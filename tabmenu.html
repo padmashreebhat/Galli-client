@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="tabmenustyle.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="wrapper">
+  <div id="tabContainer">
+    <div id="tabs">
+      <ul>
+        <li id="Personnel">Personnel</li>
+        <li id="ServiceProvider">ServiceProvider</li>
+        <li id="MyProfile">MyProfile</li>
+      </ul>
+    </div>
+    <div id="tabscontent">
+      <div class="tabpage" id="tabpage_1">
+        <h2>Page 1</h2>
+        <p>Page 1 content </p>
+      </div>
+      <div class="tabpage" id="tabpage_2">
+        <h2>Page 2</h2>
+        <p>Page 2 content </p>
+      </div>
+      <div class="tabpage" id="tabpage_3">
+        <h2>Page 3</h2>
+        <p>Page 3 content </p>
+      </div>
+    </div>
+  </div>
+  
+   <div id="myinfo">
+    <div id="tabs">
+      <ul>
+        <li id="myprofile">MyProfile</li>
+        <li id="serviceprovider">ServiceProvider</li>
+      </ul>
+    </div>
+    <div id="tabscontent">
+      <div class="tabpage" id="myprofile">
+        <h2>MyProfile</h2>
+        <p>Enter family info, email id, Ownerinfo information</p>
+        		
+				<form action="../server/myinfo.php" method="post">
+					<div id='buttonwin'>
+						<br> <br>
+						<input id="round" type="submit" value="Save" /> <br> <br>
+					</div>
+					<div id='ResInfo'>
+						<h2> Resident Information </h2>
+						
+						Apt Number: <input type="text" name="house_num"><br>
+						Block Number: <input type="text" name="block">
+						
+						FirstName:<input type="text" name="fname">  
+						LastName:<input type="text" name="lname"> <br>
+						Contact Number:<input type="text" name="phone"><br>
+					
+						<h1> Family Information:<br> </h1>
+						<h2> sl No      Family Member          Relation           DOB <h2> <br>
+						 						
+						<h4>  Purpose: </h4>
+						<select purpose="Amenity use">
+						<option value="Amenity use">Amenity use</option>
+						<option value="Party hall rent">Party hall rent</option>
+						<option value="Advertisement of service">Advertisement of service</option>
+						<option value="Renting of premise by External agency">Renting of premise by External agency</option>
+						</select> <br>
+						
+						<h4>Details: </h4><input id='tbremarks' type="text" name="Details"> <br>		
+						<h4>Remarks: </h4><input id='tbremarks' type="text" name="Remarks"> <br>		
+					</div>				
+				</form>
+
+      </div>
+      <div class="tabpage" id="serviceprovider">
+        <h2>ServiceProvier</h2>
+        <p>Driver info,maid cook care taker information</p>
+      </div>
+    </div>
+  </div>
+
+   <div id="homehelpers">
+    <div id="tabs">
+      <ul>
+        <li id="homehelp">HomeHelper</li>
+        <li id="driver">Drivers</li>
+      </ul>
+    </div>
+    <div id="tabscontent">
+      <div class="tabpage" id="homehelp">
+        <h2>HomeHelpers</h2>
+        <p>Enter Maid, cook, caretakers information</p>
+      </div>
+      <div class="tabpage" id="driver">
+        <h2>Driver</h2>
+        <p>Enter Driver information</p>
+      </div>
+    </div>
+  </div>
+</div>
+<html>

@@ -4,12 +4,16 @@
 }
 
 body {
-	background:url(../../images/background.png) top left;
 	font: .8em "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
 h2{ 
 	margin-bottom:10px;
+}
+
+table,th,td
+{
+border:1px solid black;
 }
 
 #wrapper{

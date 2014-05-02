@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+		<head>
+		<link rel="stylesheet" type="text/css" href="css/finance.css" />
+				<script src="js/clubhouse.js"></script>
+	</head>
+	<body>
+		
+					
+
+		<div id='Receipt'>
+		<h1> Payment Receipt </h1>   
+		<img src="logo.jpg" alt="ApartmentLogo" height="84" width="84">
+					<h4 align="center"> Date </h4>
+					<h4> Transaction Number </h4>
+					<h4> Name </h4>            	
+					<h4> Mobile </h4>
+					<h4> LandLine </h4>
+					<h4> Apartment Number <br></h4>
+					<h4> Amount <br></h4>
+					<h4> Purpose <br></h4>
+					<h4> Comments <br></h4>
+					<h4 align="center"> Signature <br></h4>
+
+		</div>
+		
+		<div id='buttonwin'>
+						<input id="button" type="submit" value="Print" onClick="javascript:printDiv('Receipt')"/> 
+						<input id="button" type="submit" value="SMS" />
+						<input id="button" type="submit" value="Mail" />
+					</div>
+	</body>
+</html>
+<script language="javascript" type="text/javascript">
+        function printDiv(divID) {
+            //Get the HTML of div
+            var divElements = document.getElementById(divID).innerHTML;
+            //Get the HTML of whole page
+            var oldPage = document.body.innerHTML;
+
+            //Reset the page's HTML with div's HTML only
+            document.body.innerHTML = 
+              "<html><head><title></title></head><body>" + 
+              divElements + "</body>";
+
+            //Print Page
+            window.print();
+
+            //Restore orignal HTML
+            document.body.innerHTML = oldPage;
+
+          
+        }
+ </script>

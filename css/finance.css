@@ -1,0 +1,223 @@
+
+#debitwin,#creditwin {
+	height:100%;
+	width:100%;
+	border: 5px double #5a8acc;
+	border-radius: 5px;
+	font-family: fantasy;
+	font-style: italic;
+	font-size: small;
+	text-fill-color: inherit;
+	};
+	
+#creditinput {
+	height:100%;
+	width:90%;
+	float:left;
+}	
+
+#buttonwin
+{
+	height:100%;
+	width:100%;
+
+};
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.42;
+  border-radius: 15px;
+  margin: 25px;
+};
+
+.tbremarks {width: 100px; height: 20px};
+
+#debitwin {
+	height:500px;
+	width:700px;
+	background-color: #a6cede;
+	border: 5px double #5a8acc;
+	border-radius: 5px;
+	font-family: fantasy;
+	font-style: italic;
+	font-size: small;
+	color: #0a0b0c;
+	text-fill-color: inherit;
+	};
+		input {
+		allignment:center;
+	}
+
+/******************* Transactionwin *****************************/	
+#transactionwin {
+	height:500px;
+	width:700px;
+	background-color: #a6cede;
+	border: 5px double #5a8acc;
+	border-radius: 5px;
+	font-family: fantasy;
+	font-style: italic;
+	font-size: small;
+	color: #0a0b0c;
+	text-fill-color: inherit;
+	};
+
+
+#data-table {
+    font-family: calibri, arial;
+    width: 400px;
+}
+
+#data-table thead td {
+    background-color: #8CCCF1;
+}
+
+#data-table td {
+    border: 1px solid #466E85;
+    width: 136px;
+    padding: 7px;
+}
+
+input#button{
+width:75px; /*same as the height*/
+height:30px; /*same as the width*/
+background-color:#bbd0ea;
+border:1px solid #0074ff; /*same colour as the background*/
+color:#fff;
+font-size:1.0em;
+/*set the border-radius at half the size of the width and height*/
+-webkit-border-radius: 50px;
+-moz-border-radius: 50px;
+border-radius: 25px;
+/*give the button a small drop shadow*/
+-webkit-box-shadow: 0 0 10px rgba(0,0,0, .75);
+-moz-box-shadow: 0 0 10px rgba(0,0,0, .75);
+box-shadow: 2px 2px 15px rgba(0,0,0, .75);
+margin: 25px 70px 0px 70px;
+}
+
+	
+input#round{
+width:75px; /*same as the height*/
+height:75px; /*same as the width*/
+background-color:#bbd0ea;
+border:1px solid #0074ff; /*same colour as the background*/
+color:#fff;
+font-size:1.0em;
+/*set the border-radius at half the size of the width and height*/
+-webkit-border-radius: 50px;
+-moz-border-radius: 50px;
+border-radius: 50px;
+/*give the button a small drop shadow*/
+-webkit-box-shadow: 0 0 10px rgba(0,0,0, .75);
+-moz-box-shadow: 0 0 10px rgba(0,0,0, .75);
+box-shadow: 2px 2px 15px rgba(0,0,0, .75);
+}
+/***NOW STYLE THE BUTTON'S HOVER STATE***/
+input#button:hover{
+background:#6a9cd9;
+border:1px solid #0c40c2;
+/*reduce the size of the shadow to give a pushed effect*/
+-webkit-box-shadow: 0px 0px 5px rgba(0,0,0, .75);
+-moz-box-shadow: 0px 0px 5px rgba(0,0,0, .75);
+box-shadow: 0px 0px 5px rgba(0,0,0, .75);
+}
+
+
+registration{
+ width:600px;
+ float:left;
+ color:#818181;
+ background: #f1f1f1 url(pen.png) no-repeat top right;
+ border: 2px solid #ccc;
+ padding:10px;
+ font-family: Georgia;
+ font-size: 14px;
+ -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+ -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+ -moz-border-radius: 15px;
+ -webkit-border-radius: 15px;
+}
+fieldset{
+  border-top:1px solid #ccc;
+  border-left:0;
+  border-bottom:0;
+  border-right:0;
+  padding:6px;
+  margin:0px 30px 0px 0px;
+}
+
+legend{
+  text-align:left;
+  color:#ccc;
+  font-size:18px;
+  padding:0px 4px 0px 4px;
+  margin-left:20px;
+}
+
+label{
+  font-size: 20px;
+  width:200px;
+  float: left;
+  text-align: right;
+  color:#999;
+  clear:left;
+  margin:4px 4px 0px 0px;
+  padding:0px;
+}
+input{
+  font-family: Georgia;
+  font-size: 20px;
+  float:left;
+  width:300px;
+  border:1px solid #cccccc;
+  margin:2px 0px 2px 2px;
+  color:#00abdf;
+  height:22px;
+  padding:3px;
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+input:focus,  select:focus{
+  background-color:#E0E6FF;
+}
+select{
+  font-family: Georgia;
+  font-size: 20px;
+  float:left;
+  border:1px solid #cccccc;
+  margin:2px 0px 2px 2px;
+  color:#00abdf;
+  height:22px;
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+
+.button, .button:visited{
+  float:right;
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+  cursor: pointer;
+  padding: 5px 10px 5px 5px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 32px;
+  padding: 10px 15px;
+  background-color: #00abdf;
+  display: inline-block;
+  -moz-border-radius: 10px;
+ -webkit-border-radius: 10px;
+ -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+ -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+.button:hover{
+  background-color: #777;
+}

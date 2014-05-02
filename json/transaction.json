@@ -1,0 +1,11 @@
+{
+  identifier: 'id',
+  label: 'name',
+  items: [
+    {
+      id: 'AF',
+      name: 'Africa',
+      type:'continent'
+    }
+  ]
+}

@@ -1,41 +1,167 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
-	<head>
-		<link rel="stylesheet" type="text/css" href="css/clubhouse.css" />
-				<script src="js/clubhouse.js"></script>
-	</head>
-	
-	<body>
-		<div id='Residentwin'>
-				<div id='MyProfile'>
-					<h1> Resident Information </h1>
-					<h4> FirstName </h4>
-					<h4> LastName </h4>
-					<h4> Occupation </h4>
-					<h4> Email </h4>
-					<h4> Mobile </h4>
-					<h4> LandLine </h4>
-					<h4> Social Network Profile page eg.Facebook </h4>
-				</div>
-				<div id='FlatInfo'>
-					<h4> Apartment Number <br></h4>
-					<h4> Centrax </h1>
-				</div>
-				
-				<div id='FamilyInfo'>
-					<h4> Member Name <h4>
-					<h4> DOB (dd/mm/yy) <h4>
-					<h4> Badge Number <h4>
-					<h4> Relation <h4>
-				</div>
-		
-				<div id='VehicleInfo'>
-					<h4> Parking N <h4>
-					<h4> DOB (dd/mm/yy) <h4>
-					<h4> Badge Number <h4>
-					<h4> Relation <h4>
-				</div>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="tabmenustyle.css" rel="stylesheet" type="text/css">
+<link href="table.css" rel="stylesheet" type="text/css">
+
+<script src="js/clubhouse.js"></script>
+<script src="js/finance.js"></script>
+
+</head>
+<body>
+<div id="wrapper">
+   <div id="Residentwin">
+    <div id="tabs">
+      <ul>
+        <li id="myinfo">Myinfo</li>
+        <li id="family">Family</li>
+         <li id="apartment">Apartment</li>
+         <li id="vehicle">Vehicle</li>
+        <li id="serviceprovider">ServiceProvider</li>
+      </ul>
+    </div>
+    <div id="tabscontent">
+	      <div class="tabpage" id="myinfo">
+					<form action="#" method="post">
+						 <fieldset>
+								 <legend>MyProfile</legend>
+								 <label>FirstName</label> 
+								 <input type="text" maxlength="100" value="" name="fname"/>
+								 <label>LastName</label>
+								 <input type="text" maxlength="100" value="" name="lname"/>           
+								 <label>Landline</label>
+								 <input type="text" maxlength="100" value="" name="landline"/>  
+								 <label>Mobile</label>
+								 <input type="text" maxlength="100" value="" name="mobile"/> 
+								 <label>Email</label>
+								 <input type="text" maxlength="100" value="" name="email"/> 
+								 <label>  Resident </label>
+								 <select type="Resident">
+								 <option value="Resident">Resident</option>
+								 <option value="Tenant">Tenant</option>
+								 </select>   
+								 <div id='buttonwin'>
+									 <input id="button" type="submit" value="Submit"/> 
+								</div>			                         
+							 </fieldset>
+					</form>
+	      </div>
+	      
+		<div class="tabpage" id="family">
+		<form action="#" method="post">
+	        <div id="tablecontent">
+	            <table class="table" id="familymem">
+	                <thead>
+	                    <tr>
+	                        <th scope="col" abbr=""></th>
+	                        <th scope="col" abbr="Name">Name</th>
+	                        <th scope="col" abbr="Relation">Relation</th>
+	                        <th scope="col" abbr="Age" >Age</th>
+	                      </tr>
+	                </thead>
+	               
+	                <tbody>
+	                <tr>
+	                        <th scope="row">Member1</th>
+	                        <td><input type="text" value=""></td>
+	                        <td><input type="text" value=""></td>
+	                        <td><input type="text"  value=""></td>
+	                    </tr>
+	                    <tr>
+	                        <th scope="row">Member2</th>
+	                        <td><input type="text" value=""></td>
+	                        <td><input type="text" value=""></td>
+	                        <td><input type="text" value=""></td>
+	                    </tr>
+	                    <tr>
+	                        <th scope="row">Member3</th>
+	                        <td><input type="text" value=""></td>
+	                        <td><input type="text" value=""></td>
+	                        <td><input type="text" value=""></td>
+	                    </tr>
+	                    <tr>
+	                        <th scope="row">Member4</th>
+	                        <td><input type="text" value=""></td>
+	                        <td><input type="text" value=""></td>
+	                        <td><input type="text" value=""></td>
+	                    </tr>
+	                </tbody>
+	            </table>
+	            <div id='buttonwin'>
+					<input id="button" type="submit" value="Submit"/> 
+				 </div>		                           
+			 </div>	
+		</form>	      
 		</div>
-	</body>
-</html>
+      
+		      <div class="tabpage" id="apartment">
+						<form action="#" method="post">
+								 <fieldset>
+									 <legend>Apartment</legend>
+									 <label>ApartmentNumber</label> 
+									 <input type="text" maxlength="100" value="" name="fname"/>
+									 <label>Block</label>
+									 <input type="text" maxlength="100" value="" name="lname"/>           
+									 <label>Centrax</label>
+									 <input type="text" maxlength="100" value="" name="landline"/>  
+									 <label>BuiltUpArea</label>
+									 <input type="text" maxlength="100" value="" name="mobile"/>  
+									 <div id='buttonwin'>
+										 <input id="button" type="submit" value="Submit"/> 
+									 </div>		                           
+								 </fieldset>
+						</form>
+		      </div>
+			  <div class="tabpage" id="vehicle">
+						<form action="#" method="post">
+								 <fieldset>
+									 <legend>Vehicle</legend>
+									 <label>FirstName</label> 
+									 <input type="text" maxlength="100" value="" name="fname"/>
+									 <label>LastName</label>
+									 <input type="text" maxlength="100" value="" name="lname"/>           
+									 <label>Landline</label>
+									 <input type="text" maxlength="100" value="" name="landline"/>  
+									 <label>Mobile</label>
+									 <input type="text" maxlength="100" value="" name="mobile"/> 
+									 <label>Email</label>
+									 <input type="text" maxlength="100" value="" name="email"/> 
+									 <label>  Resident </label>
+									 <select type="Resident">
+									 <option value="Resident">Resident</option>
+									 <option value="Tenant">Tenant</option>
+									 </select>                            
+								 </fieldset>
+							<div id='buttonwin'>
+								<input id="button" type="submit" value="Submit"/> 
+							</div>			
+						</form>
+		      </div>
+			  <div class="tabpage" id="serviceprovider">
+						<form action="#" method="post">
+								 <fieldset>
+									 <legend>ServiceProvider</legend>
+									 <label>Maid</label> 
+									 <input type="text" maxlength="100" value="" name="fname"/>
+									 <label>Maid</label>
+									 <input type="text" maxlength="100" value="" name="lname"/>           
+									 <label>Driver</label>
+									 <input type="text" maxlength="100" value="" name="landline"/>  
+									 <label>Cook</label>
+									 <input type="text" maxlength="100" value="" name="mobile"/> 
+									 <label>CareTaker</label>
+									 <input type="text" maxlength="100" value="" name="email"/>                             
+								 </fieldset>
+							<div id='buttonwin'>
+								<input id="button" type="submit" value="Submit"/> 
+							</div>			
+						</form>
+		      </div>
+   </div>
+  </div>
+</div>
+<html>
+
 

@@ -39,44 +39,48 @@
     </div>
     <div id="tabscontent">
       <div class="tabpage" id="myprofile">
-        <h2>MyProfile</h2>
-        <p>Enter family info, email id, Ownerinfo information</p>
-        		
 				<form action="../server/myinfo.php" method="post">
 					<div id='buttonwin'>
 						<br> <br>
 						<input id="round" type="submit" value="Save" /> <br> <br>
 					</div>
+
 					<div id='ResInfo'>
-						<h2> Resident Information </h2>
+						<h3> Resident Information </h3>
 						
-						Apt Number: <input type="text" name="house_num"><br>
-						Block Number: <input type="text" name="block">
+						Apt Number: <input type="text" name="house_num">
+						Block Number: <input type="text" name="block"> <br>
 						
 						FirstName:<input type="text" name="fname">  
 						LastName:<input type="text" name="lname"> <br>
 						Contact Number:<input type="text" name="phone"><br>
-					
-						<h1> Family Information:<br> </h1>
-						<h2> sl No      Family Member          Relation           DOB <h2> <br>
-						 						
-						<h4>  Purpose: </h4>
-						<select purpose="Amenity use">
-						<option value="Amenity use">Amenity use</option>
-						<option value="Party hall rent">Party hall rent</option>
-						<option value="Advertisement of service">Advertisement of service</option>
-						<option value="Renting of premise by External agency">Renting of premise by External agency</option>
-						</select> <br>
+						e-mail:<input type="text" name="email"><br>
 						
-						<h4>Details: </h4><input id='tbremarks' type="text" name="Details"> <br>		
-						<h4>Remarks: </h4><input id='tbremarks' type="text" name="Remarks"> <br>		
+						<h3> Family Information:<br> </h3>
+						<h4> sl No      Family Member Name          Relation           DOB <h4> <br>
+						<input type="text" name="name1"> <input type="text" name="relation">    <input type="text" name="DOB">  		
+						<input id="addfammem" type="submit" value="AddFamilyMember" /> <br> <br>
+						<input type="text" name="name1"> <input type="text" name="relation">    <input type="text" name="DOB">  		
+						<input id="addfammem" type="submit" value="AddFamilyMember" /> <br> <br>
+						<input type="text" name="name1"> <input type="text" name="relation">    <input type="text" name="DOB">  		
+						<input id="addfammem" type="submit" value="AddFamilyMember" /> <br> <br>
+						<input type="text" name="name1"> <input type="text" name="relation">    <input type="text" name="DOB">  		
+						<input id="addfammem" type="submit" value="AddFamilyMember" /> <br> <br>
+						<h3> Vehicle Information:<br> </h3>
+
+						<h4> sl No      VehicleType          RegNumber <h4> <br>
+						<input type="text" name="vehicletype"> <input type="text" name="regnumber">    				
+						<input id="addvehicleinfo" type="submit" value="AddVehicleInfo" /> <br> <br>
+						<input type="text" name="vehicletype"> <input type="text" name="regnumber">   
+						<input id="addvehicleinfo" type="submit" value="AddVehicleInfo" /> <br> <br>
+						<input type="text" name="vehicletype"> <input type="text" name="regnumber">   
+						<input id="addvehicleinfo" type="submit" value="AddVehicleInfo" /> <br> <br>						
 					</div>				
 				</form>
 
       </div>
       <div class="tabpage" id="serviceprovider">
-        <h2>ServiceProvier</h2>
-        <p>Driver info,maid cook care taker information</p>
+ 
       </div>
     </div>
   </div>

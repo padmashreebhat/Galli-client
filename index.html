@@ -13,10 +13,13 @@
 		<link rel="stylesheet" type="text/css" href="css/myselfcomponent.css" />
 		<link rel="stylesheet" type="text/css" href="css/default.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
-		<link rel="stylesheet" type="text/css" href="css/clubhouse.css" />
+		<link rel="stylesheet" type="text/css" href="css/finance.css" />
 		<link rel="stylesheet" type="text/css" href="css/Myflat.css" />
+		<link rel="stylesheet" type="text/css" href="css/table.css" />
 
 		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src=js/finance.js></script>
+		<script src=js/myflat.js></script>
 		<script src="js/modernizr.custom.js"></script>
 		  <style>
             *{
@@ -66,8 +69,9 @@
 		                    <h2>My Apartment</h2>
 		                    <p>
 		                        <a href="#">Dues</a>
-		                        <a href="#">Family</a>
-		                    </p>
+		                        <a href="#" onClick="javascript:loadmyinfo('creditwin')">Family</a>	
+		                        <a href="#">Visitors</a>		                        
+							</p>
 		                </div>
 		            </div>
 		   
@@ -76,19 +80,21 @@
 		                <div class="item_content">
 		                    <h2>Database</h2>
 		                    <p>
-		                        <a href="#">Maid</a>
+		                        <a href="#" onClick="javascript:loadhomehelperswin('creditwin')">Helpers</a>
 		                        <a href="#">Resident</a>
 		                        <a href="#">Service</a>
 		                    </p>
 		                </div>
 		            </div>
 		
-		              <div id='clubhouse' class="item">
+		              <div id='finance' class="item">
 		                <a class="link icon_finance"></a>
 		                <div class="item_content">
 		                    <h2>Finance</h2>
 		                    <p>
-		                        <a href="#">Credit</a>
+		                        <a href="#" onClick="javascript:loadfinancedetails('creditwin')">Credit</a>
+		                        <a href="#" onClick="javascript:loaddebitwin('debitwin')">Debit</a>
+		                       <a href="#" onclick="window.open('Receipt.html', 'newwindow', 'width=600, height=400'); return false;">Click</a>
 		                    </p>
 		                </div>
 		            </div>
@@ -109,7 +115,7 @@
 		                <div class="item_content">
 		                    <h2>Communication</h2>
 		                    <p>
-		                        <a href="#">eMail</a>
+		                    	<a href="#">eMail</a>	
 		                        <a href="#">sms</a>
 		                        <a href="#">Notice</a>
 		                    </p>
@@ -135,138 +141,8 @@
 
 
 <script language="javascript" type="text/javascript">
-        function printDiv(divID) {
-            //Get the HTML of div
-            var divElements = document.getElementById(divID).innerHTML;
-            //Get the HTML of whole page
-            var oldPage = document.body.innerHTML;
-
-            //Reset the page's HTML with div's HTML only
-            document.body.innerHTML = 
-              "<html><head><title></title></head><body>" + 
-              divElements + "</body>";
-
-            //Print Page
-            window.print();
-
-            //Restore orignal HTML
-            document.body.innerHTML = oldPage;
-        }
         
-        function loadcreditwin(divID) {
-            var cont = $('#filler-below');
-				cont.load('clubhouse.html #creditwin', function(){
-				console.log("inside clubhouse credit");
-          
-        });
-        }
-
-		function loadresidentwin(divID) {
-		    console.log(divID);
-		    
-            var cont = $('#filler-below');
-				cont.load('Myflat.html #Residentwin', function(){
-				console.log("inside clubhouse residentwin");
-          
-        });
-        }
-        
-        function loadtabmenuwin(divID) {
-		    console.log(divID);
-		    
-            var cont = $('#filler-below');
-				cont.load('tabmenu.html #tabContainer', function(){
-				console.log("inside homehelperswin");			
-
-				$('#tabContainer #tabscontent #tabpage_1').show();
-				$('#tabContainer #tabscontent #tabpage_2').hide();
-				$('#tabContainer #tabscontent #tabpage_3').hide();
-				
-				cont = $('#tabContainer #tabs #Personnel');
-				$(cont).hover(function(e){ 
-					console.log("inside tabheader1");
-					$('#tabContainer #tabscontent #tabpage_1').show();
-					$('#tabContainer #tabscontent #tabpage_2').hide();
-					$('#tabContainer #tabscontent #tabpage_3').hide();
-					});			          
-							        
-				cont = $('#tabContainer #tabs #ServiceProvider');
-				$(cont).hover(function(e){ 
-					console.log("inside tabheader2");
-					$('#tabContainer #tabscontent #tabpage_1').hide();
-					$('#tabContainer #tabscontent #tabpage_2').show();
-					$('#tabContainer #tabscontent #tabpage_3').hide();
-					});			          
-				
-
-				cont = $('#tabContainer #tabs #MyProfile');
-				$(cont).hover(function(e){ 
-					console.log("inside tabheader3");
-					$('#tabContainer #tabscontent #tabpage_1').hide();
-					$('#tabContainer #tabscontent #tabpage_2').hide();
-					$('#tabContainer #tabscontent #tabpage_3').show();
-					});			          
-				});
-
-        }
-
- function loadhomehelperswin(divID) {
-		    console.log(divID);
-		    
-            var cont = $('#filler-below');
-				cont.load('tabmenu.html #homehelpers', function(){
-				console.log("inside homehelperswin");			
-
-				$('#homehelpers #tabscontent #homehelp').show();
-				$('#homehelpers #tabscontent #driver').hide();
-				
-				cont = $('#homehelpers #tabs #homehelp');
-				$(cont).hover(function(e){ 
-					console.log("inside homehelp");
-					$('#homehelpers #tabscontent #homehelp').show();
-					$('#homehelpers #tabscontent #driver').hide();
-					});			          
-							        
-				cont = $('#homehelpers #tabs #driver');
-				$(cont).hover(function(e){ 
-					console.log("inside driver");
-					$('#homehelpers #tabscontent #homehelp').hide();
-					$('#homehelpers #tabscontent #driver').show();
-					});			          
-				});
-        }
-
-
-       function loadmyinfo(divID) {
-		    console.log(divID);
-		    
-            var cont = $('#filler-below');
-				cont.load('tabmenu.html #myinfo', function(){
-				console.log("inside myinfo");			
-
-				$('#myinfo #tabscontent #myprofile').show();
-				$('#myinfo #tabscontent #serviceprovider').hide();
-				
-				cont = $('#myinfo #tabs #myprofile');
-				$(cont).hover(function(e){ 
-					console.log("inside tabheader1");
-					$('#myinfo #tabscontent #myprofile').show();
-					$('#myinfo #tabscontent #serviceprovider').hide();
-					});			          
-							        
-				cont = $('#myinfo #tabs #serviceprovider');
-				$(cont).hover(function(e){ 
-					console.log("inside tabheader2");
-					$('#myinfo #tabscontent #myprofile').hide();
-					$('#myinfo #tabscontent #serviceprovider').show();
-					});			          
-				     
-				});
-
-        }
-
-
-
+ 
  </script>
  	
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -336,10 +212,10 @@
 				});
 				});
 
-			<!---- Load Clubhouse Window ----->
-			$('.container #mainmenu #clubhouse').hover(function(e){ 
+			<!---- Load finance Window ----->
+			$('.container #mainmenu #finance').hover(function(e){ 
 				console.log("inside click");
-				cont.load('submenu.html #clubhouse', function(){
+				cont.load('submenu.html #finance', function(){
 				});
 				});
 				
@@ -363,5 +239,5 @@
 				});
 				});
 
-
+ 
 </script>

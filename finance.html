@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="tabmenustyle.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="css/finance.css" />
+<script src="js/clubhouse.js"></script>
+<script src="js/finance.js"></script>
+
+</head>
+<body>
+<div id="wrapper">
+   <div id="finance">
+    <div id="tabs">
+      <ul>
+        <li id="credit">Credit</li>
+        <li id="debit">Debit</li>
+      </ul>
+    </div>
+    <div id="tabscontent">
+      <div class="tabpage" id="credit">
+				<form action="#" method="post">
+					
+					<div id='creditinput'>
+												 
+						 <fieldset>
+							  <label> TransactionID  </label> <input type="text" id="TransactionNum" name="TransactionNum"> 
+							 <legend>Member Information</legend>
+							  
+							 <label>Name</label>
+							 <input type="text" maxlength="100" value="" name="fname"/>           
+							 <label>Apartment</label>
+							 <input type="text" maxlength="100" value=""/>  
+							  <label>Contact</label>
+							 <input type="text" maxlength="100" value="" name="phone"/> 
+							 <label>  Type </label>
+							 <select purpose="Resident">
+							 <option value="Resident">Resident</option>
+							 <option value="External">External</option>
+							 </select> <br>                            
+						 </fieldset>
+
+						 <fieldset>
+						    <legend>Mode of Payment</legend>
+					 		<label>  Mode </label>
+							<select purpose="Cash">
+							<option value="Cash">Cash</option>
+							<option value="CDD">Check/DD</option>
+							<option value="BT">BankTransfer</option>
+							</select> <br>
+							<label>CheckNumber </label> <input type="text" name="Check Number">
+							<label>BankName </label><input type="text" name="Bank Name">
+							<label>BankCode</label><input type="text" name="Bank Code"><br>
+							<label>Amount </label><input type="text" name="Amount"><br>
+						</fieldset>
+						<fieldset>
+							<legend>Details </legend>
+			 				<label>  Purpose: </label>
+							<select purpose="Amenity use">
+							<option value="Amenity use">Amenity use</option>
+							<option value="Party hall rent">Party hall rent</option>
+							<option value="Advertisement of service">Advertisement of service</option>
+							<option value="Renting of premise by External agency">Renting of premise by External agency</option>
+							</select> <br>
+							<label>Remarks: </label><input id='tbremarks' type="text" name="Remarks"> <br>		
+						</fieldset>
+					</div>	
+					<div id='buttonwin'>
+						<input id="button" type="submit" value="Search"/> 
+						<input id="button" type="submit" value="Submit" onclick="window.open('Receipt.html', 'newwindow', 'width=300, height=250'); return false;"/><br> <br>
+					</div>			
+				</form>
+      </div>
+      
+      <div class="tabpage" id="debit">
+				<form action="#" method="post">
+					<div id='creditinput'>
+						<fieldset>													
+							<legend>  Purpose </legend>
+							<label>Purpose </label>
+							<select purpose="Employee">
+							<option value="Instructor">Instructor</option>
+							<option value="Water">Water</option>
+							<option value="Electricity">Electricity</option>
+							<option value="Backup">Backup</option>
+							<option value="ClubHouseMaintenance">ClubHouseMaintenance</option>
+							</select> 
+							<label>Name</label><input type="text" name="name">  
+							<label>Contact Number</label><input type="text" name="phone"><br>
+						</fieldset>
+
+						<fieldset>
+							<legend> Mode of Payment</legend> 
+							<label>Mode</label>
+							<select purpose="Cash">
+							<option value="Cash">Cash</option>
+							<option value="CDD">Check/DD</option>
+							<option value="BT">BankTransfer</option>
+							</select> 
+							<label>CheckNumber</label><input type="text" name="Check Number">
+							<label>BankName</label><input type="text" name="Bank Name">
+							<label>BankCode</label><input type="text" name="Bank Code"><br>
+							<label>Amount </label><input type="text" name="Amount"><br>
+						</fieldset>
+						<fieldset>
+							<legend>Details</legend>
+							<label>Details</label> <input id='tbremarks' type="text" name="Details"> <br>		
+							<label >Remarks</label><input id='tbremarks' type="text" name="Remarks"> <br>		
+						</fieldset>
+					</div>	
+					<div id='buttonwin'>
+						<input id="button" type="submit" value="Submit" onClick="javascript:senddebitinfo('debitinput')"/> 
+						<input id="button" type="submit" value="View" />
+					</div>			
+				</form>
+			</div>
+    </div>
+  </div>
+</div>
+<html>

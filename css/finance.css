@@ -1,4 +1,12 @@
-
+#Receiptwin{
+  background-color: white;	
+};
+#PR1h1{
+	color: black;
+	font-family: serif;
+	font-size: medium;
+		
+};
 #debitwin,#creditwin {
 	height:100%;
 	width:100%;

@@ -2,12 +2,8 @@
 <html>
 <head>
 <meta charset="utf-8">
-<link href="tabmenustyle.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="css/finance.css" />
-<script src="js/clubhouse.js"></script>
-<script src="js/finance.js"></script>
-
 </head>
+
 <body>
 <div id="wrapper">
    <div id="finance">
@@ -28,13 +24,13 @@
 							 <legend>Member Information</legend>
 							  
 							 <label>Name</label>
-							 <input type="text" maxlength="100" value="" name="fname"/>           
+							 <input type="text" maxlength="100" value="" id="fname" name="fname"/>           
 							 <label>Apartment</label>
-							 <input type="text" maxlength="100" value=""/>  
+							 <input type="text" maxlength="100" value="" id="apartment"/>  
 							  <label>Contact</label>
-							 <input type="text" maxlength="100" value="" name="phone"/> 
+							 <input type="text" maxlength="100" value="" name="phone" id="phone"/> 
 							 <label>  Type </label>
-							 <select purpose="Resident">
+							 <select purpose="Resident" id="Resident">
 							 <option value="Resident">Resident</option>
 							 <option value="External">External</option>
 							 </select> <br>                            
@@ -48,11 +44,12 @@
 							<option value="CDD">Check/DD</option>
 							<option value="BT">BankTransfer</option>
 							</select> <br>
-							<label>CheckNumber </label> <input type="text" name="Check Number">
-							<label>BankName </label><input type="text" name="Bank Name">
-							<label>BankCode</label><input type="text" name="Bank Code"><br>
-							<label>Amount </label><input type="text" name="Amount"><br>
+							<label>CheckNumber </label> <input type="text" name="Check Number" id="CheckNumber">
+							<label>BankName </label><input type="text" name="Bank Name" id="BankName">
+							<label>BankCode</label><input type="text" name="Bank Code" id="BankCode"><br>
+							<label>Amount </label><input type="text" name="Amount" id="Amount"><br>
 						</fieldset>
+						
 						<fieldset>
 							<legend>Details </legend>
 			 				<label>  Purpose: </label>
@@ -62,12 +59,19 @@
 							<option value="Advertisement of service">Advertisement of service</option>
 							<option value="Renting of premise by External agency">Renting of premise by External agency</option>
 							</select> <br>
-							<label>Remarks: </label><input id='tbremarks' type="text" name="Remarks"> <br>		
+							<label>Remarks: </label><input id='Remarks' type="text" name="Remarks"> <br>		
 						</fieldset>
 					</div>	
 					<div id='buttonwin'>
-						<input id="button" type="submit" value="Search"/> 
-						<input id="button" type="submit" value="Submit" onclick="window.open('Receipt.html', 'newwindow', 'width=300, height=250'); return false;"/><br> <br>
+					<div id="container" class="container">
+						<header class="clearfix">
+						<nav>
+							<a id="transSearch"  class="bp-icon bp-icon-prev" data-info="Search" onclick="searchTransaction()" ><span>Search</span></a>
+							<a id="creditSubmit" class="bp-icon bp-icon-drop" data-info="GenerateReceipt" onclick="generateReceipt()"><span>GenerateReceipt</span></a>
+						</nav>
+						</header>	
+					</div>
+
 					</div>			
 				</form>
       </div>
@@ -109,12 +113,52 @@
 						</fieldset>
 					</div>	
 					<div id='buttonwin'>
-						<input id="button" type="submit" value="Submit" onClick="javascript:senddebitinfo('debitinput')"/> 
-						<input id="button" type="submit" value="View" />
+						<div id="container" class="container">
+							<header class="clearfix">
+								<nav>
+									<a id="transSearch"  class="bp-icon bp-icon-prev" data-info="Submit" onClick="javascript:senddebitinfo('debitinput')" ><span>Submit</span></a>
+									<a id="creditSubmit" class="bp-icon bp-icon-drop" data-info="View" ><span>View</span></a>
+								</nav>
+							</header>	
+						</div>
 					</div>			
 				</form>
 			</div>
     </div>
   </div>
 </div>
+
+
+					
+<div id='Receiptwin'>
+		<div id='Receipt'>
+		<h1>Receipt</h1>   
+		<img src="logo.jpg" alt="ApartmentLogo" height="84" width="84">
+					<h4 id='receiptdate'> Date  :</h4>
+					<h4 id='transnum'> Transaction Number  :</h4>
+					<h4 id='receiptName'> Name   :</h4> 	
+					<h4 id='receiptMobile'> Mobile  :</h4>
+					<h4 id='receiptLandLine'> LandLine :</h4>
+					<h4 id='receiptAptNum'> Apartment Number :</h4>
+					<h4 id='receiptAmt'> Amount :</h4>
+					<h4 id='receiptPurpose'> Purpose :</h4>
+					<h4 id='receiptComments'> Comments :</h4>
+					<h4 align="center"> Signature </h4>
+
+		</div>
+		
+		<div id='buttonwin'>
+					
+					<div id="container" class="container">
+						<header class="clearfix">
+						<nav>
+							<a id="transSearch"  class="bp-icon bp-icon-prev" data-info="Print" onClick="javascript:printDiv('Receipt')" ><span>Print</span></a>
+							<a id="creditSubmit" class="bp-icon bp-icon-drop" data-info="SMS" ><span>SMS</span></a>
+							<a id="creditSubmit" class="bp-icon bp-icon-drop" data-info="email" "><span>Email</span></a>
+						</nav>
+						</header>	
+					</div>
+		</div>
+</div>
+</body>
 <html>

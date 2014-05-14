@@ -1,5 +1,8 @@
+/*---------------------------------------------------------------------------------        
+ ------------------------Recipet Generation---------------------------------------
+----------------------------------------------------------------------------------*/
 
-/* printDiv will print div passed as parameter */
+/* Print Receipt -  printDiv will print div passed as parameter */
         function printDiv(divID) {
             //Get the HTML of div
             var divElements = document.getElementById(divID).innerHTML;
@@ -17,12 +20,41 @@
             //Restore orignal HTML
             document.body.innerHTML = oldPage;
         }
+/*---------------------------------------------------------------------------------        
+ ------------------------Finance Credit--------------------------------------------
+----------------------------------------------------------------------------------*/
 
-
-       function senddebitinfo(divID){
-	        alert("Debit information is sent for approval");
+/* Search for Transaction details from database */
+       function searchTransaction(divID){
+	        transNum = $('#credit #creditinput #TransactionNum').val();
+			getTransInfo(transNum);
         }
         
+                 
+/* Get Transaction details from database */        
+        function getTransInfo(transnum) {
+       
+       /* Data is taken from JSON file, once database is integrated to be taken by database */
+       
+            $.getJSON('JSON/result.json', function(jd) { 
+                        $('#credit #creditinput #fname').val(jd.fname);
+                         
+                        $('#credit #creditinput #apartment').val(jd.apartment);
+ 				        $('#credit #creditinput #fname').attr("disabled","true");  
+
+ 				        $('#credit #creditinput #phone').val(jd.phone);
+				        $('#credit #creditinput #Amount').val(jd.Amount);
+				        $('#credit #creditinput #CheckNumber').val(jd.CheckNumber);
+				        $('#credit #creditinput #BankName').val(jd.BankName);
+				        $('#credit #creditinput #BankCode').val(jd.BankCode);
+				        $('#credit #creditinput #Remarks').val(jd.Remarks);
+				        $('input[type=text]').prop('disabled', true); 
+				        $('#credit #creditinput #TransactionNum').prop('disabled', false); 
+
+						}); 
+					}
+
+/* Load Credit window */        
         function loadcreditwin(divID) {
             var cont = $('#filler-below');
 				cont.load('creditentry.html #credit', function(){
@@ -37,43 +69,17 @@
         });
         }
 
-        
-        function loadcreditwinorig(divID) {
-            var cont = $('#filler-below');
-				cont.load('finance.html #creditwin', function(){
-				console.log("inside finance credit");
-				$('#creditwin #creditinput #transsubmit').click(function(){
-					console.log("inside transsubmit click");
-					var transNum =0;
-					transNum = $('#creditwin #creditinput #TransactionNum').val();
-					console.log(transNum);
-					getTransDetails(transNum);
-				});
-        });
-        }
-        
-        function getTransInfo(transnum) {
-           	console.log("inside getTransDetails");
-           $.getJSON('../JSON/result.json', function(jd) {
-             $('#stage').html('<p> Name: ' + jd.name + '</p>');
-             $('#stage').append('<p>AptNumber : ' + jd.AptNumber+ '</p>');
-             $('#stage').append('<p> Amount: ' + jd.Amount+ '</p>');
-             $('#stage').append('<p> Mode: ' + jd.Mode+ '</p>');
-             $('#stage').append('<p> Details: ' + jd.Details+ '</p>');
-             
-          });
-      }
-                      
-       
-				$('#creditwin #creditinput #transsubmit').click(function(){
-					console.log("inside transsubmit click");
-					var transNum =0;
-					transNum = $('#creditwin #creditinput #TransactionNum').val();
-					console.log(transNum);
-				});
+/*---------------------------------------------------------------------------------        
+ ------------------------Finance Debit--------------------------------------------
+----------------------------------------------------------------------------------*/
 
-    
-        
+/* Debit Information to be sent for Approval */
+        function senddebitinfo(divID){
+	        alert("Debit information is sent for approval");
+	        loadfinancedetails();
+        }
+                      
+/* Load Debit Window ----------*/            
 		function loaddebitwin(divID) {
             var cont = $('#filler-below');
 				cont.load('finance.html #debitwin', function(){
@@ -81,7 +87,37 @@
           
         });
         }
- 
+        
+        
+        
+/*---------------------------------------------------------------------------------        
+------------------------Receipt--------------------------------------------
+----------------------------------------------------------------------------------*/
+function generateReceipt()
+{
+			/* Send data to database */
+			/* Update Transaction ID */
+                       
+              /* Generate receipt */
+
+			  var cont = $('#filler-below');
+				cont.load('finance.html #Receiptwin', function(){
+				console.log("inside finance Receipt");
+				
+				$.getJSON('JSON/result.json', function(jd) { 
+					 $('#Receiptwin #Receipt #transnum').append(jd.transactionNum);
+					 $('#Receiptwin #Receipt #receiptName').append(jd.fname);
+					 $('#Receiptwin #Receipt #receiptMobile').append(jd.phone);
+				     $('#Receiptwin #Receipt #receiptLandLine').append(jd.fname);
+					 $('#Receiptwin #Receipt #receiptAptNum').append(jd.apartment);
+					 $('#Receiptwin #Receipt #receiptAmt').append(jd.Amount);
+				});
+});
+
+}
+/*---------------------------------------------------------------------------------        
+ ------------------------Load Finance--------------------------------------------
+----------------------------------------------------------------------------------*/
  function loadfinancedetails(divID) {
 		    console.log(divID);
 		    
@@ -91,6 +127,7 @@
 
 				$('#finance #tabscontent #credit').show();
 				$('#finance #tabscontent #debit').hide();
+				
 				
 				cont = $('#finance #tabs #credit');
 				$(cont).hover(function(e){ 
@@ -107,5 +144,4 @@
 					});			          
 				});
         }
-
 

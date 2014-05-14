@@ -1,3 +1,14 @@
+#Receiptwin{
+  background-color: white;	
+  border : double;
+};
+
+#Receiptwin #Receipt h1{
+	color: red;
+	font-family: serif;
+	font-size: medium;
+	text-align:center;
+};
 
 #debitwin,#creditwin {
 	height:100%;
@@ -82,7 +93,7 @@
     padding: 7px;
 }
 
-input#button{
+.custbutton{
 width:75px; /*same as the height*/
 height:30px; /*same as the width*/
 background-color:#bbd0ea;
@@ -99,6 +110,7 @@ border-radius: 25px;
 box-shadow: 2px 2px 15px rgba(0,0,0, .75);
 margin: 25px 70px 0px 70px;
 }
+
 
 	
 input#round{
@@ -118,7 +130,8 @@ border-radius: 50px;
 box-shadow: 2px 2px 15px rgba(0,0,0, .75);
 }
 /***NOW STYLE THE BUTTON'S HOVER STATE***/
-input#button:hover{
+
+.custbutton:hover{
 background:#6a9cd9;
 border:1px solid #0c40c2;
 /*reduce the size of the shadow to give a pushed effect*/

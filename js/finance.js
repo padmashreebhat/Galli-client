@@ -95,6 +95,7 @@
 ----------------------------------------------------------------------------------*/
 function generateReceipt()
 {
+<<<<<<< HEAD
 			/* Send data to database */
 			/* Update Transaction ID */
                        
@@ -105,14 +106,46 @@ function generateReceipt()
 				console.log("inside finance Receipt");
 				
 				$.getJSON('JSON/result.json', function(jd) { 
+=======
+/* Send data to database */
+/* Update Transaction ID */
+                       
+         /*    window.open('Receipt.html', 'newwindow', 'width=300, height=250');
+             
+              $('Receipt').html('<p> Padma: ' + jd.name + '</p>');*/
+              
+              
+              /* Generate receipt */
+			  var receiptdata;
+			  var cont = $('#filler-below');
+				cont.load('finance.html #Receiptwin', function(){
+				console.log("inside finance Receipt");
+				 $.getJSON('JSON/result.json', function(jd) { 
+>>>>>>> FETCH_HEAD
 					 $('#Receiptwin #Receipt #transnum').append(jd.transactionNum);
 					 $('#Receiptwin #Receipt #receiptName').append(jd.fname);
 					 $('#Receiptwin #Receipt #receiptMobile').append(jd.phone);
 				     $('#Receiptwin #Receipt #receiptLandLine').append(jd.fname);
 					 $('#Receiptwin #Receipt #receiptAptNum').append(jd.apartment);
 					 $('#Receiptwin #Receipt #receiptAmt').append(jd.Amount);
+<<<<<<< HEAD
 				});
 });
+=======
+					/*$(jd.transactionNum).appendTo('#Receiptwin #Receipt #transnum');*/
+
+				});
+			/*	
+             $('#Receiptwin').append('<p> Details: ' + jd.Details+ '</p>');*/
+
+				       
+}
+             
+);
+
+				        
+				        
+>>>>>>> FETCH_HEAD
 
 }
 /*---------------------------------------------------------------------------------        

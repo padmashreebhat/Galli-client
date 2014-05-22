@@ -1,0 +1,32 @@
+table{
+    font-family:Arial;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: -1px;
+    line-height: 1.0em;
+    text-align:center;
+    width:auto;
+   border:1px double #3859a0;
+   
+
+}
+th{
+    padding:6px 10px;
+    color:#71b9e0;
+    font-weight:bold;
+    text-shadow:1px 1px 1px #fff;
+    border-bottom:5px solid #444;
+    border:1px double black;
+
+}
+
+td{
+    font-size:15px;
+    font-weight:bold;
+    padding:15px 0px;
+    text-shadow:1px 1px 1px #fff;
+    border: black;
+	border:1px double #3859a0;
+}
+

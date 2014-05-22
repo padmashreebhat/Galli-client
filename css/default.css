@@ -200,7 +200,7 @@ margin-right: 100;
 	font-variant: normal;
 	text-transform: none;
 	text-align: center;
-	color: #47a3da;
+	color: #48a4d9;
 	-webkit-font-smoothing: antialiased;
 }
 
@@ -238,33 +238,3 @@ margin-right: 100;
 	content: "\e004";
 }
 
-@media screen and (max-width: 55em) {
-
-	.container > header h1,
-	.container > header nav {
-		float: none;
-	}
-
-	.container > header > span,
-	.container > header h1 {
-		text-align: center;
-	}
-
-	.container > header nav {
-		margin: 0 auto;
-	}
-
-	.container > header > span {
-		text-indent: 30px;
-	}
-}
-
-@media screen and (max-height: 25.25em), screen and (max-width: 44.3125em) {
-
-	.filler-below {
-		position: relative;
-		background: #f0f0f0;
-		height: auto;
-	}
-
-}

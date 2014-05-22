@@ -8,6 +8,10 @@
 "BankCode":"ABC0003",
 "Amount": "1500",
 "Mode": "Cash",
+<<<<<<< HEAD
 "date":"05/09/2007",
 "Remarks": "Bharatnatyam and Taekwondo for May2014 Student name Pragnya R.Bhat"
+=======
+"Remarks": "Bharatnatyam and Taekwondo for May2014"
+>>>>>>> FETCH_HEAD
 }

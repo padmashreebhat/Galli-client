@@ -27,11 +27,8 @@
 /* Search for Transaction details from database */
        function searchTransaction(divID){
 	        transNum = $('#credit #creditinput #TransactionNum').val();
-<<<<<<< HEAD
 
        /* Data is taken from JSON file, once database is integrated to be taken by database */
-=======
->>>>>>> FETCH_HEAD
 			getTransInfo(transNum);
         }
         
@@ -39,22 +36,11 @@
 /* Get Transaction details from database */        
         function getTransInfo(transnum) {
        
-<<<<<<< HEAD
        
             $.getJSON('JSON/result.json', function(jd) { 
             			$('#credit #creditinput #TransactionNum').val(transnum);
                         $('#credit #creditinput #fname').val(jd.fname);
                         $('#credit #creditinput #apartment').val(jd.apartment);
-=======
-       /* Data is taken from JSON file, once database is integrated to be taken by database */
-       
-            $.getJSON('JSON/result.json', function(jd) { 
-                        $('#credit #creditinput #fname').val(jd.fname);
-                         
-                        $('#credit #creditinput #apartment').val(jd.apartment);
- 				        $('#credit #creditinput #fname').attr("disabled","true");  
-
->>>>>>> FETCH_HEAD
  				        $('#credit #creditinput #phone').val(jd.phone);
 				        $('#credit #creditinput #Amount').val(jd.Amount);
 				        $('#credit #creditinput #CheckNumber').val(jd.CheckNumber);
@@ -108,10 +94,6 @@
 ----------------------------------------------------------------------------------*/
 function generateReceipt()
 {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> FETCH_HEAD
 			/* Send data to database */
 			/* Update Transaction ID */
                        
@@ -122,70 +104,22 @@ function generateReceipt()
 				console.log("inside finance Receipt");
 				
 				$.getJSON('JSON/result.json', function(jd) { 
-<<<<<<< HEAD
-=======
-=======
-/* Send data to database */
-/* Update Transaction ID */
-                       
-         /*    window.open('Receipt.html', 'newwindow', 'width=300, height=250');
-             
-              $('Receipt').html('<p> Padma: ' + jd.name + '</p>');*/
-              
-              
-              /* Generate receipt */
-			  var receiptdata;
-			  var cont = $('#filler-below');
-				cont.load('finance.html #Receiptwin', function(){
-				console.log("inside finance Receipt");
-				 $.getJSON('JSON/result.json', function(jd) { 
->>>>>>> FETCH_HEAD
->>>>>>> FETCH_HEAD
 					 $('#Receiptwin #Receipt #transnum').append(jd.transactionNum);
 					 $('#Receiptwin #Receipt #receiptName').append(jd.fname);
 					 $('#Receiptwin #Receipt #receiptMobile').append(jd.phone);
 				     $('#Receiptwin #Receipt #receiptLandLine').append(jd.fname);
 					 $('#Receiptwin #Receipt #receiptAptNum').append(jd.apartment);
 					 $('#Receiptwin #Receipt #receiptAmt').append(jd.Amount);
-<<<<<<< HEAD
 				});
 });
 
 }
-
-function viewReport()
-{
-	        alert("View report");
-
-};
 function generateReport()
 {
 	        alert("Generate report in excel");
 
 };
 
-=======
-<<<<<<< HEAD
-				});
-});
-=======
-					/*$(jd.transactionNum).appendTo('#Receiptwin #Receipt #transnum');*/
-
-				});
-			/*	
-             $('#Receiptwin').append('<p> Details: ' + jd.Details+ '</p>');*/
-
-				       
-}
-             
-);
-
-				        
-				        
->>>>>>> FETCH_HEAD
-
-}
->>>>>>> FETCH_HEAD
 /*---------------------------------------------------------------------------------        
  ------------------------Load Finance--------------------------------------------
 ----------------------------------------------------------------------------------*/
@@ -199,7 +133,6 @@ function generateReport()
 				$('#finance #tabscontent #credit').show();
 				$('#finance #tabscontent #debit').hide();
 				$('#finance #tabscontent #report').hide();
-				
 				
 				cont = $('#finance #tabs #credit');
 				$(cont).hover(function(e){ 
@@ -227,37 +160,71 @@ function generateReport()
 
         }
 
-<<<<<<< HEAD
-
 function  CreateTransactionTable()
 {
-    var tablecontents = "";
-    tablecontents = "<table>";
-      tablecontents += "<tr>";
-      tablecontents += "<th>" + "TransactionID" + "</th>";
-      tablecontents += "<th>" + "Date" + "</th>";
-      tablecontents += "<th>" + "AptNumber" + "</th>";
-      tablecontents += "<th>" + "Amount" + "</th>";
-      tablecontents += "<th>" + "Remarks" + "</th>";
-      tablecontents += "</tr>";
 
-/* Read content from JSON file and update the same */
-	  $.getJSON('JSON/result.json', function(jd) { 
-	  for (var i = 0; i < 15; i ++)
-	   {
-	      tablecontents += "<tr>";
-	      tablecontents += "<td>" + jd.transactionNum + "</td>";
-	      tablecontents += "<td>" + jd.date + "</td>";
-	      tablecontents += "<td>" + jd.apartment + "</td>";
-	      tablecontents += "<td>" + jd.Amount+ "</td>";
-	      tablecontents += "<td>" + jd.Remarks + "</td>";
-	      tablecontents += "</tr>";
-	   }
-	   
-	   tablecontents += "</table>";
-	   document.getElementById("tablespace").innerHTML = tablecontents;
-		});
+if("Credit"==document.getElementById("reporttype").value)
+{
+		     var tablecontents = "";
+		    tablecontents = "<table>";
+		      tablecontents += "<tr>";
+		      tablecontents += "<th>" + "TransactionID" + "</th>";
+		      tablecontents += "<th>" + "Date" + "</th>";
+		      tablecontents += "<th>" + "AptNumber" + "</th>";
+		      tablecontents += "<th>" + "Amount" + "</th>";
+		      tablecontents += "<th>" + "Remarks" + "</th>";
+		      tablecontents += "</tr>";
+		
+		/* Read content from JSON file and update the same */
+			  $.getJSON('JSON/result.json', function(jd) { 
+			  for (var i = 0; i < 15; i ++)
+			   {
+			      tablecontents += "<tr>";
+			      tablecontents += "<td>" + jd.transactionNum + "</td>";
+			      tablecontents += "<td>" + jd.date + "</td>";
+			      tablecontents += "<td>" + jd.apartment + "</td>";
+			      tablecontents += "<td>" + jd.Amount+ "</td>";
+			      tablecontents += "<td>" + jd.Remarks + "</td>";
+			      tablecontents += "</tr>";
+			   }
+			   
+			   tablecontents += "</table>";
+			   document.getElementById("tablespace").innerHTML = tablecontents;
+				});
+		
+}
+else
+{
+		     var tablecontents = "";
+		    tablecontents = "<table>";
+		      tablecontents += "<tr>";
+		      tablecontents += "<th>" + "TransactionID" + "</th>";
+		      tablecontents += "<th>" + "Date" + "</th>";
+		      tablecontents += "<th>" + "AptNumber" + "</th>";
+		      tablecontents += "<th>" + "Amount" + "</th>";
+		      tablecontents += "<th>" + "Remarks" + "</th>";
+		      tablecontents += "<th>" + "Status" + "</th>";
+		      tablecontents += "</tr>";
+		
+		/* Read content from JSON file and update the same */
+			  $.getJSON('JSON/result.json', function(jd) { 
+			  for (var i = 0; i < 15; i ++)
+			   {
+			      tablecontents += "<tr>";
+			      tablecontents += "<td>" + jd.transactionNum + "</td>";
+			      tablecontents += "<td>" + jd.date + "</td>";
+			      tablecontents += "<td>" + jd.apartment + "</td>";
+			      tablecontents += "<td>" + jd.Amount+ "</td>";
+			      tablecontents += "<td>" + jd.Remarks + "</td>";
+			      tablecontents += "<td>" + jd.Status + "</td>";
+			      tablecontents += "</tr>";
+			   }
+			   
+			   tablecontents += "</table>";
+			   document.getElementById("tablespace").innerHTML = tablecontents;
+				});
+		
 
 }
-=======
->>>>>>> FETCH_HEAD
+
+}

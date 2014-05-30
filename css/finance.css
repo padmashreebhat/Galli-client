@@ -1,9 +1,5 @@
 #Receiptwin{
   background-color: white;	
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> FETCH_HEAD
   border : double;
 };
 
@@ -14,15 +10,6 @@
 	text-align:center;
 };
 
-=======
-};
-#PR1h1{
-	color: black;
-	font-family: serif;
-	font-size: medium;
-		
-};
->>>>>>> FETCH_HEAD
 #debitwin,#creditwin {
 	height:100%;
 	width:100%;
@@ -227,23 +214,6 @@ select{
   -moz-border-radius: 5px;
 }
 
-.button, .button:visited{
-  float:right;
-  text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
-  border-bottom: 1px solid rgba(0,0,0,0.25);
-  cursor: pointer;
-  padding: 5px 10px 5px 5px;
-  color: #fff;
-  text-decoration: none;
-  font-size: 32px;
-  padding: 10px 15px;
-  background-color: #00abdf;
-  display: inline-block;
-  -moz-border-radius: 10px;
- -webkit-border-radius: 10px;
- -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
- -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
-}
 .button:hover{
   background-color: #777;
 }

@@ -1,3 +1,149 @@
+function myflat_StoreDetails(infoType)
+{
+ alert("Send details to database");
+}
+
+function myflat_CreateTable(tableType)
+{
+	switch(tableType)
+	{
+		case "Family":
+		CreateFamilyTable();
+		break;
+
+		case "Vehicle":
+		CreateVehicleTable();
+		break;
+
+		default:
+		break;
+	}
+}
+
+function myflat_addRow(tableType)
+{
+	switch(tableType)
+	{
+		case "Family":
+		addRowFamilyTable();
+		break;
+
+		case "Vehicle":
+		addRowVehicleTable();
+		break;
+
+		default:
+		break;
+	}
+
+}
+
+function CreateVehicleTable()
+{
+		      var tablecontents = "";
+		      tablecontents = "<table>";
+		      tablecontents += "<tr>";
+		      tablecontents += "<th>" + "VehicleType" + "</th>";
+		      tablecontents += "<th>" + "RegNumber" + "</th>";
+		      tablecontents += "<th>" + "" + "</th>";
+		      tablecontents += "</tr>";
+		
+		/* Read content from JSON file and update the same */
+			  $.getJSON('JSON/result.json', function(jd) { 
+			  for (var i = 0; i < 3; i ++)
+			   {
+			      tablecontents += "<tr>";
+			      tablecontents += "<td>" + jd.VehicleType + "</td>";
+			      tablecontents += "<td>" + jd.RegNumber + "</td>";
+			      tablecontents += "<td>" + '<input type="button" class="tablebutton" value = "Delete" onClick="Javacsript:deleteVehicle(this)">' + "</td>";
+			      tablecontents += "</tr>";
+			   }
+			   
+			   tablecontents += "</table>";
+			   document.getElementById("myvehicletable").innerHTML = tablecontents;
+				});
+
+}
+
+function CreateFamilyTable()
+{
+		      var tablecontents = "";
+		      tablecontents = "<table>";
+		      tablecontents += "<tr>";
+		      tablecontents += "<th>" + "Name" + "</th>";
+		      tablecontents += "<th>" + "Age" + "</th>";
+		      tablecontents += "<th>" + "Relation" + "</th>";
+		      tablecontents += "<th>" + "" + "</th>";
+		      tablecontents += "</tr>";
+		
+		/* Read content from JSON file and update the same */
+			  $.getJSON('JSON/result.json', function(jd) { 
+			  for (var i = 0; i < 3; i ++)
+			   {
+			      tablecontents += "<tr>";
+			      tablecontents += "<td>" + jd.fname + "</td>";
+			      tablecontents += "<td>" + jd.age + "</td>";
+			      tablecontents += "<td>" + jd.relation + "</td>";
+			      tablecontents += "<td>" + '<input type="button" class="tablebutton" value = "Delete" onClick="Javacsript:deleteFamilyMember(this)">' + "</td>";
+			      tablecontents += "</tr>";
+			   }
+			   
+			   tablecontents += "</table>";
+			   document.getElementById("tablespace").innerHTML = tablecontents;
+				});
+
+}
+
+function addRowFamilyTable() {
+     var myName = document.getElementById("name");
+    var age = document.getElementById("age");
+    var relation = document.getElementById("relation");
+    var table = document.getElementById("tablespace");
+ 
+    var rowCount = table.rows.length;
+    var row = table.insertRow(rowCount);
+ 
+    row.insertCell(0).innerHTML= myName.value;
+    row.insertCell(1).innerHTML= age.value;
+    row.insertCell(2).innerHTML= relation.value;
+    row.insertCell(3).innerHTML= '<input type="button" class="tablebutton" value = "Delete" onClick="Javacsript:deleteFamilyMember(this)">';
+    
+}
+
+
+
+function addRowVehicleTable() {
+     var VehicleType = document.getElementById("VehicleType");
+    var RegNumber = document.getElementById("RegNumber");
+    var table = document.getElementById("myvehicletable");
+ 
+    var rowCount = table.rows.length;
+    var row = table.insertRow(rowCount);
+ 
+    row.insertCell(0).innerHTML= VehicleType.value;
+    row.insertCell(1).innerHTML= RegNumber.value;
+    row.insertCell(2).innerHTML= '<input type="button" class="tablebutton" value = "Delete" onClick="Javacsript:deleteVehicle(this)">';
+    
+}
+ 
+function deleteVehicle(obj) {
+      
+    var index = obj.parentNode.parentNode.rowIndex;
+    var table = document.getElementById("myvehicletable");
+    table.deleteRow(index);
+    
+}
+ 
+function deleteFamilyMember(obj) {
+      
+    var index = obj.parentNode.parentNode.rowIndex;
+    var table = document.getElementById("tablespace");
+    table.deleteRow(index);
+    
+}
+
+
+
 		function loadresidentwin(divID) {
 		    console.log(divID);
 		    
@@ -125,6 +271,7 @@
 					$('#Residentwin #tabscontent #apartment').hide();
 					$('#Residentwin #tabscontent #family').show();
 					$('#Residentwin #tabscontent #vehicle').hide();
+					myflat_CreateTable("Family");
 					});			    
 				     
 				     
@@ -136,6 +283,7 @@
 					$('#Residentwin #tabscontent #apartment').hide();
 					$('#Residentwin #tabscontent #family').hide();
 					$('#Residentwin #tabscontent #vehicle').show();
+					myflat_CreateTable("Vehicle");
 					});			    
 
 				});

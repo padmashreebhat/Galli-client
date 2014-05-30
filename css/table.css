@@ -6,10 +6,8 @@ table{
     letter-spacing: -1px;
     line-height: 1.0em;
     text-align:center;
-    width:auto;
-   border:1px double #3859a0;
-   
-
+   border:1px solid #a1aab4;
+   float:;
 }
 th{
     padding:6px 10px;
@@ -30,3 +28,23 @@ td{
 	border:1px double #3859a0;
 }
 
+td.a{
+	color: red;
+}
+.tablebutton{
+	  float:right;
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+  cursor: pointer;
+  padding: 5px 10px 5px 5px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+  padding: 10px 15px;
+  background-color: #00aade;
+  width: auto;
+  height: auto;
+  display: inline-block;
+ -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+ -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}

@@ -57,53 +57,32 @@
 	      
 		<div class="tabpage" id="family">
 		<form action="#" method="post">
-	        <div id="tablecontent">
-	            <table class="table" id="familymem">
-	                <thead>
-	                    <tr>
-	                        <th scope="col" abbr=""></th>
-	                        <th scope="col" abbr="Name">Name</th>
-	                        <th scope="col" abbr="Relation">Relation</th>
-	                        <th scope="col" abbr="Age" >Age</th>
-	                      </tr>
-	                </thead>
-	               
-	                <tbody>
-	                <tr>
-	                        <th scope="row">Member1</th>
-	                        <td><input type="text" value=""></td>
-	                        <td><input type="text" value=""></td>
-	                        <td><input type="text"  value=""></td>
-	                    </tr>
-	                    <tr>
-	                        <th scope="row">Member2</th>
-	                        <td><input type="text" value=""></td>
-	                        <td><input type="text" value=""></td>
-	                        <td><input type="text" value=""></td>
-	                    </tr>
-	                    <tr>
-	                        <th scope="row">Member3</th>
-	                        <td><input type="text" value=""></td>
-	                        <td><input type="text" value=""></td>
-	                        <td><input type="text" value=""></td>
-	                    </tr>
-	                    <tr>
-	                        <th scope="row">Member4</th>
-	                        <td><input type="text" value=""></td>
-	                        <td><input type="text" value=""></td>
-	                        <td><input type="text" value=""></td>
-	                    </tr>
-	                </tbody>
-	            </table>
-	            <div id='buttonwin'>
-					<div id="container" class="container">
-											<header class="clearfix">
-											<nav>
-												<a id="transSearch"  class="bp-icon bp-icon-prev" data-info="Submit" ><span>Submit</span></a>
-											</nav>
-											</header>	
+			<div id="mydata">
+					<fieldset>
+					<legend>Family Members</legend>
+					<table id="tablespace"  style="float:center"></table>
+					</fieldset>
 					</div>
-				 </div>		                           
+			
+					
+					<fieldset>
+					<legend> Add New Family Member</legend>	
+						<label> Name </label>
+						<input type="text" id="name">
+						<label> Age </label>
+						<input type="text" id="age">
+						<label>Relation </label>
+						<input type="text" id="relation">
+					</fieldset>
+
+		            <div id='buttonwin'>
+					<div id="container" class="container">
+						<header class="clearfix">
+						<nav>
+							<a id="add"  class="bp-icon bp-icon-prev" data-info="Add" onclick="Javascript:addRowFamilyTable()" ><span>Add</span></a>
+						</nav>
+						</header>	
+					</div>
 			 </div>	
 		</form>	      
 		</div>
@@ -134,33 +113,30 @@
 		      </div>
 			  <div class="tabpage" id="vehicle">
 						<form action="#" method="post">
-								 <fieldset>
-									 <legend>Vehicle</legend>
-									 <label>FirstName</label> 
-									 <input type="text" maxlength="100" value="" name="fname"/>
-									 <label>LastName</label>
-									 <input type="text" maxlength="100" value="" name="lname"/>           
-									 <label>Landline</label>
-									 <input type="text" maxlength="100" value="" name="landline"/>  
-									 <label>Mobile</label>
-									 <input type="text" maxlength="100" value="" name="mobile"/> 
-									 <label>Email</label>
-									 <input type="text" maxlength="100" value="" name="email"/> 
-									 <label>  Resident </label>
-									 <select type="Resident">
-									 <option value="Resident">Resident</option>
-									 <option value="Tenant">Tenant</option>
-									 </select>                            
-								 </fieldset>
-							<div id='buttonwin'>
-								<div id="container" class="container">
-											<header class="clearfix">
-											<nav>
-												<a id="transSearch"  class="bp-icon bp-icon-prev" data-info="Submit" ><span>Submit</span></a>
-											</nav>
-											</header>	
-								</div>
-							</div>			
+							<div id="vehicledata">
+									<fieldset>
+									<legend>Vehicle Details</legend>
+									<table id="myvehicletable"></table>
+									</fieldset>
+									</div>
+							
+									<fieldset>
+									<legend> Add New Vehicle Details</legend>	
+										<label> Vehicle Type </label>
+										<input type="text" id="VehicleType">
+										<label> Reg Number </label>
+										<input type="text" id="RegNumber">
+									</fieldset>
+				
+						            <div id='buttonwin'>
+									<div id="container" class="container">
+										<header class="clearfix">
+										<nav>
+											<a id="add"  class="bp-icon bp-icon-prev" data-info="Add" onclick="Javascript:addRowVehicleTable()" ><span>Add</span></a>
+										</nav>
+										</header>	
+									</div>
+							 </div>	
 						</form>
 		      </div>
 			  <div class="tabpage" id="serviceprovider">

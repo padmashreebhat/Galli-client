@@ -141,29 +141,39 @@
 		      </div>
 			  <div class="tabpage" id="serviceprovider">
 						<form action="#" method="post">
-								 <fieldset>
-									 <legend>ServiceProvider</legend>
-									 <label>Maid</label> 
-									 <input type="text" maxlength="100" value="" name="fname"/>
-									 <label>Maid</label>
-									 <input type="text" maxlength="100" value="" name="lname"/>           
-									 <label>Driver</label>
-									 <input type="text" maxlength="100" value="" name="landline"/>  
-									 <label>Cook</label>
-									 <input type="text" maxlength="100" value="" name="mobile"/> 
-									 <label>CareTaker</label>
-									 <input type="text" maxlength="100" value="" name="email"/>                             
-								 </fieldset>
-							<div id='buttonwin'>
-								<div id="container" class="container">
-											<header class="clearfix">
-											<nav>
-												<a id="transSearch"  class="bp-icon bp-icon-prev" data-info="Submit" ><span>Submit</span></a>
-											</nav>
-											</header>	
-								</div>
-							</div>			
+							<div id="myserviceprovider">
+									<fieldset>
+									<legend>ServiceProvider Details</legend>
+									<table id="myserviceprovidertable"></table>
+									</fieldset>
+									</div>
+							
+									<fieldset>
+									<legend> Add New ServiceProvider Details</legend>	
+										<label> SPID Number </label>
+										<input type="text" id="SpId">
+										<label> StartTime </label>
+										<input type="time" id="Starttime">
+										<label> End Time </label>
+										<input type="time" id="Endtime">
+
+										<label> Salary </label>
+										<input type="text" id="Salary">
+										<label> Date </label>
+										<input type="date" id="FromDate">
+									</fieldset>
+				
+						            <div id='buttonwin'>
+									<div id="container" class="container">
+										<header class="clearfix">
+										<nav>
+											<a id="add"  class="bp-icon bp-icon-prev" data-info="Add" onclick="Javascript:addRowSPTable()" ><span>Add</span></a>
+										</nav>
+										</header>	
+									</div>
+							 </div>	
 						</form>
+			  
 		      </div>
    </div>
   </div>

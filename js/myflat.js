@@ -14,7 +14,11 @@ function myflat_CreateTable(tableType)
 		case "Vehicle":
 		CreateVehicleTable();
 		break;
-
+		
+		case "SP":
+		CreateSPTable();
+		break;
+		
 		default:
 		break;
 	}
@@ -35,6 +39,40 @@ function myflat_addRow(tableType)
 		default:
 		break;
 	}
+
+}
+function CreateSPTable()
+{
+		      var tablecontents = "";
+		      tablecontents = "<table>";
+		      tablecontents += "<tr>";
+		      tablecontents += "<th>" + "SPID Number" + "</th>";
+		      tablecontents += "<th>" + "Name" + "</th>";
+		      tablecontents += "<th>" + "Starttime" + "</th>";
+		      tablecontents += "<th>" + "Endtime" + "</th>";
+		      tablecontents += "<th>" + "Salary" + "</th>";
+		      tablecontents += "<th>" + "FromDate" + "</th>";
+		      tablecontents += "<th>" + "" + "</th>";
+		      tablecontents += "</tr>";
+		
+		/* Read content from JSON file and update the same */
+			  $.getJSON('JSON/result.json', function(jd) { 
+			  for (var i = 0; i < 3; i ++)
+			   {
+			      tablecontents += "<tr>";
+			      tablecontents += "<td>" + jd.SPID + "</td>";
+			      tablecontents += "<td>" + jd.SPName + "</td>";
+			      tablecontents += "<td>" + jd.Starttime + "</td>";
+			      tablecontents += "<td>" + jd.Endtime + "</td>";
+			      tablecontents += "<td>" + jd.Salary + "</td>";
+			      tablecontents += "<td>" + jd.FromDate + "</td>";
+			      tablecontents += "<td>" + '<input type="button" class="tablebutton" value = "Delete" onClick="Javacsript:deleteSP(this)">' + "</td>";
+			      tablecontents += "</tr>";
+			   }
+			   
+			   tablecontents += "</table>";
+			   document.getElementById("myserviceprovidertable").innerHTML = tablecontents;
+				});
 
 }
 
@@ -94,6 +132,31 @@ function CreateFamilyTable()
 
 }
 
+
+function addRowSPTable() {
+     var SpId = document.getElementById("SpId");
+     var name = "Basamma";
+    var Starttime = document.getElementById("Starttime");
+     var Endtime = document.getElementById("Endtime");
+    var Salary = document.getElementById("Salary");
+    var FromDate = document.getElementById("FromDate");
+      var table = document.getElementById("myserviceprovidertable");
+ 
+    var rowCount = table.rows.length;
+    var row = table.insertRow(rowCount);
+ 
+    row.insertCell(0).innerHTML= SpId.value;
+	row.insertCell(1).innerHTML= name.value;
+    row.insertCell(2).innerHTML= Starttime.value;
+     row.insertCell(3).innerHTML= Endtime.value;
+    row.insertCell(4).innerHTML= Salary.value;
+    row.insertCell(5).innerHTML= FromDate.value;
+    row.insertCell(6).innerHTML= '<input type="button" class="tablebutton" value = "Delete" onClick="Javacsript:deleteSP(this)">';
+    
+}
+
+
+
 function addRowFamilyTable() {
      var myName = document.getElementById("name");
     var age = document.getElementById("age");
@@ -138,6 +201,14 @@ function deleteFamilyMember(obj) {
       
     var index = obj.parentNode.parentNode.rowIndex;
     var table = document.getElementById("tablespace");
+    table.deleteRow(index);
+    
+}
+
+function deleteSP(obj) {
+      
+    var index = obj.parentNode.parentNode.rowIndex;
+    var table = document.getElementById("myserviceprovidertable");
     table.deleteRow(index);
     
 }
@@ -250,6 +321,7 @@ function deleteFamilyMember(obj) {
 					$('#Residentwin #tabscontent #apartment').hide();
 					$('#Residentwin #tabscontent #family').hide();
 					$('#Residentwin #tabscontent #vehicle').hide();
+					myflat_CreateTable("SP");
 					});			          
 				     
 				     cont = $('#Residentwin #tabs #apartment');

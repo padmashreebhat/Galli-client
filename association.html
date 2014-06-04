@@ -8,7 +8,15 @@
 <div id="wrapper">
    <div id="association">
     <div id="tabscontent">
-      
+    
+<div class="alertbox" id="rejectbox">
+<label> Comment </label>
+<input type="text" maxlength="100" value="" id="comment" name="comment"/>
+<input type="button" class="tablebutton" value="Ok" onclick="CloseAlertBox()" style="float: right; margin-right: 20px;
+            font-weight: bold; width: 50px" />
+</div>
+
+     
 			 <div class="tabpage" id="report">
 				<form action="#" method="post">
 					<div id='approvalwin'>
@@ -21,16 +29,17 @@
 							<option value="Pending">Pending</option>
 							</select> 
 						</fieldset>
-
-						<p id="tablespace"></p>
+						<table id="tablespace"></table>
 					</div>	
 
 				</form>
 			</div>
+			
+			
+
     </div>
   </div>
 </div>
-
 
 
 </body>

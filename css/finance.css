@@ -182,7 +182,7 @@ label{
   margin:4px 4px 0px 0px;
   padding:0px;
 }
-input{
+TEXTAREA,input{
   font-family: Georgia;
   font-size: 20px;
   float:left;
@@ -190,7 +190,6 @@ input{
   border:1px solid #cccccc;
   margin:2px 0px 2px 2px;
   color:#00abdf;
-  height:22px;
   padding:3px;
   -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
   -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);

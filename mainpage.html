@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Sphinx: MyNest</title>
+		<meta name="description" content="Sphinx : MyNest" />
+		<meta name="keywords" content="MyNest Sphinx" />
+		<link rel="stylesheet" type="text/css" href="css/tabmenustyle.css" />
+		<link rel="stylesheet" href="css/mainmenustyle.css" type="text/css" media="screen"/>
+		<link rel="stylesheet" type="text/css" href="css/myselfdefault.css" />
+		<link rel="stylesheet" type="text/css" href="css/myselfcomponent.css" />
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/table.css" />
+		<link rel="stylesheet" type="text/css" href="css/finance.css" />
+		<link rel="stylesheet" type="text/css" href="css/alertbox.css" />
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+		<script src=js/finance.js></script>
+		<script src=js/myflat.js></script>
+		<script src=js/association.js></script>
+		<script src=js/communication.js></script>
+		<script src="js/modernizr.custom.js"></script>
+		  <style>
+            *{
+                margin:0;
+                padding:0;
+              }
+          </style>
+	</head>
+	<body>
+		<div id="container" class="container">
+			<header class="clearfix">
+				<span>Sphinx <span class="bp-icon bp-icon-about" data-content="Company Profile to be updated"></span></span>
+				<h1>Galli</h1>
+			</header>	
+
+			<div id="mainmenu">
+		            <div id='security' class="item">
+		                <a class="link icon_security"></a>
+		                <div class="item_content">
+		                    <h2>Security</h2>
+		                    <p>
+		                        <a href="#">Vehicle</a>
+		                        <a href="#">Visitors</a>
+		                    </p>
+		                </div>
+		            </div>
+		
+		            <div id='storage' class="item">
+		                <a class="link icon_storage"></a>
+		                <div class="item_content">
+		                    <h2>Storage</h2>
+		                    <p>
+		                        <a href="#">Photos</a>
+		                        <a href="#">Documents</a>
+		                    </p>
+		                </div>
+		            </div>
+		            
+		            <div id='myself' class="item">
+		                <a class="link icon_myflat"></a>
+		                <div class="item_content">
+		                    <h2>My Apartment</h2>
+		                    <p>
+		                        <a href="#">Dues</a>
+		                        <a href="#" onClick="javascript:loadmyinfo('creditwin')">Family</a>	
+		                        <a href="#">Visitors</a>		                        
+							</p>
+		                </div>
+		            </div>
+		   
+		               <div id='database' class="item">
+		                <a class="link icon_database"></a>
+		                <div class="item_content">
+		                    <h2>Database</h2>
+		                    <p>
+		                        <a href="#" onClick="javascript:loadhomehelperswin('creditwin')">Helpers</a>
+		                        <a href="#">Resident</a>
+		                        <a href="#">Service</a>
+		                    </p>
+		                </div>
+		            </div>
+		
+		              <div id='finance' class="item">
+		                <a class="link icon_finance"></a>
+		                <div class="item_content">
+		                    <h2>Finance</h2>
+		                    <p>
+		                        <a href="#" onClick="javascript:loadfinancedetails('creditwin')">Credit</a>
+		                        <a href="#" onClick="javascript:loaddebitwin('debitwin')">Debit</a>
+		                       <a href="#" onclick="">Reports</a>
+		                    </p>
+		                </div>
+		            </div>
+		       
+		            <div id='association' class="item">
+		                <a class="link icon_association"></a>
+		                <div class="item_content">
+		                    <h2>Association</h2>
+		                    <p>
+		                        <a href="#">Minutes</a>
+		                        <a href="#">Members</a>
+		                    </p>
+		                </div>
+		            </div>
+		            
+		            <div id=communication class="item">
+		                <a class="link icon_communication"></a>
+		                <div class="item_content">
+		                    <h2>Communication</h2>
+		                    <p>
+		                    	<a href="#">eMail</a>	
+		                        <a href="#">sms</a>
+		                        <a href="#" onClick="javascript:loadnoticeboard('noticeboard')">Compliant</a>
+		                    </p>
+		                </div>
+		            </div>
+		
+			</div>
+			
+			
+			<div id="submenu">
+			</div>
+					
+			<div id="filler-below" class="filler-below">			
+			</div>
+			
+			<div id="advertisements">
+			
+		</div>
+		
+		</body>
+</html>
+
+
+<script language="javascript" type="text/javascript">
+        
+ 
+ </script>
+ 	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+       <script>
+            $('.item').hover(
+                function(){
+                    var $this = $(this);
+                    expand($this);
+                },
+                function(){
+                    var $this = $(this);
+                    collapse($this);
+                }
+            );
+            function expand($elem){
+                var angle = 0;
+                var t = setInterval(function () {
+                    if(angle == 1440){
+                        clearInterval(t);
+                        return;
+                    }
+                    angle += 40;
+                    $('.link',$elem).stop().animate({rotate: '+=-40deg'}, 0);
+                },10);
+                $elem.stop().animate({width:'268px'}, 1000)
+                .find('.item_content').fadeIn(400,function(){
+                    $(this).find('p').stop(true,true).fadeIn(600);
+                });
+            }
+            function collapse($elem){
+                var angle = 1440;
+                var t = setInterval(function () {
+                    if(angle == 0){
+                        clearInterval(t);
+                        return;
+                    }
+                    angle -= 40;
+                    $('.link',$elem).stop().animate({rotate: '+=40deg'}, 0);
+                },10);
+                $elem.stop().animate({width:'52px'}, 1000)
+                .find('.item_content').stop(true,true).fadeOut().find('p').stop(true,true).fadeOut();
+            }
+ 							
+			<!---- Load Default Window ----->
+			var cont = $('#submenu');	
+				cont.load('submenu.html #communication', function(){
+				});
+							
+			<!---- Load communication Window ----->
+			$('.container #mainmenu #communication').hover(function(e){ 
+				console.log("inside click");
+				loadnoticeboard("noticeboard");
+				cont.load('submenu.html #communication', function(){
+				});
+				});
+				
+			<!---- Load database Window ----->
+			$('.container #mainmenu #database').hover(function(e){ 
+				console.log("inside click");
+				
+				cont.load('submenu.html #database', function(){
+				});
+				});
+			
+			<!---- Load myhome Window ----->
+			$('.container #mainmenu #myself').hover(function(e){ 
+				console.log("inside click");
+				loadmyinfo("myhome");
+				cont.load('submenu.html #myself', function(){
+				});
+				});
+
+			<!---- Load finance Window ----->
+			$('.container #mainmenu #finance').hover(function(e){ 
+				console.log("inside click");
+				loadfinancedetails("finance");
+				cont.load('submenu.html #finance', function(){
+				});
+				});
+				
+				<!---- Load Security Window ----->
+			$('.container #mainmenu #security').hover(function(e){ 
+				console.log("inside click");
+				cont.load('submenu.html #security', function(){
+				});
+				});
+
+				<!---- Load Association Window ----->
+			$('.container #mainmenu #association').hover(function(e){ 
+				console.log("inside click");
+				loadsealofapproval("approval");
+				cont.load('submenu.html #association', function(){
+				});
+				});
+				<!---- Load storage Window ----->
+			$('.container #mainmenu #storage').hover(function(e){ 
+				console.log("inside click");
+				cont.load('submenu.html #storage', function(){
+				});
+				});
+
+ 
+</script>

@@ -5,9 +5,16 @@
 
 body {
 	font: .8em "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+
 }
 
 
+p {
+	color:  #60b0db;
+}
+.container{
+	background-color: #60b0db;
+}
 
 
 

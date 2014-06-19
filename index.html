@@ -247,11 +247,77 @@
 					<div id="CommunicationDet">
 					<fieldset>
 					<legend>Communication</legend>
-					<p> A. Email </p>
-					<p> B. SMS </p>
-					<p> c. NoticeBoard </p>
+					<h2> Email <h2>
+					<p> Sending Mails </p>
+					<h2> SMS <h2>
+					<p> Sending SMS </p>
+					<h2> NoticeBoard </h2>
+					<p> Resident can display Notice </p>
 					</fieldset>
 					</div>
+					<div id="AssociationDet">
+					<fieldset>
+					<legend>Association</legend>
+					<h2> MOM <h2>
+					<p> Capturing Minutes </p>
+					<h2> Meetings <h2>
+					<p> Schedule Meetings </p>
+					<h2> Association </h2>
+					<p> Current Association details </p>
+					</fieldset>
+					</div>
+					<div id="FinanceDet">
+					<fieldset>
+					<legend>Finance</legend>
+					<h2> Credit <h2>
+					<p> Generate Receipts </p>
+					<h2> Debit <h2>
+					<p> Generate Reports </p>
+					<h2> Reports </h2>
+					<p> Generate Reports </p>
+					</fieldset>
+					</div>
+					<div id="DatabaseDet">
+					<fieldset>
+					<legend>Database</legend>
+					<h2> HomeHelpers <h2>
+					<p> Maintain details of Maid,Cook,Drivers </p>
+					<h2> Resident <h2>
+					<p> Maintain information of residents </p>
+					<h2> Employee </h2>
+					<p> Details of employee </p>
+					</fieldset>
+					</div>
+					<div id="ApartmentDet">
+					<fieldset>
+					<legend>MyHome</legend>
+					<h2> MyData <h2>
+					<p> Maintain details of Family,Car,Homehelpers </p>
+					<h2> Reports <h2>
+					<p> Maintain details bill payments,pending etc </p>
+					<h2> Visitors </h2>
+					<p> Details of visitors to my apartment </p>
+					</fieldset>
+					</div>
+					<div id="StorageDet">
+					<fieldset>
+					<legend>Storage</legend>
+					<h2> Documents <h2>
+					<p> Aggrement documents, presentations etc will be maintained </p>
+					<h2> Photos <h2>
+					<p> Photos/Videos of events </p>
+					</fieldset>
+					</div>
+					<div id="SecurityDet">
+					<fieldset>
+					<legend>Security</legend>
+					<h2> VisitorRecord <h2>
+					<p> All visitor details </p>
+					<h2> Vehicle Information <h2>
+					<p> All vehicle information </p>
+					</fieldset>
+					</div>
+
 			 </div>	
 		</form>	      
 		</div>
@@ -332,7 +398,139 @@
                 $elem.stop().animate({width:'52px'}, 1000)
                 .find('.item_content').stop(true,true).fadeOut().find('p').stop(true,true).fadeOut();
             }
-     
+            
+     		
+   				cont = $('.container #loginmenu #tabscontent #features #mydata #CommunicationDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #AssociationDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #FinanceDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #DatabaseDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #ApartmentDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #StorageDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #SecurityDet');				
+				$(cont).hide("drop");
+	
+			$('.container #loginmenu #tabscontent #features #mainmenu #communication').hover(function(e){ 
+   				cont = $('.container #loginmenu #tabscontent #features #mydata #CommunicationDet');				
+				$(cont).show("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #AssociationDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #FinanceDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #DatabaseDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #ApartmentDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #StorageDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #SecurityDet');				
+				$(cont).hide("drop");
+
+				});
+
+				$('.container #loginmenu #tabscontent #features #mainmenu #association').hover(function(e){ 
+   				cont = $('.container #loginmenu #tabscontent #features #mydata #CommunicationDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #AssociationDet');				
+				$(cont).show("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #FinanceDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #DatabaseDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #ApartmentDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #StorageDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #SecurityDet');				
+				$(cont).hide("drop");
+
+				});
+				$('.container #loginmenu #tabscontent #features #mainmenu #finance').hover(function(e){ 
+   				cont = $('.container #loginmenu #tabscontent #features #mydata #CommunicationDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #AssociationDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #FinanceDet');				
+				$(cont).show("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #DatabaseDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #ApartmentDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #StorageDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #SecurityDet');				
+				$(cont).hide("drop");
+				});
+				$('.container #loginmenu #tabscontent #features #mainmenu #database').hover(function(e){ 
+   				cont = $('.container #loginmenu #tabscontent #features #mydata #CommunicationDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #AssociationDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #FinanceDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #DatabaseDet');				
+				$(cont).show("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #ApartmentDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #StorageDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #SecurityDet');				
+				$(cont).hide("drop");
+				});
+				$('.container #loginmenu #tabscontent #features #mainmenu #myself').hover(function(e){ 
+   				cont = $('.container #loginmenu #tabscontent #features #mydata #CommunicationDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #AssociationDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #FinanceDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #DatabaseDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #ApartmentDet');				
+				$(cont).show("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #StorageDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #SecurityDet');				
+				$(cont).hide("drop");
+				});
+				$('.container #loginmenu #tabscontent #features #mainmenu #storage').hover(function(e){ 
+   				cont = $('.container #loginmenu #tabscontent #features #mydata #CommunicationDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #AssociationDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #FinanceDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #DatabaseDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #ApartmentDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #StorageDet');				
+				$(cont).show("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #SecurityDet');				
+				$(cont).hide("drop");
+				});
+				$('.container #loginmenu #tabscontent #features #mainmenu #security').hover(function(e){ 
+   				cont = $('.container #loginmenu #tabscontent #features #mydata #CommunicationDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #AssociationDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #FinanceDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #DatabaseDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #ApartmentDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #StorageDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #SecurityDet');				
+				$(cont).show("drop");
+				});
+
 
  		<!---- Load communication Window ----->
 			$('.container #loginmenu #tabscontent #login #register').click(function(e){

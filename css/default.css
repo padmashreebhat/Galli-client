@@ -79,9 +79,9 @@ margin-right: 100;
 
 #submenu{
 	background: #edf7f8;
-	height: 100%;
-	width:20%;
-	float:left;
+	height: 30%;
+	width:100%;
+	clear:both;
 	overflow-y:auto;
 }
 .filler-above
@@ -94,7 +94,7 @@ margin-right: 100;
 .filler-below {
 	width: 80%;
 	height: 100%;
-	float:right;
+	clear: both;
 	background: #f0f0f0;
 	overflow-y:auto;
 }

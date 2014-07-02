@@ -20,6 +20,7 @@
 		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 		<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 
+		<script src=js/submenu.js></script>
 		<script src=js/finance.js></script>
 		<script src=js/myflat.js></script>
 		<script src=js/association.js></script>
@@ -187,6 +188,45 @@
 			<!---- Load Default Window ----->
 			var cont = $('#submenu');	
 				cont.load('submenu.html #communication', function(){
+				 $('.submenuitem').hover(
+			                function(){
+			                    var $this = $(this);
+			                    expand($this);
+			                },
+			                function(){
+			                    var $this = $(this);
+			                    collapse($this);
+			                }
+			            );
+			            function expand($elem){
+			                var angle = 0;
+			                var t = setInterval(function () {
+			                    if(angle == 1440){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle += 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=-40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'268px'}, 1000)
+			                .find('.item_content').fadeIn(400,function(){
+			                    $(this).find('p').stop(true,true).fadeIn(600);
+			                });
+			            }
+			            function collapse($elem){
+			                var angle = 1440;
+			                var t = setInterval(function () {
+			                    if(angle == 0){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle -= 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'75px'}, 1000)
+			                .find('.item_content').stop(true,true).fadeOut().find('p').stop(true,true).fadeOut();
+			            }
+
 				});
 							
 			<!---- Load communication Window ----->
@@ -194,6 +234,45 @@
 				console.log("inside click");
 				loadnoticeboard("noticeboard");
 				cont.load('submenu.html #communication', function(){
+				 $('.submenuitem').hover(
+			                function(){
+			                    var $this = $(this);
+			                    expand($this);
+			                },
+			                function(){
+			                    var $this = $(this);
+			                    collapse($this);
+			                }
+			            );
+			            function expand($elem){
+			                var angle = 0;
+			                var t = setInterval(function () {
+			                    if(angle == 1440){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle += 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=-40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'268px'}, 1000)
+			                .find('.item_content').fadeIn(400,function(){
+			                    $(this).find('p').stop(true,true).fadeIn(600);
+			                });
+			            }
+			            function collapse($elem){
+			                var angle = 1440;
+			                var t = setInterval(function () {
+			                    if(angle == 0){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle -= 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'75px'}, 1000)
+			                .find('.item_content').stop(true,true).fadeOut().find('p').stop(true,true).fadeOut();
+			            }
+
 				});
 				});
 				
@@ -202,6 +281,45 @@
 				console.log("inside click");
 				
 				cont.load('submenu.html #database', function(){
+				 $('.submenuitem').hover(
+			                function(){
+			                    var $this = $(this);
+			                    expand($this);
+			                },
+			                function(){
+			                    var $this = $(this);
+			                    collapse($this);
+			                }
+			            );
+			            function expand($elem){
+			                var angle = 0;
+			                var t = setInterval(function () {
+			                    if(angle == 1440){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle += 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=-40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'268px'}, 1000)
+			                .find('.item_content').fadeIn(400,function(){
+			                    $(this).find('p').stop(true,true).fadeIn(600);
+			                });
+			            }
+			            function collapse($elem){
+			                var angle = 1440;
+			                var t = setInterval(function () {
+			                    if(angle == 0){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle -= 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'75px'}, 1000)
+			                .find('.item_content').stop(true,true).fadeOut().find('p').stop(true,true).fadeOut();
+			            }
+
 				});
 				});
 			
@@ -210,6 +328,45 @@
 				console.log("inside click");
 				loadmyinfo("myhome");
 				cont.load('submenu.html #myself', function(){
+				 $('.submenuitem').hover(
+			                function(){
+			                    var $this = $(this);
+			                    expand($this);
+			                },
+			                function(){
+			                    var $this = $(this);
+			                    collapse($this);
+			                }
+			            );
+			            function expand($elem){
+			                var angle = 0;
+			                var t = setInterval(function () {
+			                    if(angle == 1440){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle += 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=-40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'268px'}, 1000)
+			                .find('.item_content').fadeIn(400,function(){
+			                    $(this).find('p').stop(true,true).fadeIn(600);
+			                });
+			            }
+			            function collapse($elem){
+			                var angle = 1440;
+			                var t = setInterval(function () {
+			                    if(angle == 0){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle -= 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'75px'}, 1000)
+			                .find('.item_content').stop(true,true).fadeOut().find('p').stop(true,true).fadeOut();
+			            }
+
 				});
 				});
 
@@ -218,6 +375,45 @@
 				console.log("inside click");
 				loadfinancedetails("finance");
 				cont.load('submenu.html #finance', function(){
+				 $('.submenuitem').hover(
+			                function(){
+			                    var $this = $(this);
+			                    expand($this);
+			                },
+			                function(){
+			                    var $this = $(this);
+			                    collapse($this);
+			                }
+			            );
+			            function expand($elem){
+			                var angle = 0;
+			                var t = setInterval(function () {
+			                    if(angle == 1440){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle += 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=-40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'268px'}, 1000)
+			                .find('.item_content').fadeIn(400,function(){
+			                    $(this).find('p').stop(true,true).fadeIn(600);
+			                });
+			            }
+			            function collapse($elem){
+			                var angle = 1440;
+			                var t = setInterval(function () {
+			                    if(angle == 0){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle -= 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'75px'}, 1000)
+			                .find('.item_content').stop(true,true).fadeOut().find('p').stop(true,true).fadeOut();
+			            }
+
 				});
 				});
 				
@@ -225,20 +421,134 @@
 			$('.container #mainmenu #security').hover(function(e){ 
 				console.log("inside click");
 				cont.load('submenu.html #security', function(){
+								           $('.submenuitem').hover(
+			                function(){
+			                    var $this = $(this);
+			                    expand($this);
+			                },
+			                function(){
+			                    var $this = $(this);
+			                    collapse($this);
+			                }
+			            );
+			            function expand($elem){
+			                var angle = 0;
+			                var t = setInterval(function () {
+			                    if(angle == 1440){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle += 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=-40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'268px'}, 1000)
+			                .find('.item_content').fadeIn(400,function(){
+			                    $(this).find('p').stop(true,true).fadeIn(600);
+			                });
+			            }
+			            function collapse($elem){
+			                var angle = 1440;
+			                var t = setInterval(function () {
+			                    if(angle == 0){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle -= 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'75px'}, 1000)
+			                .find('.item_content').stop(true,true).fadeOut().find('p').stop(true,true).fadeOut();
+			            }
+
 				});
 				});
 
 				<!---- Load Association Window ----->
 			$('.container #mainmenu #association').hover(function(e){ 
-				console.log("inside click");
 				loadsealofapproval("approval");
 				cont.load('submenu.html #association', function(){
+				           $('.submenuitem').hover(
+			                function(){
+			                    var $this = $(this);
+			                    expand($this);
+			                },
+			                function(){
+			                    var $this = $(this);
+			                    collapse($this);
+			                }
+			            );
+			            function expand($elem){
+			                var angle = 0;
+			                var t = setInterval(function () {
+			                    if(angle == 1440){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle += 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=-40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'268px'}, 1000)
+			                .find('.item_content').fadeIn(400,function(){
+			                    $(this).find('p').stop(true,true).fadeIn(600);
+			                });
+			            }
+			            function collapse($elem){
+			                var angle = 1440;
+			                var t = setInterval(function () {
+			                    if(angle == 0){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle -= 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'75px'}, 1000)
+			                .find('.item_content').stop(true,true).fadeOut().find('p').stop(true,true).fadeOut();
+			            }
 				});
 				});
 				<!---- Load storage Window ----->
 			$('.container #mainmenu #storage').hover(function(e){ 
 				console.log("inside click");
 				cont.load('submenu.html #storage', function(){
+				           $('.submenuitem').hover(
+			                function(){
+			                    var $this = $(this);
+			                    expand($this);
+			                },
+			                function(){
+			                    var $this = $(this);
+			                    collapse($this);
+			                }
+			            );
+			            function expand($elem){
+			                var angle = 0;
+			                var t = setInterval(function () {
+			                    if(angle == 1440){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle += 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=-40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'268px'}, 1000)
+			                .find('.item_content').fadeIn(400,function(){
+			                    $(this).find('p').stop(true,true).fadeIn(600);
+			                });
+			            }
+			            function collapse($elem){
+			                var angle = 1440;
+			                var t = setInterval(function () {
+			                    if(angle == 0){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle -= 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'75px'}, 1000)
+			                .find('.item_content').stop(true,true).fadeOut().find('p').stop(true,true).fadeOut();
+			            }
 				});
 				});
 

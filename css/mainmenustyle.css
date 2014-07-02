@@ -1,4 +1,4 @@
-
+/* Main Menu details */
 
 .menu{
     width:800px;
@@ -34,8 +34,8 @@
     left:2px;
     top:2px;
     position:absolute;
-    width:48px;
-    height:48px;
+    width:65px;
+    height:65px;
 }
 .icon_home{
     background:transparent url(../images/home.png) no-repeat top left;
@@ -84,7 +84,7 @@
     display:none;
 }
 .item_content h2{
-    color:#aaa;
+    color:#4244a4;
     text-shadow: 1px 1px 1px #fff;
     background-color:transparent;
     font-size:14px;
@@ -103,6 +103,152 @@
     color:#0b965b;
 }
 .item_content p {
+    background-color:transparent;
+    display:none;
+}
+.item_content p input{
+    border:1px solid #ccc;
+    padding:1px;
+    width:155px;
+    float:left;
+    margin-right:5px;
+}
+
+/* Sub Menu details */
+
+
+.submenuitem{
+    position:relative;
+    background-color:#f0f0f0;
+    float:right;
+    width:75px;
+    margin:0px 5px;
+    height:75px;
+    border:2px solid #ddd;
+    -moz-border-radius:30px;
+    -webkit-border-radius:30px;
+    border-radius:30px;
+    -moz-box-shadow:1px 1px 3px #555;
+    -webkit-box-shadow:1px 1px 3px #555;
+    box-shadow:1px 1px 3px #555;
+    cursor:pointer;
+    overflow:hidden;
+}
+
+.link{
+    left:2px;
+    top:2px;
+    position:absolute;
+    width:65px;
+    height:65px;
+}
+.icon_mom{
+    background:transparent url(../images/mom.jpg) no-repeat top left;
+}
+.icon_seal{
+    background:transparent url(../images/seal.jpg) no-repeat top left;
+}
+.icon_members{
+    background:transparent url(../images/members.jpg) no-repeat top left;
+}
+.icon_meeting{
+    background:transparent url(../images/meeting.jpg) no-repeat top left;
+}
+.icon_vehicle{
+    background:transparent url(../images/vehicle.jpeg) no-repeat top left;
+}
+.icon_visitor{
+    background:transparent url(../images/visitor.jpg) no-repeat top left;
+}
+.icon_report{
+    background:transparent url(../images/montlyreport.jpeg) no-repeat top left;
+}
+.icon_transaction{
+    background:transparent url(../images/rupee.jpeg) no-repeat top left;
+}
+.icon_family{
+    background:transparent url(../images/family.jpeg) no-repeat top left;
+}
+.icon_guests{
+    background:transparent url(../images/guests.jpg) no-repeat top left;
+}
+.icon_documents{
+    background:transparent url(../images/document.jpeg) no-repeat top left;
+}
+.icon_camera{
+    background:transparent url(../images/camera.jpeg) no-repeat top left;
+}
+.icon_securitycam{
+    background:transparent url(../images/seccamera.jpeg) no-repeat top left;
+}
+.icon_email{
+    background:transparent url(../images/email.jpg) no-repeat top left;
+}
+.icon_sms{
+    background:transparent url(../images/sms.jpg) no-repeat top left;
+}
+.icon_cb{
+    background:transparent url(../images/compliantbox.jpg) no-repeat top left;
+}
+.icon_poll{
+    background:transparent url(../images/poll.jpeg) no-repeat top left;
+}
+.icon_nb{
+    background:transparent url(../images/notice.jpg) no-repeat top left;
+}
+.icon_camera{
+    background:transparent url(../images/camera.jpeg) no-repeat top left;
+}
+.icon_securitycam{
+    background:transparent url(../images/seccamera.jpeg) no-repeat top left;
+}
+.icon_associationdata{
+    background:transparent url(../images/association.jpg) no-repeat top left;
+}
+.icon_employee{
+    background:transparent url(../images/employee.jpg) no-repeat top left;
+}
+.icon_housekeeping{
+    background:transparent url(../images/housekeeping.jpeg) no-repeat top left;
+}
+.icon_instructor{
+    background:transparent url(../images/instructor.jpeg) no-repeat top left;
+}
+.icon_serviceprovider{
+    background:transparent url(../images/serviceprovider.jpeg) no-repeat top left;
+}
+
+
+.submenu_item_content{
+    position:absolute;
+    height:52px;
+    width:220px;
+    overflow:hidden;
+    left:56px;
+    top:7px;
+    background:transparent;
+    display:none;
+}
+.submenu_item_content h2{
+    color:#4244a4;
+    text-shadow: 1px 1px 1px #fff;
+    background-color:transparent;
+    font-size:14px;
+}
+.submenu_item_content a{
+    background-color:transparent;
+    float:left;
+    margin-right:7px;
+    margin-top:3px;
+    color:#bababa;
+    text-shadow: 1px 1px 1px #fff;
+    text-decoration:none;
+    font-size:12px;
+}
+.submenu_item_content a:hover{
+    color:#0b965b;
+}
+.submenu_item_content p {
     background-color:transparent;
     display:none;
 }

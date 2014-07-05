@@ -21,6 +21,7 @@ body, html { font-size: 100%; padding: 0; margin: 0; height: 100%;}
 body {
     font-family: 'Lato', Calibri, Arial, sans-serif;
     color: #48a4d9;
+    background-image:"background.jpeg";
 }
 
 a {
@@ -78,8 +79,8 @@ margin-right: 100;
 }
 
 #submenu{
-	background: #edf7f8;
-	height: 30%;
+background-color: rgba(218,235,245,0.43);
+	height: 20%;
 	width:100%;
 	clear:both;
 	overflow-y:auto;
@@ -92,11 +93,13 @@ margin-right: 100;
 	background: #f0f0f0;
 }
 .filler-below {
-	width: 80%;
-	height: 100%;
-	clear: both;
+	width: 75%;
+	height: auto;
 	background: #f0f0f0;
 	overflow-y:auto;
+	margin:auto;
+	border-color: #00bbff;
+	border-style: groove;
 }
 
 .filler-above p {

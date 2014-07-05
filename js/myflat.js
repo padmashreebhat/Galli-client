@@ -1,3 +1,8 @@
+
+function submitdetails(infoType)
+{
+alert("I am inside submitdetails");
+}
 function myflat_StoreDetails(infoType)
 {
  alert("Send details to database");

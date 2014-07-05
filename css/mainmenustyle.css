@@ -217,7 +217,33 @@
 .icon_serviceprovider{
     background:transparent url(../images/serviceprovider.jpeg) no-repeat top left;
 }
-
+.icon_submit{
+    background:transparent url(../images/submit.jpg) no-repeat top left;
+}
+.icon_find{
+    background:transparent url(../images/find.jpg) no-repeat top left;
+}
+.icon_add{
+    background:transparent url(../images/add.jpeg) no-repeat top left;
+}
+.icon_receipt{
+    background:transparent url(../images/receipt_icon.jpeg) no-repeat top left;
+}
+.icon_view{
+    background:transparent url(../images/viewicon.jpeg) no-repeat top left;
+}
+.icon_print{
+    background:transparent url(../images/printicon.jpeg) no-repeat top left;
+}
+.icon_sms2{
+    background:transparent url(../images/smsicon.jpeg) no-repeat top left;
+}
+.icon_email2{
+    background:transparent url(../images/emailicon.jpeg) no-repeat top left;
+}
+.icon_register{
+    background:transparent url(../images/register_icon.jpeg) no-repeat top left;
+}
 
 .submenu_item_content{
     position:absolute;
@@ -258,4 +284,27 @@
     width:155px;
     float:left;
     margin-right:5px;
+}
+
+
+.roundbutton{
+    position:relative;
+    background-color:#f0f0f0;
+    float:right;
+    width:52px;
+    margin:0px 5px;
+    height:52px;
+    border:2px solid #ddd;
+    -moz-border-radius:30px;
+    -webkit-border-radius:30px;
+    border-radius:30px;
+    -moz-box-shadow:1px 1px 3px #555;
+    -webkit-box-shadow:1px 1px 3px #555;
+    box-shadow:1px 1px 3px #555;
+    cursor:pointer;
+    overflow:hidden;
+}
+
+.roundbutton:hover{
+    border-color: #4c92ce;
 }

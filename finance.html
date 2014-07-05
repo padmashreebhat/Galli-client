@@ -65,15 +65,12 @@
 						</fieldset>
 					</div>	
 					<div id='buttonwin'>
-					<div id="container" class="container">
-						<header class="clearfix">
-						<nav>
-							<a id="transSearch"  class="bp-icon bp-icon-prev" data-info="Search" onclick="searchTransaction()" ><span>Search</span></a>
-							<a id="creditSubmit" class="bp-icon bp-icon-drop" data-info="GenerateReceipt" onclick="generateReceipt()"><span>GenerateReceipt</span></a>
-						</nav>
-						</header>	
-					</div>
-
+						<div id='transSearch' class="roundbutton" onClick="searchTransaction()">
+			                <a class="link icon_find"> </a>
+			             </div>
+			             <div id='creditSubmit' class="roundbutton" onClick="generateReceipt()">
+			                <a class="link icon_receipt"> </a>
+			             </div>
 					</div>			
 				</form>
       </div>
@@ -115,14 +112,13 @@
 						</fieldset>
 					</div>	
 					<div id='buttonwin'>
-						<div id="container" class="container">
-							<header class="clearfix">
-								<nav>
-									<a id="transSearch"  class="bp-icon bp-icon-prev" data-info="Submit" onClick="javascript:senddebitinfo('debitinput')" ><span>Submit</span></a>
-									<a id="creditSubmit" class="bp-icon bp-icon-drop" data-info="View" ><span>View</span></a>
-								</nav>
-							</header>	
-						</div>
+						 <div id='transSearch' class="roundbutton" onClick="javascript:senddebitinfo('debitinput')">
+			                <a class="link icon_submit"> </a>
+			             </div>
+			             <div id='creditSubmit' class="roundbutton" >
+			                <a class="link icon_view"> </a>
+			             </div>
+
 					</div>			
 				</form>
 			</div>
@@ -148,14 +144,12 @@
 						<p id="tablespace"></p>
 					</div>	
 					<div id='buttonwin'>
-						<div id="container" class="container">
-							<header class="clearfix">
-								<nav>
-									<a id="transSearch"  class="bp-icon bp-icon-prev" data-info="Generate" onClick="javascript:generateReport('debitinput')" ><span>Submit</span></a>
-									<a id="creditSubmit" class="bp-icon bp-icon-drop" data-info="View" onClick="javascript:CreateTransactionTable('debitinput')" ><span>View</span></a>
-								</nav>
-							</header>	
-						</div>
+						 <div id='transSearch' class="roundbutton" onClick="javascript:generateReport('debitinput')">
+			                <a class="link icon_submit"> </a>
+			             </div>
+			             <div id='creditSubmit' class="roundbutton" >
+			                <a class="link icon_view" onClick="javascript:CreateTransactionTable('debitinput')"> </a>
+			             </div>
 					</div>			
 				</form>
 			</div>
@@ -182,16 +176,16 @@
 		</div>
 		
 		<div id='buttonwin'>
-					
-					<div id="container" class="container">
-						<header class="clearfix">
-						<nav>
-							<a id="transSearch"  class="bp-icon bp-icon-prev" data-info="Print" onClick="javascript:printDiv('Receipt')" ><span>Print</span></a>
-							<a id="creditSubmit" class="bp-icon bp-icon-drop" data-info="SMS" ><span>SMS</span></a>
-							<a id="creditSubmit" class="bp-icon bp-icon-drop" data-info="email" "><span>Email</span></a>
-						</nav>
-						</header>	
-					</div>
+						<div id='creditSubmit' class="roundbutton" >
+			                <a class="link icon_print" onClick="javascript:printDiv('Receipt')"> </a>
+			             </div>
+			             <div id='creditSubmit' class="roundbutton" >
+			                <a class="link icon_sms2" > </a>
+			             </div>
+			             <div id='creditSubmit' class="roundbutton" >
+			                <a class="link icon_email2" > </a>
+			             </div>
+		
 		</div>
 </div>
 </body>

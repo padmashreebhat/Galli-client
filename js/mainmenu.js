@@ -1,7 +1,7 @@
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
  
 function submenuaction{ 
-           $('.item').hover(
+           $('.submenuitem').hover(
                 function(){
                     var $this = $(this);
                     expand($this);

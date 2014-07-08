@@ -204,6 +204,17 @@
 		                    </p>
 		                </div>
 		            </div>
+
+
+		               <div id='settings' class="item">
+		                <a class="link icon_settings"></a>
+		                <div class="item_content">
+		                    <h2>Settings</h2>
+		                    <p>
+		                        <a href="#" onClick="javascript:loadhomehelperswin('creditwin')">Helpers</a>
+		                    </p>
+		                </div>
+		            </div>
 		
 		              <div id='finance' class="item">
 		                <a class="link icon_finance"></a>
@@ -430,6 +441,28 @@
 				$(cont).hide("drop");
 				cont = $('.container #loginmenu #tabscontent #features #mydata #SecurityDet');				
 				$(cont).hide("drop");
+
+				});
+
+
+			$('.container #loginmenu #tabscontent #features #mainmenu #settings').hover(function(e){ 
+   				cont = $('.container #loginmenu #tabscontent #features #mydata #CommunicationDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #AssociationDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #FinanceDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #DatabaseDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #ApartmentDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #StorageDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #SecurityDet');				
+				$(cont).hide("drop");
+				cont = $('.container #loginmenu #tabscontent #features #mydata #SettingsDet');				
+				$(cont).show("drop");
+
 
 				});
 

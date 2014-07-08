@@ -244,6 +244,15 @@
 .icon_register{
     background:transparent url(../images/register_icon.jpeg) no-repeat top left;
 }
+.icon_settings{
+    background:transparent url(../images/settings.jpeg) no-repeat top left;
+}
+.icon_group{
+    background:transparent url(../images/group.jpeg) no-repeat top left;
+}
+.icon_ads{
+    background:transparent url(../images/ads.jpeg) no-repeat top left;
+}
 
 .submenu_item_content{
     position:absolute;

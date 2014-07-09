@@ -57,6 +57,7 @@
 		      <ul>
 		        <li id="Create">Create</li>
 		        <li id="View">View</li>
+		        <li id="Results">Result</li>
 		      </ul>
 		    </div>
 	    
@@ -84,10 +85,10 @@
 									</fieldset>
 								</div>	
 								<div id='buttonwin'>
-										<div id='security' class="roundbutton" onClick="searchPoll()">
+										<div id='security' class="roundbutton" onClick="SearchPoll()">
 							                <a class="link icon_find"> </a>
 										</div>
-										<div id='security' class="roundbutton" onClick="searchPoll()">
+										<div id='security' class="roundbutton" onClick="RegisterPoll()">
 							                <a class="link icon_add"> </a>
 										</div>
 								</div>			
@@ -96,7 +97,15 @@
 		      
 			      <div class="tabpage" id="ViewPoll">
 					  <table id="polltable"></table>
-				  </div>			
+					  <div id='buttonwin'>
+										<div id='security' class="roundbutton" onClick="VoiceOpinion()">
+							                <a class="link icon_submit"> </a>
+										</div>
+					 </div>		
+				  </div>
+				  <div class="tabpage" id="PollResult">
+					  <table id="pollresulttable"></table>
+				  </div>	
 			 </div>
 		
 		</div>	

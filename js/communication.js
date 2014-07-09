@@ -1,3 +1,20 @@
+
+
+function VoiceOpinion(){
+    /*Submit opinion and store in database */
+	alert("Submit opinion and store in database");
+}
+
+function SearchPoll(){
+	/* Search for poll details and update */
+	alert("Search for poll details and update");
+}
+
+function RegisterPoll(){
+	/* Register  poll details*/
+	alert("Register  poll details");
+}
+
 /*---------------------------------------------------------------------------------        
  ------------------------Load Opinion Poll--------------------------------------------
 ----------------------------------------------------------------------------------*/
@@ -8,51 +25,112 @@
 
 				$('#Poll #tabscontent #CreatePoll').show();
 				$('#Poll #tabscontent #ViewPoll').hide();
+				$('#Poll #tabscontent #PollResult').hide();
 				
 				cont = $('#Poll #tabs #Create');
 				$(cont).hover(function(e){ 
 					console.log("inside Create");
 					$('#Poll #tabscontent #CreatePoll').show();
 					$('#Poll #tabscontent #ViewPoll').hide();
+					$('#Poll #tabscontent #PollResult').hide();
 					});			          
 				cont = $('#Poll #tabs #View');
 				$(cont).hover(function(e){ 
 					console.log("inside View");
 					$('#Poll #tabscontent #CreatePoll').hide();
 					$('#Poll #tabscontent #ViewPoll').show();
-					createcomplainttable();
-					});			          
+					$('#Poll #tabscontent #PollResult').hide();
+					createpolltable();
+					});		
+				cont = $('#Poll #tabs #Results');
+				$(cont).hover(function(e){ 
+					console.log("inside View");
+					$('#Poll #tabscontent #CreatePoll').hide();
+					$('#Poll #tabscontent #ViewPoll').hide();
+					$('#Poll #tabscontent #PollResult').show();
+					createpollresulttable();
+					});			      	          
 				});
 
         }
 
 function createpolltable(){
-			     var tablecontents = "";
-		    tablecontents = "<table>";
+			  var tablecontents = "";
+		      tablecontents = "<table>";
 		      tablecontents += "<tr>";
-		      tablecontents += "<th>" + "CompliantID" + "</th>";
-		      tablecontents += "<th>" + "Date" + "</th>";
+		      tablecontents += "<th>" + "PollID" + "</th>";
+		      tablecontents += "<th>" + "ValidUpto" + "</th>";
 		      tablecontents += "<th>" + "Subject" + "</th>";
-		      tablecontents += "<th>" + "AssignedTo" + "</th>";
+		      tablecontents += "<th>" + "Option1" + "</th>";
+		      tablecontents += "<th>" + "Option2" + "</th>";
+		      tablecontents += "<th>" + "Option3" + "</th>";
+		      tablecontents += "<th>" + "Option4" + "</th>";
+		      tablecontents += "<th>" + "Option5" + "</th>";
 		      tablecontents += "<th>" + "Status" + "</th>";
 		      tablecontents += "</tr>";
 		
 		/* Read content from JSON file and update the same */
 			  $.getJSON('JSON/result.json', function(jd) { 
-			  for (var i = 0; i < 15; i ++)
+			  for (var i = 0; i < 5; i ++)
 			   {
 			      tablecontents += "<tr>";
 			      tablecontents += "<td>" + jd.transactionNum +"</td>";
 			      tablecontents += "<td>" + jd.date + "</td>";
 			      tablecontents += "<td>" + jd.Remarks + "</td>";
 			      tablecontents += "<td>" + jd.fname+ "</td>";
-			      tablecontents += "<td>" + "Approved" + "</td>";
-			      tablecontents += "<td>" + '<input type="button" class="tablebutton" value = "View" onClick="Javacsript:ViewReq(this)">' + "</td>";
+			      tablecontents += "<td>" + jd.fname+ "</td>";
+			      tablecontents += "<td>" + jd.fname+ "</td>";
+			      tablecontents += "<td>" + jd.fname+ "</td>";
+			      tablecontents += "<td>" + jd.fname+ "</td>";
+			      tablecontents += "<td>" + '<input type="text" value = "0" style="width:45px">'+ "</td>";
 			      tablecontents += "</tr>";
 			   }
 			   
 			   tablecontents += "</table>";
-			   document.getElementById("complianttable").innerHTML = tablecontents;
+			   document.getElementById("polltable").innerHTML = tablecontents;
+				});
+				
+				$("#transvalue ").click(function(){
+				alert("transaction value clicked");
+});
+
+}
+
+
+function createpollresulttable(){
+			  var tablecontents = "";
+		      tablecontents = "<table>";
+		      tablecontents += "<tr>";
+		      tablecontents += "<th>" + "PollID" + "</th>";
+		      tablecontents += "<th>" + "ValidUpto" + "</th>";
+		      tablecontents += "<th>" + "Subject" + "</th>";
+		      tablecontents += "<th>" + "Option1" + "</th>";
+		      tablecontents += "<th>" + "Option2" + "</th>";
+		      tablecontents += "<th>" + "Option3" + "</th>";
+		      tablecontents += "<th>" + "Option4" + "</th>";
+		      tablecontents += "<th>" + "Option5" + "</th>";
+		      tablecontents += "<th>" + "Status" + "</th>";
+		      tablecontents += "</tr>";
+		
+		/* Read content from JSON file and update the same */
+			  $.getJSON('JSON/result.json', function(jd) { 
+			  for (var i = 0; i < 5; i ++)
+			   {
+			      tablecontents += "<tr>";
+			      tablecontents += "<td>" + jd.transactionNum +"</td>";
+			      tablecontents += "<td>" + jd.date + "</td>";
+			      tablecontents += "<td>" + jd.Remarks + "</td>";
+			      tablecontents += "<td>" + jd.pollnum+ "</td>";
+			      tablecontents += "<td>" + jd.pollnum+ "</td>";
+			      tablecontents += "<td>" + jd.pollnum+ "</td>";
+			      tablecontents += "<td>" + jd.pollnum+ "</td>";
+			      tablecontents += "<td>" + jd.pollnum+ "</td>";
+			      tablecontents += "<td>" + jd.status+ "</td>";
+			      tablecontents += "</tr>";
+			   }
+			   
+			   tablecontents += "</table>";
+			   document.getElementById("pollresulttable").innerHTML = tablecontents;
 				});
 				
 				$("#transvalue ").click(function(){

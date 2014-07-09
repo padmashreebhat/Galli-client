@@ -113,9 +113,9 @@ function CreateFamilyTable()
 		      var tablecontents = "";
 		      tablecontents = "<table>";
 		      tablecontents += "<tr>";
-		      tablecontents += "<th>" + "Name" + "</th>";
-		      tablecontents += "<th>" + "Age" + "</th>";
-		      tablecontents += "<th>" + "Relation" + "</th>";
+		      tablecontents += "<th>" + "GroupName" + "</th>";
+		      tablecontents += "<th>" + "Description" + "</th>";
+		      tablecontents += "<th>" + "MailList" + "</th>";
 		      tablecontents += "<th>" + "" + "</th>";
 		      tablecontents += "</tr>";
 		

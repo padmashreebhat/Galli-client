@@ -25,6 +25,7 @@
 		<script src=js/myflat.js></script>
 		
 		<script src=js/association.js></script>
+		<script src=js/settings.js></script>
 		<script src=js/communication.js></script>
 		<script src="js/modernizr.custom.js"></script>
 		
@@ -102,7 +103,7 @@
 		                <div class="item_content">
 		                    <h2>Settings</h2>
 		                    <p>
-		                        <a href="#" onClick="javascript:loadhomehelperswin('creditwin')">Helpers</a>
+		                        <a href="#" onClick="javascript:loadcreategroup('creategroup')">Helpers</a>
 		                    </p>
 		                </div>
 		            </div>
@@ -135,9 +136,9 @@
 		                <div class="item_content">
 		                    <h2>Communication</h2>
 		                    <p>
-		                    	<a href="#">eMail</a>	
-		                        <a href="#">sms</a>
-		                        <a href="#" onClick="javascript:loadnoticeboard('noticeboard')">Compliant</a>
+		                    	<a href="#" onClick="javascript:loadopinionpoll('opinionpoll')">Poll </a>	
+		                        <a href="#">Email</a>
+		                        <a href="#" onClick="javascript:loadcompliantbox('noticeboard')">Compliant</a>
 		                    </p>
 		                </div>
 		            </div>
@@ -333,8 +334,6 @@
 							
 			<!---- Load communication Window ----->
 			$('.container #mainmenu #communication').hover(function(e){ 
-				console.log("inside click");
-				loadnoticeboard("noticeboard");
 				cont.load('submenu.html #communication', function(){
 				 $('.submenuitem').hover(
 			                function(){

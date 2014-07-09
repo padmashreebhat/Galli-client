@@ -9,143 +9,37 @@
 	   <div id="settings">
 		    <div id="tabs">
 		      <ul>
-		        <li id="Create">Create</li>
-		        <li id="View">View</li>
+		        <li id="Group">Create</li>
 		      </ul>
 		    </div>
 	    
 		    <div id="tabscontent">
-			      <div class="tabpage" id="CreateCompliant">
+			      <div class="tabpage" id="Creategroup">
 							<form action="#" method="post">
-								<div id='Create'>
+								<div id='Creategroup'>
 									 <fieldset>
-										 <legend>Compliant Details</legend>
-										 <label> ComplaintID  </label> <input type="text" id="ComplID" name="ComplID"> 
-			
-										
-						 				<label>  Problem </label>
-										<select purpose="Electrician">
-										<option value="Electrician">Electrica</option>
-										<option value="Plumber">Plumber</option>
-										<option value="Civil">Civil</option>
-										<option value="OfficeStaff">OfficeStaff</option>
-										<option value="Others">Others</option>
-										</select> <br>
-										<label>Subject </label><input id='Subject' type="text" style="width:450px;" name="Subject"> <br>
-										<label> Detail </label><TEXTAREA NAME="SpecialRequest" ROWS="8" style="width:450px;">Please enter your details</TEXTAREA>
+										 <legend>Group Details</legend>
+										 <table id="tablespace"  style="float:center"></table>
+									</fieldset>
+									<fieldset>
+										 <legend>Create Group</legend>
+										 <label> GroupName  </label> <input type="text" id="GroupName" name="GroupName"> 
+										 <label>Description </label><input type="text" id="Description"  style="width:450px;" name="Description"> <br>
+										 <label> Email </label><TEXTAREA NAME="SpecialRequest" id="MailList" ROWS="8" style="width:450px;">Please enter mail list separated by ","</TEXTAREA>
 									</fieldset>
 								</div>	
 								<div id='buttonwin'>
 								<div id="container" class="container">
-										<div id='security' class="roundbutton" onClick="searchCompliant()">
-							                <a class="link icon_find"> </a>
-										</div>
-								</div>
-			
-								</div>			
-							</form>
-			      </div>
-		      
-			      <div class="tabpage" id="ViewCompliant">
-					  <table id="complianttable"></table>
-				  </div>			
-			 </div>
-		
-		</div>
-		   <div id="Poll">
-		    <div id="tabs">
-		      <ul>
-		        <li id="Create">Create</li>
-		        <li id="View">View</li>
-		      </ul>
-		    </div>
-	    
-		    <div id="tabscontent">
-			      <div class="tabpage" id="CreatePoll">
-							<form action="#" method="post">
-								<div id='Create'>
-									 <fieldset>
-										 <legend>Poll Details</legend>
-										 <label> PollID  </label> <input type="text" id="PollID" name="PollID"> 
-										 <label> ValidUpto  </label> <input type="date" id="validity" name="validity"> 
-			
-										<label> Topic </label><input id='Topic' type="text" style="width:450px;" name="Subject"> <br>
-										<label> Description </label><TEXTAREA NAME="Poll Description" ROWS="8" style="width:450px;">Please enter details</TEXTAREA>
-										 
-
-									</fieldset>
-									<fieldset>
-									<legend>Options</legend>
-										 <label> 1.  </label> <input type="text" id="Pollopt1" name="Pollopt1"> 
-										 <label> 2.  </label> <input type="text" id="Pollopt2" name="Pollopt2"> 
-										 <label> 3.  </label> <input type="text" id="Pollopt3" name="Pollopt3"> 
-										 <label> 4.  </label> <input type="text" id="Pollopt4" name="Pollopt4"> 
-										 <label> 5.  </label> <input type="text" id="Pollopt5" name="Pollopt5"> 
-									</fieldset>
-								</div>	
-								<div id='buttonwin'>
-										<div id='security' class="roundbutton" onClick="searchPoll()">
-							                <a class="link icon_find"> </a>
-										</div>
-										<div id='security' class="roundbutton" onClick="searchPoll()">
+										<div id='security' class="roundbutton" onClick="addGroupDetails()">
 							                <a class="link icon_add"> </a>
 										</div>
+								</div>
 								</div>			
 							</form>
 			      </div>
-		      
-			      <div class="tabpage" id="ViewPoll">
-					  <table id="polltable"></table>
-				  </div>			
-			 </div>
+		 </div>
 		
-		</div>	
-		<div id="NoticeBoard">
-		    <div id="tabs">
-		      <ul>
-		        <li id="Create">Create</li>
-		        <li id="View">View</li>
-		      </ul>
-		    </div>
-	    
-		    <div id="tabscontent">
-			      <div class="tabpage" id="CreateNotice">
-							<form action="#" method="post">
-								<div id='Create'>
-									 <fieldset>
-										 <legend>Notice Board</legend>
-										 <label> ComplaintID  </label> <input type="text" id="ComplID" name="ComplID"> 
-			
-										
-						 				<label>  Problem </label>
-										<select purpose="Electrician">
-										<option value="Electrician">Electrica</option>
-										<option value="Plumber">Plumber</option>
-										<option value="Civil">Civil</option>
-										<option value="OfficeStaff">OfficeStaff</option>
-										<option value="Others">Others</option>
-										</select> <br>
-										<label>Subject </label><input id='Subject' type="text" style="width:450px;" name="Subject"> <br>
-										<label> Detail </label><TEXTAREA NAME="SpecialRequest" ROWS="8" style="width:450px;">Please enter your details</TEXTAREA>
-									</fieldset>
-								</div>	
-								<div id='buttonwin'>
-										<div id='security' class="roundbutton" onClick="searchCompliant()">
-							                <a class="link icon_find"> </a>
-										</div>
-										<div id='security' class="roundbutton" onClick="RegisterCompliant()">
-							                <a class="link icon_register"> </a>
-										</div>
-								</div>			
-							</form>
-			      </div>
-		      
-			      <div class="tabpage" id="ViewNotice">
-					  <table id="noticetable"></table>
-				  </div>			
-			 </div>
-		
-		</div>
+	   </div>
 	</div>
 </body>
 

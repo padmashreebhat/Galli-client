@@ -19,6 +19,11 @@
 "Starttime":"8:00 AM",
 "Endtime":"10:00 AM",
 "Salary":"3500",
-"FromDate":"2/09/2014"
+"FromDate":"2/09/2014",
+"groupname":"malachiteassociation",
+"purpose":"Group for malachite association",
+"emaillist":"member1@yahoo.com,member2@gmail.com,mem3@gmail.com",
+"status":"closed",
+"pollnum":"5"
 }
 

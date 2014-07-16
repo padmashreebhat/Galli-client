@@ -115,7 +115,12 @@
 }
 
 /* Sub Menu details */
-
+.submenutitle{
+	float:left;
+	text-align: center;
+font-size: 30px;
+padding: 30px 46px 47px 86px;
+}
 
 .submenuitem{
     position:relative;

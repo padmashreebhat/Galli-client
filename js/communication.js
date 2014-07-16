@@ -1,20 +1,4 @@
 
-
-function VoiceOpinion(){
-    /*Submit opinion and store in database */
-	alert("Submit opinion and store in database");
-}
-
-function SearchPoll(){
-	/* Search for poll details and update */
-	alert("Search for poll details and update");
-}
-
-function RegisterPoll(){
-	/* Register  poll details*/
-	alert("Register  poll details");
-}
-
 /*---------------------------------------------------------------------------------        
  ------------------------Load Opinion Poll--------------------------------------------
 ----------------------------------------------------------------------------------*/
@@ -109,7 +93,7 @@ function createpollresulttable(){
 		      tablecontents += "<th>" + "Option3" + "</th>";
 		      tablecontents += "<th>" + "Option4" + "</th>";
 		      tablecontents += "<th>" + "Option5" + "</th>";
-		      tablecontents += "<th>" + "Status" + "</th>";
+		      tablecontents += "<th>" + "Option" + "</th>";
 		      tablecontents += "</tr>";
 		
 		/* Read content from JSON file and update the same */
@@ -137,6 +121,23 @@ function createpollresulttable(){
 				alert("transaction value clicked");
 });
 
+}
+
+
+
+function VoiceOpinion(){
+    /*Submit opinion and store in database */
+	alert("Submit opinion and store in database");
+}
+
+function SearchPoll(){
+	/* Search for poll details and update */
+	alert("Search for poll details and update");
+}
+
+function RegisterPoll(){
+	/* Register  poll details*/
+	alert("Register  poll details");
 }
 
 
@@ -182,15 +183,16 @@ function createcomplainttable(){
 		
 		/* Read content from JSON file and update the same */
 			  $.getJSON('JSON/result.json', function(jd) { 
-			  for (var i = 0; i < 15; i ++)
+			  for (var i = 0; i < 10; i ++)
 			   {
 			      tablecontents += "<tr>";
 			      tablecontents += "<td>" + jd.transactionNum +"</td>";
 			      tablecontents += "<td>" + jd.date + "</td>";
 			      tablecontents += "<td>" + jd.Remarks + "</td>";
 			      tablecontents += "<td>" + jd.fname+ "</td>";
-			      tablecontents += "<td>" + "Approved" + "</td>";
+			      tablecontents += "<td>" + '<input type="text" value = "Open" style="width:60px">'+ "</td>";
 			      tablecontents += "<td>" + '<input type="button" class="tablebutton" value = "View" onClick="Javacsript:ViewReq(this)">' + "</td>";
+			      tablecontents += "<td>" + '<input type="button" class="tablebutton" value = "Update" onClick="Javacsript:ViewReq(this)">' + "</td>";
 			      tablecontents += "</tr>";
 			   }
 			   
@@ -202,6 +204,13 @@ function createcomplainttable(){
 				alert("transaction value clicked");
 });
 
+}
+
+
+
+function RegisterComplaint(){
+    /*Register Compliant */
+	alert("Register complaint and store in database");
 }
 
 
@@ -234,10 +243,9 @@ function createcomplainttable(){
         }
 
 function createnoticetable(){
-			     var tablecontents = "";
-		    tablecontents = "<table>";
+			  var tablecontents = "";
+    		  tablecontents = "<table>";
 		      tablecontents += "<tr>";
-		      tablecontents += "<th>" + "NoticeID" + "</th>";
 			  tablecontents += "<th>" + "Owner" + "</th>";
 		      tablecontents += "<th>" + "Date" + "</th>";
 		      tablecontents += "<th>" + "Subject" + "</th>";
@@ -246,12 +254,11 @@ function createnoticetable(){
 		
 		/* Read content from JSON file and update the same */
 			  $.getJSON('JSON/result.json', function(jd) { 
-			  for (var i = 0; i < 15; i ++)
+			  for (var i = 0; i < 10; i ++)
 			   {
 			      tablecontents += "<tr>";
-			      tablecontents += "<td>" + jd.transactionNum +"</td>";
-			      tablecontents += "<td>" + jd.date + "</td>";
 				  tablecontents += "<td>" + jd.fname + "</td>";
+			      tablecontents += "<td>" + jd.date + "</td>";
 			      tablecontents += "<td>" + jd.Remarks + "</td>";
 				  tablecontents += "<td>" + '<input type="button" class="tablebutton" value = "View" onClick="Javacsript:ViewReq(this)">' + "</td>";
 			      tablecontents += "</tr>";
@@ -265,4 +272,16 @@ function createnoticetable(){
 				alert("transaction value clicked");
 });
 
+}
+
+function SubmitNotice(){
+	alert("update info into database");
+}
+
+
+function loadSMS(){
+	           var cont = $('#filler-below');
+				cont.load('communication.html #SMS', function(){
+				console.log("inside SMS");			
+					});			          
 }

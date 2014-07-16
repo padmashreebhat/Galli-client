@@ -5,18 +5,26 @@
 </head>
 
 <body>
-<div id="wrapper">
-   <div id="association">
-    <div id="tabscontent">
-    
-<div class="alertbox" id="rejectbox">
-<label> Comment </label>
-<input type="text" maxlength="100" value="" id="comment" name="comment"/>
-<input type="button" class="tablebutton" value="Ok" onclick="CloseAlertBox()" style="float: right; margin-right: 20px;
-            font-weight: bold; width: 50px" />
-</div>
 
-     
+<div id="wrapper">
+
+  	   <div id="sealofapproval">
+		    <div id="tabs">
+		      <ul>
+		        <li id="View">View</li>
+				<h3 style="font-family:arial;color:white;font-size:24px;text-align:center;"> SealOfApproval </h3>
+		      </ul>
+		    </div>
+	    
+		    <div id="tabscontent">
+		    <div class="alertbox" id="rejectbox">
+			<label> Comment </label><TEXTAREA NAME="comment" ROWS="4" style="width:450px;">Please enter your details</TEXTAREA>
+			<input type="button" class="tablebutton" value="Ok" onclick="CloseAlertBox()" style="float: right; margin-right: 20px;
+			            font-weight: bold; width: 100px" />
+			</div>
+
+
+			
 			 <div class="tabpage" id="report">
 				<form action="#" method="post">
 					<div id='approvalwin'>
@@ -34,13 +42,152 @@
 
 				</form>
 			</div>
-			
-			
+		      
+			      <div class="tabpage" id="ViewMeeting">
+					  <table id="meetingtable"></table>
+				  </div>			
+			 </div>
+		</div>
 
-    </div>
-  </div>
-</div>
 
+	   <div id="Meeting">
+		    <div id="tabs">
+		      <ul>
+		        <li id="Schedule">Schedule</li>
+		        <li id="View">View</li>
+		        <li id="MOM">MOM</li>
+				<h3 style="font-family:arial;color:white;font-size:24px;text-align:center;"> Meeting </h3>
+		      </ul>
+		    </div>
+	    
+		    <div id="tabscontent">
+			      <div class="tabpage" id="ScheduleMeeting">
+							<form action="#" method="post">
+								<div id='Schedule'>
+									 <fieldset>
+										 <legend>Meeting Details</legend>
+										 <label> MeetingID  </label> <input type="text" id="MeetingID" name="MeetingID"> 
+										 <label> Attendees  </label> <input type="text" id="Attendees" name="Attendees"> 
+										 <label> Date  </label> <input type="datetime" id="datetime" name="datetime"> 
+ 										<label>Subject </label><input id='Subject' type="text" style="width:450px;" name="Subject"> <br>
+	 									<label> Detail </label><TEXTAREA NAME="SpecialRequest" ROWS="8" style="width:450px;">Please enter your details</TEXTAREA>
+									</fieldset>
+								</div>	
+								<div id='buttonwin'>
+								<div id="container" class="container">
+										<div id='searchcomp' class="roundbutton" onClick="searchMeetingDetails()">
+							                <a class="link icon_find"> </a>
+										</div>
+										<div id='submitcomp' class="roundbutton" onClick="scheduleMeeting()">
+							                <a class="link icon_submit"> </a>
+										</div>
+								</div>
+			
+								</div>			
+							</form>
+			      </div>
+		      
+			      <div class="tabpage" id="ViewMeeting">
+					  <table id="meetingtable"></table>
+				  </div>	
+				  		<div class="tabpage" id="CreateMOM">
+							<form action="#" method="post">
+								<div id='Create'>
+									 <fieldset>
+									<legend>Meeting ID</legend>
+									 <img border="0" src="images/mom.jpg" style="float:left" width="75" height="75">
+										 <label>MeetingID </label><input id='MeetingID' type="text" name="MeetingID"> <br>
+										 <div id='security' class="roundbutton" onClick="javascript:searchMeetingDetails()">
+							                <a class="link icon_find"> </a>
+										</div>
+									 </fieldset>
+									 <fieldset>
+										 <legend>Add ActionPoint Details</legend>
+										 <label> ActionPoint </label><TEXTAREA id='ActionPoint' NAME="ActionPoint" ROWS="2" style="width:450px;">Please enter your details</TEXTAREA>
+										 <label> Detail </label><TEXTAREA id='Detail' NAME="Detail" ROWS="8" style="width:450px;">Please enter your details</TEXTAREA>
+										 <label> ActionOwner </label>
+										<input type="text" id="ActionOwner">
+
+										 <label> TargetDate </label>
+										 <input type="date" id="tdate">
+
+										 <label> CompletedDate </label>
+										 <input type="date" id="cdate">
+
+										 <label> Status </label>
+										 <input type="text" id="status">
+									</fieldset>
+								</div>	
+								<div id='buttonwin'>
+										<div id='security' class="roundbutton" onClick="javascript:AddActionPoint()">
+							                <a class="link icon_submit"> </a>
+										</div>
+								</div>	
+									<table id="momtable"></table>
+							</form>
+			      </div>		
+			 </div>
+		</div>
+
+		 <div id="Members">
+		    <div id="tabs">
+		      <ul>
+		        <li id="Create">Create</li>
+		        <li id="View">View</li>
+		        <h3 style="font-family:arial;color:white;font-size:24px;text-align:center;"> Members</h3>
+		      </ul>
+		    </div>
+	    
+		    <div id="tabscontent">
+			      <div class="tabpage" id="CreateMembers">
+						<form action="#" method="post">
+							<div id="MemberData">
+									<fieldset>
+									<label>  Year </label>
+									<select year="2011-2012">
+									<option value="2012-2013">2012-2013</option>
+									<option value="2013-2014">2013-2014</option>
+									</select> <br>
+	
+									<legend>Association Members</legend>
+									<table id="tablespace"  style="float:center"></table>
+									</fieldset>
+									</div>
+							
+									
+									<fieldset>
+									<legend> Add New Association Member</legend>	
+										<label> Name </label>
+										<input type="text" id="name">
+										<label> AptNum </label>
+										<input type="text" id="AptNum">
+										<label> Position </label>
+										<input type="text" id="Postion">
+									</fieldset>
+				
+						            <div id='buttonwin'>
+										<div id='security' class="roundbutton" onClick="javascript:addRowAssocationMem()">
+							                <a class="link icon_add"> </a>
+										</div>
+									</div>	
+						</form>	      
+			      </div>
+		      
+			      <div class="tabpage" id="ViewMembers">
+					  <table id="memberstable"></table>
+					  <div id='buttonwin'>
+										<div id='security' class="roundbutton" onClick="VoiceOpinion()">
+							                <a class="link icon_submit"> </a>
+										</div>
+					 </div>		
+				  </div>
+				  <div class="tabpage" id="PollResult">
+					  <table id="pollresulttable"></table>
+				  </div>	
+			 </div>
+		
+		</div>	
+	</div>
 
 </body>
 <html>

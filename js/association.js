@@ -8,12 +8,15 @@ function CloseAlertBox() {
         function OpenAlertBox() {
             $("#rejectbox").show();
         }
+/*=========================================================================*/        
+/* Seal of Approval */
+/*=========================================================================*/        
 
 function loadsealofapproval(divID) {
 		    
             var cont = $('#filler-below');
-				cont.load('association.html #association', function(){
-				console.log("inside association");
+				cont.load('association.html #sealofapproval', function(){
+				console.log("inside sealofapproval");
 				$("#rejectbox").hide();
             $("#rejectbox").draggable();            
 						}
@@ -131,3 +134,194 @@ function ViewReq(obj){
 $("#transvalue ").click(function(){
 	console.log("transaction value clicked");
 });
+
+
+/*---------------------------------------------------------------------------------        
+ ------------------------ Meeting --------------------------------------------
+----------------------------------------------------------------------------------*/
+ function ScheduleMeeting(divID) {
+            var cont = $('#filler-below');
+				cont.load('association.html #Meeting', function(){
+				console.log("inside Meeting");			
+
+				$('#Meeting #tabscontent #ScheduleMeeting').show();
+				$('#Meeting #tabscontent #ViewMeeting').hide();
+				$('#Meeting #tabscontent #CreateMOM').hide();
+
+				cont = $('#Meeting #tabs #Schedule');
+				$(cont).hover(function(e){ 
+					console.log("inside Schedule");
+					$('#Meeting #tabscontent #ScheduleMeeting').show();
+					$('#Meeting #tabscontent #CreateMOM').hide();
+					$('#Meeting #tabscontent #ViewMeeting').hide();
+					});			
+					
+				cont = $('#Meeting #tabs #MOM');
+				$(cont).hover(function(e){ 
+					console.log("inside Schedule");
+					$('#Meeting #tabscontent #ScheduleMeeting').hide();
+					$('#Meeting #tabscontent #CreateMOM').show();
+					$('#Meeting #tabscontent #ViewMeeting').hide();
+					CreateMOMtable();
+					});			                    
+				cont = $('#Meeting #tabs #View');
+				$(cont).hover(function(e){ 
+					console.log("inside View");
+					$('#Meeting #tabscontent #ScheduleMeeting').hide();
+					$('#Meeting #tabscontent #CreateMOM').hide();
+					$('#Meeting #tabscontent #ViewMeeting').show();
+					createMeetingTable();
+					});			          
+				});
+
+        }
+function createMeetingTable(){
+			     var tablecontents = "";
+		    tablecontents = "<table>";
+		      tablecontents += "<tr>";
+		      tablecontents += "<th>" + "MeetingID" + "</th>";
+		      tablecontents += "<th>" + "Date" + "</th>";
+		      tablecontents += "<th>" + "Subject" + "</th>";
+		      tablecontents += "<th>" + "" + "</th>";
+		      tablecontents += "<th>" + "" + "</th>";
+		      tablecontents += "</tr>";
+		
+		/* Read content from JSON file and update the same */
+			  $.getJSON('JSON/result.json', function(jd) { 
+			  for (var i = 0; i < 10; i ++)
+			   {
+			      tablecontents += "<tr>";
+			      tablecontents += "<td>" + jd.transactionNum +"</td>";
+			      tablecontents += "<td>" + jd.date + "</td>";
+			      tablecontents += "<td>" + jd.Remarks + "</td>";
+			      tablecontents += "<td>" + '<input type="button" class="tablebutton" value = "Delete" onClick="Javacsript:deleteActionPoint(this)">' + "</td>";
+			      tablecontents += "<td>" + '<input type="button" class="tablebutton" value = "View" onClick="Javacsript:ViewReq(this)">' + "</td>";
+			      tablecontents += "</tr>";
+			   }
+			   
+			   tablecontents += "</table>";
+			   document.getElementById("meetingtable").innerHTML = tablecontents;
+				});
+				
+				$("#transvalue ").click(function(){
+				alert("transaction value clicked");
+});
+
+}
+
+
+				
+function searchMeetingDetails()
+{
+			    alert("searchMeetingDetails...Search for meeting details extracting from database");
+}
+function scheduleMeeting()
+{
+			    alert("scheduleMeeting: Store in database and send mail to all attendees. Integrate with google calen??");
+}
+
+
+/*---------------------------------------------------------------------------------        
+ ------------------------Load Members --------------------------------------------
+----------------------------------------------------------------------------------*/
+ function loadAssociationMem(divID) {
+            var cont = $('#filler-below');
+				cont.load('association.html #Members', function(){
+				console.log("inside Meeting");			
+
+				$('#Members #tabscontent #Create').show();
+				$('#Members #tabscontent #View').hide();
+				
+				cont = $('#Members #tabs #CreateMembers');
+				$(cont).hover(function(e){ 
+					console.log("inside Create");
+					$('#Members #tabscontent #Create').show();
+					$('#Members #tabscontent #View').hide();
+					});			          
+				cont = $('#Members #tabs #ViewMembers');
+				$(cont).hover(function(e){ 
+					console.log("inside View");
+					$('#Members #tabscontent #Create').hide();
+					$('#Members #tabscontent #View').show();
+					createMeetingTable();
+					});			          
+				});
+
+        }
+
+
+/*---------------------------------------------------------------------------------        
+ ------------------------Load MOM --------------------------------------------
+----------------------------------------------------------------------------------*/
+function CreateMOMtable()
+{
+		      var tablecontents = "";
+		      tablecontents = "<table>";
+		      tablecontents += "<tr>";
+		      tablecontents += "<th>" + "ActionPoint" + "</th>";
+		      tablecontents += "<th>" + "ActionOwner" + "</th>";
+		      tablecontents += "<th>" + "TargetDate" + "</th>";
+		      tablecontents += "<th>" + "ActualDate" + "</th>";
+		      tablecontents += "<th>" + "Status" + "</th>";
+		      tablecontents += "<th>" + "" + "</th>";
+		      tablecontents += "<th>" + "" + "</th>";
+		      tablecontents += "</tr>";
+		
+		/* Read content from JSON file and update the same */
+			  $.getJSON('JSON/result.json', function(jd) { 
+			  for (var i = 0; i < 3; i ++)
+			   {
+			      tablecontents += "<tr>";
+			      tablecontents += "<td>" + jd.SPName + "</td>";
+			      tablecontents += "<td>" + jd.Starttime + "</td>";
+			      tablecontents += "<td>" + jd.Endtime + "</td>";
+			      tablecontents += "<td>" + jd.FromDate + "</td>";
+				  tablecontents += "<td>" + '<input type="text" value = "Open" style="width:60px">'+ "</td>";
+			      tablecontents += "<td>" + '<input type="button" class="tablebutton" value = "View" onClick="Javacsript:deleteActionPoint(this)">' + "</td>";
+			      tablecontents += "<td>" + '<input type="button" class="tablebutton" value = "Delete" onClick="Javacsript:deleteActionPoint(this)">' + "</td>";
+			      tablecontents += "</tr>";
+			   }
+			   
+			   tablecontents += "</table>";
+			   document.getElementById("momtable").innerHTML = tablecontents;
+				});
+
+}
+
+function deleteActionPoint(obj) {
+      
+    var index = obj.parentNode.parentNode.rowIndex;
+    var table = document.getElementById("momtable");
+    table.deleteRow(index);
+    
+}
+
+
+function loadMOM(divID) {
+		    
+            var cont = $('#filler-below');
+				cont.load('association.html #MOM', function(){
+				            CreateMOMtable();          
+						}
+				)};
+				
+function AddActionPoint(){
+alert("insideAddActionPoint");
+    var ActionPoint = document.getElementById("ActionPoint");
+    var tdate = document.getElementById("tdate");
+     var cdate = document.getElementById("cdate");
+      var status = document.getElementById("status");
+      var ActionOwner = document.getElementById("ActionOwner");
+    var table = document.getElementById("momtable");
+ 
+    var rowCount = table.rows.length;
+    var row = table.insertRow(1);
+ 
+    row.insertCell(0).innerHTML= ActionPoint.value;
+    row.insertCell(1).innerHTML= ActionOwner.value;
+    row.insertCell(2).innerHTML= tdate.value;
+    row.insertCell(3).innerHTML= cdate.value;
+    row.insertCell(4).innerHTML= status.value;
+    row.insertCell(5).innerHTML= '<input type="button" class="tablebutton" value = "Delete" onClick="Javacsript:deleteActionPoint(this)">';
+    row.insertCell(5).innerHTML= '<input type="button" class="tablebutton" value = "View" onClick="Javacsript:deleteActionPoint(this)">';
+		}		

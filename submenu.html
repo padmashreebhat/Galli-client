@@ -2,13 +2,15 @@
 <html lang="en" class="no-js">
 	<body>
 	<div id=communication>
-	
+	<div class=submenutitle>
+	<h4> Communication </h4>
+	</div>
 					<div id='nb' class="submenuitem">
 		                <a class="link icon_nb"></a>
 		                <div class="item_content">
 		                    <h2>NoticeBoard</h2>
 		                    <p>
-		                        <a href="#" onClick="javascript:loadnoticeboard('noticeboard')">Update</a>
+		                        <a href="#" onClick="javascript:loadnoticeboard('noticeboard')">Create/View</a>
 		                    </p>
 		                </div>
 		            </div>
@@ -26,7 +28,7 @@
 		                <div class="item_content">
 		                    <h2>Sms</h2>
 		                    <p>
-		                        <a href="#">Send</a>
+		                        <a href="#" onClick="javascript:loadSMS('sms')">Click here</a>
 		                    </p>
 		                </div>
 		            </div>
@@ -35,7 +37,7 @@
 		                <div class="item_content">
 		                    <h2>CompliantBox</h2>
 		                    <p>
-		                        <a href="#" onClick="javascript:loadcompliantbox('compliantbox')">Send</a>
+		                        <a href="#" onClick="javascript:loadcompliantbox('compliantbox')">Click here</a>
 		                    </p>
 		                </div>
 		            </div>
@@ -44,12 +46,15 @@
 		                <div class="item_content">
 		                    <h2>Create/Submit Poll</h2>
 		                    <p>
-		                        <a href="#" onClick="javascript:loadopinionpoll('opinionpoll')">Create</a>
+		                        <a href="#" onClick="javascript:loadopinionpoll('opinionpoll')">Click here</a>
 		                    </p>
 		                </div>
 		            </div>
 	</div>
 	<div id=database>
+	<div class=submenutitle>
+	<h4> Database </h4>
+	</div>
 				<!-- Top Navigation -->	
 				
 					<div id='resident' class="submenuitem">
@@ -57,16 +62,7 @@
 		                <div class="item_content">
 		                    <h2>Resident</h2>
 		                    <p>
-		                        <a href="#" onClick="javascript:loadresidentwin('homehelpers')">Update</a>
-		                    </p>
-		                </div>
-		            </div>
-					<div id='association' class="submenuitem">
-		                <a class="link icon_associationdata"></a>
-		                <div class="item_content">
-		                    <h2>Association</h2>
-		                    <p>
-		                        <a href="#">Update</a>
+		                        <a href="#" onClick="javascript:loadresidentwin('homehelpers')">Click here</a>
 		                    </p>
 		                </div>
 		            </div>
@@ -109,6 +105,9 @@
 	</div>
 
 <div id=storage>
+	<div class=submenutitle>
+	<h4> Storage </h4>
+	</div>
 					<div id='camera' class="submenuitem">
 		                <a class="link icon_camera"></a>
 		                <div class="item_content">
@@ -141,6 +140,9 @@
 	</div>
 
 <div id=myself>
+	<div class=submenutitle>
+	<h4> My Apartment </h4>
+	</div>
 					<div id='family' class="submenuitem">
 		                <a class="link icon_family"></a>
 		                <div class="item_content">
@@ -171,6 +173,9 @@
 	</div>
 
 <div id=finance>
+	<div class=submenutitle>
+	<h4> Finance </h4>
+	</div>
 					<div id='report' class="submenuitem">
 		                <a class="link icon_report"></a>
 		                <div class="item_content">
@@ -192,7 +197,9 @@
 	</div>
 <div id=security>
 
-
+	<div class=submenutitle>
+	<h4> Security </h4>
+	</div>
 				<!-- Top Navigation -->			
 		            <div id='vehicle' class="submenuitem">
 		                <a class="link icon_vehicle"></a>
@@ -217,6 +224,9 @@
 	</div>
 	
 	<div id=settings>
+		<div class=submenutitle>
+	<h4> Settings </h4>
+	</div>
 				<!-- Top Navigation -->			
 		            <div id='ads' class="submenuitem">
 		                <a class="link icon_ads"></a>
@@ -241,22 +251,15 @@
 	</div>
 
 <div id=association>
-		            <div id='mom' class="submenuitem">
-		                <a class="link icon_mom"></a>
-		                <div class="item_content">
-		                    <h2>MoM</h2>
-		                    <p>
-		                        <a href="#">View</a>
-		                    </p>
-		                </div>
-		            </div>
-		
+	<div class=submenutitle>
+	<h4> Association </h4>
+	</div>
 		            <div id='seal' class="submenuitem">
 		                <a class="link icon_seal"></a>
 		                <div class="item_content">
 		                    <h2>Approval</h2>
 		                    <p>
-		                        <a href="#">View</a>
+		                        <a href="#" onClick="javascript:loadsealofapproval('seal')">View</a>
 		                    </p>
 		                </div>
 		            </div>
@@ -266,7 +269,7 @@
 		                <div class="item_content">
 		                    <h2>Members</h2>
 		                    <p>
-		                        <a href="#" onClick="javascript:loadmyinfo('creditwin')">View</a>	
+		                        <a href="#" onClick="javascript:loadAssociationMem('member')">View</a>	
 							</p>
 		                </div>
 		            </div>
@@ -276,7 +279,7 @@
 		                <div class="item_content">
 		                    <h2>Meeting</h2>
 		                    <p>
-		                        <a href="#" onClick="javascript:loadmyinfo('creditwin')">View</a>	
+		                        <a href="#" onClick="javascript:ScheduleMeeting('creditwin')">View</a>	
 							</p>
 		                </div>
 		            </div>

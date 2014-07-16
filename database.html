@@ -6,12 +6,12 @@
 
 <body>
 <div id="wrapper">
-	   <div id="CompliantBox">
+	   <div id="ServiceProvider">
 		    <div id="tabs">
 		      <ul>
 		        <li id="Create">Create</li>
 		        <li id="View">View</li>
-				<h3 style="font-family:arial;color:white;font-size:24px;text-align:center;"> ComplaintBox </h3>
+				<h3 style="font-family:arial;color:white;font-size:24px;text-align:center;"> ServiceProvider </h3>
 		      </ul>
 		      	<div class=submenutitle>
 				<h4> Compliant Box </h4>
@@ -19,13 +19,13 @@
 		    </div>
 	    
 		    <div id="tabscontent">
-			      <div class="tabpage" id="CreateCompliant">
+			      <div class="tabpage" id="AddServiceProvider">
 							<form action="#" method="post">
-								<div id='Create'>
+								<div id='Add'>
 									 <fieldset>
-										 <legend>Compliant Details</legend>
-										 <label> ComplaintID  </label> <input type="text" id="ComplID" name="ComplID"> 
-						 				<label>  Problem </label>
+										 <legend>ServiceProviderDetails</legend>
+										 <label> Name  </label> <input type="text" id="SPName" name="SPName"> 
+						 				<label>  Service </label>
 										<select purpose="Electrician">
 										<option value="Electrician">Electrica</option>
 										<option value="Plumber">Plumber</option>
@@ -33,26 +33,26 @@
 										<option value="OfficeStaff">OfficeStaff</option>
 										<option value="Others">Others</option>
 										</select> <br>
-										<label>Subject </label><input id='Subject' type="text" style="width:450px;" name="Subject"> <br>
-										<label> Detail </label><TEXTAREA NAME="SpecialRequest" ROWS="8" style="width:450px;">Please enter your details</TEXTAREA>
+										<label> Contact </label><input id='Contact' type="text" style="width:450px;" name="Contact"> <br>
+										<label> Address </label><TEXTAREA NAME="SpecialRequest" ROWS="8" style="width:450px;">Please enter address</TEXTAREA>
+										<label> Documents </label><input id='Contact' type="text" style="width:450px;" name="Contact"> <br>
 									</fieldset>
 								</div>	
 								<div id='buttonwin'>
 								<div id="container" class="container">
-										<div id='searchcomp' class="roundbutton" onClick="searchCompliant()">
+										<div id='SearchSP' class="roundbutton" onClick="SearchSP()">
 							                <a class="link icon_find"> </a>
 										</div>
-										<div id='submitcomp' class="roundbutton" onClick="RegisterComplaint()">
+										<div id='SubmitSP' class="roundbutton" onClick="StoreSPDetails()">
 							                <a class="link icon_submit"> </a>
 										</div>
 								</div>
-			
 								</div>			
 							</form>
 			      </div>
 		      
 			      <div class="tabpage" id="ViewCompliant">
-					  <table id="complianttable"></table>
+					  <table id="sptable"></table>
 				  </div>			
 			 </div>
 		

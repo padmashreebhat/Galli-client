@@ -7,6 +7,8 @@ table{
     line-height: 1.0em;
     text-align:center;
    border:1px solid #a1aab4;
+   margin-left:auto; 
+    margin-right:auto;
   
 }
 th{

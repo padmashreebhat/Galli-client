@@ -6,6 +6,9 @@
 
 <body>
 <div id="wrapper">
+
+
+
 	   <div id="ServiceProvider">
 		    <div id="tabs">
 		      <ul>
@@ -19,6 +22,13 @@
 		    </div>
 	    
 		    <div id="tabscontent">
+		    		    <div class="popUpWindow" id="viewBox">
+		    		    	<div class="photoID" id="spphoto"> </div>
+		    		        <label> ID Number </label> <h3 id=SPID> </h3>
+							<label> Address </label><h3 id=SPAdd> </h3> <br>
+							<input type="button" class="tablebutton" value="Ok" onclick="CloseViewWindow()" style="float: right; margin-right: 20px;
+			            font-weight: bold; width: 100px" />
+						</div>
 			      <div class="tabpage" id="AddServiceProvider">
 							<form action="#" method="post">
 								<div id='Add'>
@@ -50,106 +60,129 @@
 								</div>			
 							</form>
 			      </div>
+			      <div class="tabpage" id="ViewServiceProvider">
+			      	<table id="sptable"></table>
+			      </div>
 		      
-			      <div class="tabpage" id="ViewCompliant">
-					  <table id="sptable"></table>
-				  </div>			
 			 </div>
 		
 		</div>
-		   <div id="Poll">
+		   <div id="Instructor">
 		    <div id="tabs">
 		      <ul>
 		        <li id="Create">Create</li>
 		        <li id="View">View</li>
-		        <li id="Results">Result</li>
-		        <h3 style="font-family:arial;color:white;font-size:24px;text-align:center;"> Opinion Poll </h3>
+				<h3 style="font-family:arial;color:white;font-size:24px;text-align:center;"> Instructor </h3>
 		      </ul>
+		      	<div class=submenutitle>
+				<h4> Instructor </h4>
+				</div>
 		    </div>
 	    
 		    <div id="tabscontent">
-			      <div class="tabpage" id="CreatePoll">
+		    		    <div class="popUpWindow" id="InsViewBox">
+		    		    	<div class="photoID" id="Insphoto"> </div>
+		    		        <label> ID Number </label> <h3 id=InsID> </h3>
+							<label> Address </label><h3 id=InsAdd> </h3> <br>
+							<label> Qualification </label><h3 id=InsQulification> </h3> <br>
+							<input type="button" class="tablebutton" value="Ok" onclick="CloseInstructorView()" style="float: right; margin-right: 20px;
+			            font-weight: bold; width: 100px" />
+						</div>
+			      <div class="tabpage" id="AddInstructorDetails">
 							<form action="#" method="post">
-								<div id='Create'>
+								<div id='Add'>
 									 <fieldset>
-										 <legend>Poll Details</legend>
-										 <label> PollID  </label> <input type="text" id="PollID" name="PollID"> 
-										 <label> ValidUpto  </label> <input type="date" id="validity" name="validity"> 
-			
-										<label> Topic </label><input id='Topic' type="text" style="width:450px;" name="Subject"> <br>
-										<label> Description </label><TEXTAREA NAME="Poll Description" ROWS="8" style="width:450px;">Please enter details</TEXTAREA>
-										 
-
-									</fieldset>
-									<fieldset>
-									<legend>Options</legend>
-										 <label> 1.  </label> <input type="text" id="Pollopt1" name="Pollopt1"> 
-										 <label> 2.  </label> <input type="text" id="Pollopt2" name="Pollopt2"> 
-										 <label> 3.  </label> <input type="text" id="Pollopt3" name="Pollopt3"> 
-										 <label> 4.  </label> <input type="text" id="Pollopt4" name="Pollopt4"> 
-										 <label> 5.  </label> <input type="text" id="Pollopt5" name="Pollopt5"> 
+										 <legend>InstructorDetails</legend>
+										 <label> Name  </label> <input type="text" id="SPName" name="SPName"> 
+						 				<label>  Field </label>
+										<select purpose="Music">
+										<option value="Music">Electrica</option>
+										<option value="Dance">Plumber</option>
+										<option value="Tennis">Civil</option>
+										<option value="Taekwondo">OfficeStaff</option>
+										<option value="Others">Others</option>
+										</select> <br>
+										<label> Contact </label><input id='Contact' type="text" style="width:450px;" name="Contact"> <br>
+										<label> Qulification </label><input id='Contact' type="text" style="width:450px;" name="Contact"> <br>
+										<label> Address </label><TEXTAREA NAME="SpecialRequest" ROWS="8" style="width:450px;">Please enter address</TEXTAREA>
+										<label> Documents </label><input id='Contact' type="text" style="width:450px;" name="Contact"> <br>
 									</fieldset>
 								</div>	
 								<div id='buttonwin'>
-										<div id='security' class="roundbutton" onClick="SearchPoll()">
+								<div id="container" class="container">
+										<div id='SearchSP' class="roundbutton" onClick="SearchIns()">
 							                <a class="link icon_find"> </a>
 										</div>
-										<div id='security' class="roundbutton" onClick="RegisterPoll()">
-							                <a class="link icon_add"> </a>
+										<div id='SubmitSP' class="roundbutton" onClick="StoreInsDetails()">
+							                <a class="link icon_submit"> </a>
 										</div>
+								</div>
 								</div>			
 							</form>
 			      </div>
-		      
-			      <div class="tabpage" id="ViewPoll">
-					  <table id="polltable"></table>
-					  <div id='buttonwin'>
-										<div id='security' class="roundbutton" onClick="VoiceOpinion()">
-							                <a class="link icon_submit"> </a>
-										</div>
-					 </div>		
-				  </div>
-				  <div class="tabpage" id="PollResult">
-					  <table id="pollresulttable"></table>
-				  </div>	
+			      <div class="tabpage" id="ViewInstructorDetails">
+			      	<table id="instable"></table>
+			      </div>
+		    					   
 			 </div>
 		
 		</div>	
-		<div id="NoticeBoard">
+	   <div id="HomeHelpers">
 		    <div id="tabs">
 		      <ul>
 		        <li id="Create">Create</li>
 		        <li id="View">View</li>
-		        <h3 style="font-family:arial;color:white;font-size:24px;text-align:center;"> Notice Board </h3>
+				<h3 style="font-family:arial;color:white;font-size:24px;text-align:center;"> HomeHelpers </h3>
 		      </ul>
+		      	<div class=submenutitle>
+				<h4> HomeHelpers </h4>
+				</div>
 		    </div>
 	    
 		    <div id="tabscontent">
-			      <div class="tabpage" id="CreateNotice">
+		    		    <div class="popUpWindow" id="hhviewBox">
+		    		    	<div class="photoID" id="hhphoto"> </div>
+		    		        <label> ID Number </label> <h3 id=hhID> </h3>
+							<label> Address </label><h3 id=hhAdd> </h3> <br>
+							<input type="button" class="tablebutton" value="Ok" onclick="CloseHHViewWindow()" style="float: right; margin-right: 20px;
+			            font-weight: bold; width: 100px" />
+						</div>
+			      <div class="tabpage" id="AddHomeHelper">
 							<form action="#" method="post">
-								<div id='Create'>
+								<div id='Add'>
 									 <fieldset>
-										 <legend>Notice Board</legend>
-						 				<label>  Priority </label>
-										<select purpose="Medium">
-										<option value="Medium">Medium</option>
-										<option value="High">High</option>
+										 <legend>HomeHelperDetails</legend>
+										 <label> Name  </label> <input type="text" id="SPName" name="SPName"> 
+						 				<label>  Service </label>
+										<select purpose="Cook">
+										<option value="Maid">Maid</option>
+										<option value="CareTaker">CareTaker</option>
+										<option value="Cook">Cook</option>
 										</select> <br>
-										<label>Subject </label><input id='Subject' type="text" style="width:450px;" name="Subject"> <br>
-										<label> Detail </label><TEXTAREA NAME="SpecialRequest" ROWS="8" style="width:450px;">Please enter your details</TEXTAREA>
+										<label> Contact </label><input id='Contact' type="text" style="width:450px;" name="Contact"> <br>
+										<label> Address </label><TEXTAREA NAME="SpecialRequest" ROWS="8" style="width:450px;">Please enter address</TEXTAREA>
+										<label> Documents </label><input id='Contact' type="text" style="width:450px;" name="Contact"> <br>
+									 </fieldset>
+									 <fieldset>
+										<legend>Schedule</legend>
 									</fieldset>
 								</div>	
 								<div id='buttonwin'>
-										<div id='security' class="roundbutton" onClick="SubmitNotice()">
+								<div id="container" class="container">
+										<div id='SearcHH' class="roundbutton" onClick="SearchHH()">
+							                <a class="link icon_find"> </a>
+										</div>
+										<div id='SubmitHH' class="roundbutton" onClick="StoreHHDetails()">
 							                <a class="link icon_submit"> </a>
 										</div>
+								</div>
 								</div>			
 							</form>
 			      </div>
+			      <div class="tabpage" id="ViewHomeHelper">
+			      	<table id="hhtable"></table>
+			      </div>
 		      
-			      <div class="tabpage" id="ViewNotice">
-					  <table id="noticetable"></table>
-				  </div>			
 			 </div>
 		
 		</div>

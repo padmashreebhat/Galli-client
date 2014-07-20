@@ -3,7 +3,9 @@
 /**********************************************************************************************************/
 
 /************************  View Window      *****************************************************************/
-
+function SearchHHUsingFname(fname){
+						CreateHHtable(fname);
+}
 function CloseHHViewWindow() {
             $("#hhviewBox").hide();
             
@@ -24,12 +26,13 @@ function CloseHHViewWindow() {
 				$('#HomeHelpers #tabscontent #AddHomeHelper').show();
 				$('#HomeHelpers #tabscontent #ViewHomeHelper').hide();
 				$('#HomeHelpers #tabscontent #hhviewBox').hide();
-				
+				addHHScheduleTable();
 				cont = $('#HomeHelpers #tabs #Create');
 				$(cont).hover(function(e){ 
 					console.log("inside tabheader1");
 					$('#HomeHelpers #tabscontent #AddHomeHelper').show();
 					$('#HomeHelpers #tabscontent #ViewHomeHelper').hide();
+					addHHScheduleTable();
 					});			          
 							        
 				     
@@ -38,7 +41,6 @@ function CloseHHViewWindow() {
 					console.log("inside tabheader2");
 					$('#HomeHelpers #tabscontent #AddHomeHelper').hide();
 					$('#HomeHelpers #tabscontent #ViewHomeHelper').show();
-					CreateHHtable();
 					});			    
 
 				});
@@ -47,7 +49,7 @@ function CloseHHViewWindow() {
 
 /************************Service Provider Table    ***********************************************************/
 
-function CreateHHtable(){
+function CreateHHtable(fname){
 			  var tablecontents = "";
 		      tablecontents = "<table>";
 		      tablecontents += "<tr>";
@@ -110,9 +112,73 @@ function StoreHHDetails(){
 }
 
 
+function addHHScheduleTable()
+{
+		      var tablecontents = "";
+		      tablecontents = "<table>";
+		      tablecontents += "<tr>";
+		      tablecontents += "<th>" + "Apt Num" + "</th>";
+		      tablecontents += "<th>" + "StartTime" + "</th>";
+		      tablecontents += "<th>" + "EndTime" + "</th>";
+		      tablecontents += "<th>" + "DateofJoin" + "</th>";
+		      tablecontents += "<th>" + "DateofTermination" + "</th>";
+			  tablecontents += "<th>" + "Salary" + "</th>";
+		      tablecontents += "<th>" + "" + "</th>";
+			  tablecontents += "<th>" + "" + "</th>";
+		      tablecontents += "</tr>";
+		
+		/* Read content from JSON file and update the same */
+			  $.getJSON('JSON/result.json', function(jd) { 
+			  for (var i = 0; i < 3; i ++)
+			   {
+			      tablecontents += "<tr>";
+			      tablecontents += "<td>" + jd.apartment + "</td>";
+			      tablecontents += "<td>" + jd.Starttime + "</td>";
+			      tablecontents += "<td>" + jd.Endtime + "</td>";
+				  tablecontents += "<td>" + jd.FromDate + "</td>";
+			      tablecontents += "<td>" + jd.FromDate + "</td>";
+			      tablecontents += "<td>" + jd.Salary + "</td>";
+				  tablecontents += "<td>" + '<input type="button" class="tablebutton" value = "Edit" >' + "</td>";
+			      tablecontents += "<td>" + '<input type="button" class="tablebutton" value = "Delete" onClick="Javacsript:deleteHHEmployer(this)">' + "</td>";
+			      tablecontents += "</tr>";
+			   }
+			   
+			   tablecontents += "</table>";
+			   document.getElementById("HHScheduleTable").innerHTML = tablecontents;
+				});
 
+}
 
+function deleteHHEmployer(obj) {
+      
+    var index = obj.parentNode.parentNode.rowIndex;
+    var table = document.getElementById("HHScheduleTable");
+    table.deleteRow(index);
+    
+}
 
+function addRowHHScheduleTable() {
+    var aptNum = document.getElementById("aptNum");
+    var fTime = document.getElementById("fTime");
+    var tTime = document.getElementById("tTime");
+    var jDate = document.getElementById("jDate");
+    var tDate = document.getElementById("tDate");
+    var salary = document.getElementById("salary");
+    var table = document.getElementById("HHScheduleTable");
+ 
+    var rowCount = table.rows.length;
+    var row = table.insertRow(rowCount);
+ 
+    row.insertCell(0).innerHTML= aptNum.value;
+    row.insertCell(1).innerHTML= fTime.value;
+    row.insertCell(2).innerHTML= tTime.value;
+    row.insertCell(3).innerHTML= jDate.value;
+    row.insertCell(4).innerHTML= tDate.value;
+    row.insertCell(5).innerHTML= salary.value;
+    row.insertCell(6).innerHTML= '<input type="button" class="tablebutton" value = "Edit">';
+    row.insertCell(7).innerHTML= '<input type="button" class="tablebutton" value = "Delete" onClick="Javacsript:deleteHHEmployer(this)">';
+    
+}
 
 /**********************************************************************************************************/
 /*********************** Instructor *****************************************************************/

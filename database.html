@@ -163,11 +163,7 @@
 										<label> Address </label><TEXTAREA NAME="SpecialRequest" ROWS="8" style="width:450px;">Please enter address</TEXTAREA>
 										<label> Documents </label><input id='Contact' type="text" style="width:450px;" name="Contact"> <br>
 									 </fieldset>
-									 <fieldset>
-										<legend>Schedule</legend>
-									</fieldset>
-								</div>	
-								<div id='buttonwin'>
+									 								<div id='buttonwin'>
 								<div id="container" class="container">
 										<div id='SearcHH' class="roundbutton" onClick="SearchHH()">
 							                <a class="link icon_find"> </a>
@@ -177,9 +173,50 @@
 										</div>
 								</div>
 								</div>			
+									 <fieldset>
+										<form action="#" method="post">
+												   <legend> Add New Employer</legend>	
+														<label> Apt Number </label>
+														<input type="text" id="aptNum">
+														<label> From </label>
+														<input type="time" id="fTime">
+														<label> To </label>
+														<input type="text" id="tTime">
+														<label> Joined Date </label>
+														<input type="date" id="jDate">
+														<label> Till Date </label>
+														<input type="date" id="tDate">
+														<label> Salary </label>
+														<input type="text" id="salary">
+													
+													<div id="mydata">
+														<fieldset>
+														<legend>Schedule</legend>
+														<table id="HHScheduleTable"  style="float:center"></table>
+														</fieldset>
+													</div>
+													
+														
+										            <div id='buttonwin'>
+														<div id='security' class="roundbutton" onClick="javascript:addRowHHScheduleTable()">
+											                <a class="link icon_add"> </a>
+														</div>
+													</div>	
+										</form>	      
+								
+									</fieldset>
+								</div>	
+
 							</form>
 			      </div>
 			      <div class="tabpage" id="ViewHomeHelper">
+			      	<fieldset>
+					   <legend>Find Home Helper Detail</legend>
+					   		<label> Name </label><input id='fname' type="text" style="width:200px;" name="fname">
+			        					<div id='SearcHH' class="roundbutton" onClick="SearchHHUsingFname()">
+							                <a class="link icon_find"> </a>
+										</div>
+			        </fieldset>
 			      	<table id="hhtable"></table>
 			      </div>
 		      

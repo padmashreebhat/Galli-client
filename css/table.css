@@ -6,7 +6,7 @@ table{
     letter-spacing: -1px;
     line-height: 1.0em;
     text-align:center;
-   border:1px solid #a1aab4;
+	border:1px double #b1b5be;
    margin-left:auto; 
     margin-right:auto;
   
@@ -26,8 +26,7 @@ td{
     font-weight:bold;
     padding:15px 0px;
     text-shadow:1px 1px 1px #fff;
-    border: black;
-	border:1px double #3859a0;
+ 	border:1px double #b1b5be;
 }
 
 td.a{

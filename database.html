@@ -12,8 +12,8 @@
 	   <div id="ServiceProvider">
 		    <div id="tabs">
 		      <ul>
+  		        <li id="View">View</li>
 		        <li id="Create">Create</li>
-		        <li id="View">View</li>
 				<h3 style="font-family:arial;color:white;font-size:24px;text-align:center;"> ServiceProvider </h3>
 		      </ul>
 		      	<div class=submenutitle>
@@ -30,6 +30,7 @@
 			            font-weight: bold; width: 100px" />
 						</div>
 			      <div class="tabpage" id="AddServiceProvider">
+			      <img src="images/electician.jpeg" style="float:left" width="75" height="75">
 							<form action="#" method="post">
 								<div id='Add'>
 									 <fieldset>
@@ -70,8 +71,8 @@
 		   <div id="Instructor">
 		    <div id="tabs">
 		      <ul>
-		        <li id="Create">Create</li>
 		        <li id="View">View</li>
+		        <li id="Create">Create</li>
 				<h3 style="font-family:arial;color:white;font-size:24px;text-align:center;"> Instructor </h3>
 		      </ul>
 		      	<div class=submenutitle>
@@ -92,6 +93,7 @@
 							<form action="#" method="post">
 								<div id='Add'>
 									 <fieldset>
+									  <img src="images/instructor.jpeg" style="float:left" width="75" height="75">
 										 <legend>InstructorDetails</legend>
 										 <label> Name  </label> <input type="text" id="SPName" name="SPName"> 
 						 				<label>  Field </label>
@@ -130,8 +132,8 @@
 	   <div id="HomeHelpers">
 		    <div id="tabs">
 		      <ul>
-		        <li id="Create">Create</li>
 		        <li id="View">View</li>
+		        <li id="Create">Create</li>
 				<h3 style="font-family:arial;color:white;font-size:24px;text-align:center;"> HomeHelpers </h3>
 		      </ul>
 		      	<div class=submenutitle>
@@ -148,6 +150,7 @@
 			            font-weight: bold; width: 100px" />
 						</div>
 			      <div class="tabpage" id="AddHomeHelper">
+					  <img src="images/maidindian.png" style="float:left" width="75" height="75">
 							<form action="#" method="post">
 								<div id='Add'>
 									 <fieldset>
@@ -210,6 +213,7 @@
 							</form>
 			      </div>
 			      <div class="tabpage" id="ViewHomeHelper">
+					  <img src="images/maidindian.png" style="float:left" width="75" height="75">
 			      	<fieldset>
 					   <legend>Find Home Helper Detail</legend>
 					   		<label> Name </label><input id='fname' type="text" style="width:200px;" name="fname">
@@ -223,38 +227,7 @@
 			 </div>
 		
 		</div>
-		<div id="SMS">
-		    <div id="tabs">
-		      <ul>
-		        <li id="Create">Send</li>
-		        <h3 style="font-family:arial;color:white;font-size:24px;text-align:center;"> Send SMS</h3>
-		      </ul>
-		    </div>
-	    
-		    <div id="tabscontent">
-			      <div class="tabpage" id="CreateNotice">
-							<form action="#" method="post">
-								<div id='Create'>
-									 <fieldset>
-										 <legend>Send SMS</legend>
-										<label> Name </label><input id='Subject' type="text" style="width:450px;" name="Subject"> <br>
-										<label> Message </label><TEXTAREA NAME="SpecialRequest" ROWS="8" style="width:450px;">Please enter your details</TEXTAREA>
-									</fieldset>
-								</div>	
-								<div id='buttonwin'>
-										<div id='security' class="roundbutton" onClick="SubmitNotice()">
-							                <a class="link icon_submit"> </a>
-										</div>
-								</div>			
-							</form>
-			      </div>
-		      
-			      <div class="tabpage" id="ViewNotice">
-					  <table id="noticetable"></table>
-				  </div>			
-			 </div>
-		
-		</div>
+
 	</div>
 
 </body>

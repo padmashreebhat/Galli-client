@@ -220,7 +220,7 @@ function deleteSP(obj) {
 
 
 
-		function loadresidentwin(divID) {
+	/*	function loadresidentwin(divID) {
 		    console.log(divID);
 		    
             var cont = $('#filler-below');
@@ -228,9 +228,9 @@ function deleteSP(obj) {
 				console.log("inside finance residentwin");
           
         });
-        }
+        }*/
         
-        function loadtabmenuwin(divID) {
+        function loadresidentwin(divID) {
 		    console.log(divID);
 		    
             var cont = $('#filler-below');

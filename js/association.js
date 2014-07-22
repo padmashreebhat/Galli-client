@@ -10,21 +10,39 @@ function CloseAlertBox() {
         }
 /*=========================================================================*/        
 /* Seal of Approval */
-/*=========================================================================*/        
+/*=========================================================================*/   
+function CloseRequestDetail() {
+            $("#viewSealofApprovalDet").hide();
+            
+        }
+function OpenRequestDetail() {
+            $("#viewSealofApprovalDet").show();
+        }
+function ViewRequestDetailsWindow(obj){
+		var index = obj.parentNode.parentNode.rowIndex;
+		var table = document.getElementById("tablespace");
+		var x = document.getElementById("tablespace").rows[index].cells;
+		var Requestid= x[0].innerHTML;
+		var Requestid="<h3>"+Requestid+"</h3>";
+		var RequestDetails="Approval for Disel charges for the month of August 2014 required"
+    /* Get Address, history other details from database */
+      OpenRequestDetail();
+        $("#viewSealofApprovalDet #RequestID").html(Requestid+"<br>");
+        $("#viewSealofApprovalDet #RequestDet").html(RequestDetails+"<br>");
+}
 
 function loadsealofapproval(divID) {
 		    
             var cont = $('#filler-below');
 				cont.load('association.html #sealofapproval', function(){
 				console.log("inside sealofapproval");
+				CloseRequestDetail();
 				$("#rejectbox").hide();
             $("#rejectbox").draggable();            
 						}
 				)};
 
-function ApproveReq()
-{
-}
+
 function  CreateSealofApproval()
 {
 
@@ -42,7 +60,7 @@ if("Approved"==document.getElementById("approvalstatus").value)
 		
 		/* Read content from JSON file and update the same */
 			  $.getJSON('JSON/result.json', function(jd) { 
-			  for (var i = 0; i < 15; i ++)
+			  for (var i = 0; i < 5; i ++)
 			   {
 			      tablecontents += "<tr>";
 			      tablecontents += "<td>" + jd.transactionNum +"</td>";
@@ -50,7 +68,7 @@ if("Approved"==document.getElementById("approvalstatus").value)
 			      tablecontents += "<td>" + jd.Amount + "</td>";
 			      tablecontents += "<td>" + jd.Remarks+ "</td>";
 			      tablecontents += "<td>" + "Approved" + "</td>";
-			      tablecontents += "<td>" + '<input type="button" class="tablebutton" value = "View" onClick="Javacsript:ViewReq(this)">' + "</td>";
+			      tablecontents += "<td>" + '<input type="button" class="tablebutton" value = "View" onClick="Javacsript:ViewRequestDetailsWindow(this)">' + "</td>";
 			      tablecontents += "</tr>";
 			   }
 			   
@@ -73,22 +91,18 @@ else
 		      tablecontents += "<th>" + "Amount" + "</th>";
 		      tablecontents += "<th>" + "Remarks" + "</th>";
 		      tablecontents += "<th>" + "Details" + "</th>";
-		      tablecontents += "<th>" + "Approve" + "</th>";
-		      tablecontents += "<th>" + "Reject" + "</th>";
 		      tablecontents += "</tr>";
 		
 		/* Read content from JSON file and update the same */
 			  $.getJSON('JSON/result.json', function(jd) { 
-			  for (var i = 0; i < 15; i ++)
+			  for (var i = 0; i < 5; i ++)
 			   {
 			      tablecontents += "<tr>";
 			      tablecontents += "<td>" + jd.transactionNum + "</td>";
 			      tablecontents += "<td>" + jd.date + "</td>";
 			      tablecontents += "<td>" + jd.Amount + "</td>";
 			      tablecontents += "<td>" + jd.Remarks+ "</td>";
-			      tablecontents += "<td>" + '<input type="button" class="tablebutton" value = "View" onClick="Javacsript:ViewReq(this)">' + "</td>";
-			      tablecontents += "<td>" + '<input type="button" class="tablebutton" value = "Approve" onClick="Javacsript:ApproveReq(this)">' + "</td>";
-				  tablecontents += "<td>" + '<input type="button" class="tablebutton" value = "Reject" onClick="Javacsript:RejectReq(this)">' + "</td>";
+			      tablecontents += "<td>" + '<input type="button" class="tablebutton" value = "View" onClick="Javacsript:ViewRequestDetailsWindow(this)">' + "</td>";
 			      tablecontents += "</tr>";
 			   }
 			   
@@ -110,17 +124,16 @@ var table = document.getElementById("tablespace");
 var transID = table[index].getAttribute("TransactionID");
 }*/
 
-function ApproveReq(obj) {
-      
+function ApproveRequest(obj) {
+      CloseRequestDetail();
     var index = obj.parentNode.parentNode.rowIndex;
     var table = document.getElementById("tablespace");
     table.deleteRow(index);
     /*Update status as approved and remove row from this list */
 }
 
-function RejectReq(obj) {
-
-	OpenAlertBox();
+function RejectRequest(obj) {
+CloseRequestDetail();
     var index = obj.parentNode.parentNode.rowIndex;
     var table = document.getElementById("tablespace");
     table.deleteRow(index);

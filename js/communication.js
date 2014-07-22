@@ -145,14 +145,35 @@ function RegisterPoll(){
 /*---------------------------------------------------------------------------------        
  ------------------------Load Complaint Box--------------------------------------------
 ----------------------------------------------------------------------------------*/
+
+function CloseCompliantWindow() {
+            $("#viewCompliantDetail").hide();
+            
+        }
+function OpenCompliantWindow() {
+            $("#viewCompliantDetail").show();
+        }
+function ViewCompliantWindow(obj){
+		var index = obj.parentNode.parentNode.rowIndex;
+		var table = document.getElementById("complianttable");
+		var x = document.getElementById("complianttable").rows[index].cells;
+		var Compid= x[0].innerHTML;
+		var Compid="<h3>"+Compid+"</h3>";
+		var CompDetails="Shower in Study is leaking "
+    /* Get Address, history other details from database */
+      OpenCompliantWindow();
+        $("#viewCompliantDetail #CompNum").html(Compid+"<br>");
+        $("#viewCompliantDetail #CompDet").html(CompDetails+"<br>");
+}
+
  function loadcompliantbox(divID) {
             var cont = $('#filler-below');
-				cont.load('communication.html #CompliantBox', function(){
+ 				cont.load('communication.html #CompliantBox', function(){
 				console.log("inside CompliantBox");			
 
 				$('#CompliantBox #tabscontent #CreateCompliant').show();
 				$('#CompliantBox #tabscontent #ViewCompliant').hide();
-				
+				           CloseCompliantWindow();
 				cont = $('#CompliantBox #tabs #Create');
 				$(cont).hover(function(e){ 
 					console.log("inside Create");
@@ -191,7 +212,7 @@ function createcomplainttable(){
 			      tablecontents += "<td>" + jd.Remarks + "</td>";
 			      tablecontents += "<td>" + jd.fname+ "</td>";
 			      tablecontents += "<td>" + '<input type="text" value = "Open" style="width:60px">'+ "</td>";
-			      tablecontents += "<td>" + '<input type="button" class="tablebutton" value = "View" onClick="Javacsript:ViewReq(this)">' + "</td>";
+			      tablecontents += "<td>" + '<input type="button" class="tablebutton" value = "View" onClick="Javacsript:ViewCompliantWindow(this)">' + "</td>";
 			      tablecontents += "<td>" + '<input type="button" class="tablebutton" value = "Update" onClick="Javacsript:ViewReq(this)">' + "</td>";
 			      tablecontents += "</tr>";
 			   }
@@ -217,11 +238,31 @@ function RegisterComplaint(){
 /*---------------------------------------------------------------------------------        
  ------------------------Load Notice Board--------------------------------------------
 ----------------------------------------------------------------------------------*/
+function CloseNoticeDetailsWindow() {
+            $("#viewNoticeDetail").hide();
+            
+        }
+function OpenNoticeDetailsWindow() {
+            $("#viewNoticeDetail").show();
+        }
+function ViewNoticeDetailsWindow(obj){
+		var index = obj.parentNode.parentNode.rowIndex;
+		var table = document.getElementById("noticetable");
+		var x = document.getElementById("noticetable").rows[index].cells;
+		var Noticeid= x[0].innerHTML;
+		var Noticeid="<h3>"+Noticeid+"</h3>";
+		var NoticeDetails="AGM is scheduled to be in August 2014, All residents are requested to be available"
+    /* Get Address, history other details from database */
+      OpenNoticeDetailsWindow();
+        $("#viewNoticeDetail #NoticeNum").html(Noticeid+"<br>");
+        $("#viewNoticeDetail #NoticeDet").html(NoticeDetails+"<br>");
+}
+
  function loadnoticeboard(divID) {
             var cont = $('#filler-below');
 				cont.load('communication.html #NoticeBoard', function(){
 				console.log("inside NoticeBoard");			
-
+				CloseNoticeDetailsWindow();
 				$('#NoticeBoard #tabscontent #CreateNotice').show();
 				$('#NoticeBoard #tabscontent #ViewNotice').hide();
 				
@@ -260,7 +301,7 @@ function createnoticetable(){
 				  tablecontents += "<td>" + jd.fname + "</td>";
 			      tablecontents += "<td>" + jd.date + "</td>";
 			      tablecontents += "<td>" + jd.Remarks + "</td>";
-				  tablecontents += "<td>" + '<input type="button" class="tablebutton" value = "View" onClick="Javacsript:ViewReq(this)">' + "</td>";
+				  tablecontents += "<td>" + '<input type="button" class="tablebutton" value = "View" onClick="Javacsript:ViewNoticeDetailsWindow(this)">' + "</td>";
 			      tablecontents += "</tr>";
 			   }
 			   

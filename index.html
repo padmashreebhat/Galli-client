@@ -16,15 +16,39 @@
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 		<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		<script src="js/login.js"></script>
+		<script src="js/fblogin.js"></script>
+		<script src="js/googlelogin.js"></script>
+
 
 		<script src="js/modernizr.custom.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/imagegrid.css" />
 		<script type="text/javascript" src="js/modernizr.custom.26633.js"></script>
     </head>
-    <body style="background-image:url(images/background/login.jpg)">
+    <body>
+    <script type="text/javascript">
+      (function() {
+       var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+       po.src = 'https://apis.google.com/js/client:plusone.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+     })();
+    </script>
     			<header>
 				<span>Sphinx <span class="bp-icon bp-icon-about" data-content="Company Profile to be updated"></span></span>
 				<h1>Galli</h1>
+				<div
+				  class="fb-like"
+				  data-send="true"
+				  data-width="450"
+				  data-show-faces="true">
+				</div>
+				
+	
+						<div id='buttonwin'>
+			             <div id='creditSubmit' class="roundbutton" onClick="logoutApp()">
+			                <a class="link icon_logout"> </a>
+			             </div>
+					</div>		
 			</header>	
 
 		<img src="images/loading.gif" style="display:none;"/>
@@ -89,24 +113,39 @@
 				</div>
 		<div id="container" class="container">
 		<div id="loginmenu" class="loginmenu">
-		    <div id="tabs">
-		      <ul>
-		        <li id="login" onclick="loadloginmenu()">Login</li>
-		        <li id="features" onclick="loadloginmenu()">Features</li>
-		        <li id="aboutus">AboutUS</li>
-		      </ul>
-		    </div>
+    <div id="tabs">
+      <ul>
+        <li id="login" onclick="loadloginmenu()">Login</li>
+        <li id="features" onclick="loadloginmenu()">Features</li>
+        <li id="aboutus">AboutUS</li>
+      </ul>
+    </div>
         <div id="tabscontent">
 	      <div class="tabpage" id="login">
 					<form action="#" method="post">
 						 <fieldset>
 							 <legend>login</legend>
-         						 
 							  <label> Email  </label> <input type="text" id="email" name="email"> 
-							 <label>Password</label> <input type="password" maxlength="100" value="" id="passwd" name="passwd"/>                    						 			 <input class="bigbutton" type="button" value="Login" onclick="window.location.href='mainpage.html'"/> 
-							 <input class="bigbutton" type="button" value="FacebookLogin" onclick="window.location.href='mainpage.html'"/> 
+							 <label>Password</label> <input type="password" maxlength="100" value="" id="passwd" name="passwd"/>                    						 			 <input class="bigbutton" type="button" value="Login" onclick="validateLogin()"/> 
+
 							 </fieldset>
-							 
+
+							<fieldset>
+							<legend> facebook/gmail user?</legend>
+							<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+							</fb:login-button>
+							<div id="status">
+							</div>
+							<button class="g-signin"
+        data-scope="https://www.googleapis.com/auth/plus.login"
+        data-clientid="808023600922-btvp4h6td3eopktv02ip79nl720r6b37.apps.googleusercontent.com"
+        data-callback="onSignInCallback"
+        data-theme="dark"
+        data-cookiepolicy="single_host_origin"
+        data-requestvisibleactions="http://schemas.google.com/AddActivity"
+        data-width="wide">
+    </button>
+							</fieldset>							 
 							 <br>
 							 <fieldset>
 								 <legend>New User?</legend>
@@ -132,7 +171,7 @@
 								 <legend>Apartment Information</legend>
          						 <label> Flat Number  </label> <input type="text" id="AptNum" name="AptNum"> 
          						 <label> Apartment Name  </label> <input type="text" id="AptName" name="AptName"> 							
-								 <input class="bigbutton" type="button" value="Register" /> 
+								 <input class="bigbutton" type="button" value="Register" onclick="RegiseterUserDetails()"/> 
 						</fieldset>
 						<fieldset>
 								 <br>
@@ -201,17 +240,6 @@
 		                        <a href="#" onClick="javascript:loadhomehelperswin('creditwin')">Helpers</a>
 		                        <a href="#">Resident</a>
 		                        <a href="#">Service</a>
-		                    </p>
-		                </div>
-		            </div>
-
-
-		               <div id='settings' class="item">
-		                <a class="link icon_settings"></a>
-		                <div class="item_content">
-		                    <h2>Settings</h2>
-		                    <p>
-		                        <a href="#" onClick="javascript:loadhomehelperswin('creditwin')">Helpers</a>
 		                    </p>
 		                </div>
 		            </div>
@@ -369,7 +397,6 @@
 			
 			});
 			
-
   
               $('.item').hover(
                 function(){
@@ -441,28 +468,6 @@
 				$(cont).hide("drop");
 				cont = $('.container #loginmenu #tabscontent #features #mydata #SecurityDet');				
 				$(cont).hide("drop");
-
-				});
-
-
-			$('.container #loginmenu #tabscontent #features #mainmenu #settings').hover(function(e){ 
-   				cont = $('.container #loginmenu #tabscontent #features #mydata #CommunicationDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #AssociationDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #FinanceDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #DatabaseDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #ApartmentDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #StorageDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #SecurityDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #SettingsDet');				
-				$(cont).show("drop");
-
 
 				});
 
@@ -622,35 +627,8 @@
 		$('.container #loginmenu #tabs #aboutus').hover(function(e){ 
 			
 		});
-		
-		
-		function UserLogin(){
-			
-		}
-function RegisterUser(divID){
-	   console.log("inside registerUser");
-				cont = $('.container #loginmenu #tabscontent #login');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #register');				
-				$(cont).show("drop");
-				cont = $('.container #loginmenu #tabscontent #registergalli');				
-				$(cont).hide("drop");
-
-        }
-        
-function CreateGalli(divID){
-	   console.log("inside registerUser");
-				cont = $('.container #loginmenu #tabscontent #login');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #register');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #registergalli');				
-				$(cont).show("drop");
-
-        }
-
-
-				</script>
+	
+	   </script>
     </body>
 </html>
 

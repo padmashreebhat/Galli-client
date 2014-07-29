@@ -38,7 +38,6 @@ function loadsealofapproval(divID) {
 				console.log("inside sealofapproval");
 				CloseRequestDetail();
 				$("#rejectbox").hide();
-            $("#rejectbox").draggable();            
 						}
 				)};
 

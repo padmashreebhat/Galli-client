@@ -258,6 +258,9 @@ padding: 30px 46px 47px 86px;
 .icon_ads{
     background:transparent url(../images/ads.jpeg) no-repeat top left;
 }
+.icon_logout{
+    background:transparent url(../images/logout.png) no-repeat top left;
+}
 
 .submenu_item_content{
     position:absolute;

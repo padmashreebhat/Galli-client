@@ -276,7 +276,7 @@
 				});
 							
 			<!---- Load communication Window ----->
-			$('.container #mainmenu #communication').hover(function(e){ 
+			$('.container #mainmenu #communication').click(function(e){ 
 			loadnoticeboard();
 				cont.load('submenu.html #communication', function(){
 				 $('.submenuitem').hover(
@@ -322,7 +322,7 @@
 				});
 				
 			<!---- Load database Window ----->
-			$('.container #mainmenu #database').hover(function(e){ 
+			$('.container #mainmenu #database').click(function(e){ 
 				console.log("inside click");
 				loadHomeHelper();
 				cont.load('submenu.html #database', function(){
@@ -369,7 +369,7 @@
 				});
 			
 			<!---- Load myhome Window ----->
-			$('.container #mainmenu #myself').hover(function(e){ 
+			$('.container #mainmenu #myself').click(function(e){ 
 				console.log("inside click");
 				loadmyinfo("myhome");
 				cont.load('submenu.html #myself', function(){
@@ -415,7 +415,7 @@
 				});
 				});
 			<!---- Load finance Window ----->
-			$('.container #mainmenu #finance').hover(function(e){ 
+			$('.container #mainmenu #finance').click(function(e){ 
 				console.log("inside click");
 				loadfinancedetails("finance");
 				cont.load('submenu.html #finance', function(){
@@ -462,7 +462,7 @@
 				});
 
 			<!---- Load settings Window ----->
-			$('.container #mainmenu #settings').hover(function(e){ 
+			$('.container #mainmenu #settings').click(function(e){ 
 				loadcreategroup();
 				cont.load('submenu.html #settings', function(){
 				 $('.submenuitem').hover(
@@ -508,7 +508,7 @@
 				});
 				
 				<!---- Load Security Window ----->
-			$('.container #mainmenu #security').hover(function(e){ 
+			$('.container #mainmenu #security').click(function(e){ 
 				console.log("inside click");
 				cont.load('submenu.html #security', function(){
 								           $('.submenuitem').hover(
@@ -554,7 +554,7 @@
 				});
 
 				<!---- Load Association Window ----->
-			$('.container #mainmenu #association').hover(function(e){ 
+			$('.container #mainmenu #association').click(function(e){ 
 				loadsealofapproval("approval");
 				cont.load('submenu.html #association', function(){
 				           $('.submenuitem').hover(
@@ -598,7 +598,7 @@
 				});
 				});
 				<!---- Load storage Window ----->
-			$('.container #mainmenu #storage').hover(function(e){ 
+			$('.container #mainmenu #storage').click(function(e){ 
 				console.log("inside click");
 				cont.load('submenu.html #storage', function(){
 				           $('.submenuitem').hover(

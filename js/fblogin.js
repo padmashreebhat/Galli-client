@@ -26,13 +26,10 @@ function logoutApplication(){
    
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into this app.';
+
     } else {
       // The person is not logged into Facebook, so we're not sure if
       // they are logged into this app or not.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into Facebook.';
     }
   }
 
@@ -88,7 +85,7 @@ function logoutApplication(){
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.email);
-            window.open("http://Apples-iMac.local/~padmashreebhat/MyProject/MyNest/client/testpage.html","_self");
+            window.open("http://Apples-iMac.local/~padmashreebhat/MyProject/MyNest/client/mainpage.html","_self");
 
     });
    }

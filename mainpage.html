@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Sphinx: Galli</title>
+		<meta name="description" content="Sphinx : Galli" />
+		<meta name="keywords" content="MyNest Sphinx" />
+		<link rel="stylesheet" type="text/css" href="css/tabmenustyle.css" />
+		<link rel="stylesheet" href="css/mainmenustyle.css" type="text/css" media="screen"/>
+		<link rel="stylesheet" type="text/css" href="css/myselfdefault.css" />
+		<link rel="stylesheet" type="text/css" href="css/myselfcomponent.css" />
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/table.css" />
+		<link rel="stylesheet" type="text/css" href="css/finance.css" />
+		<link rel="stylesheet" type="text/css" href="css/alertbox.css" />
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+		<script src=js/finance.js></script>
+		<script src=js/myflat.js></script>
+		<script src=js/database.js></script>
+		<script src=js/association.js></script>
+		<script src=js/settings.js></script>
+		<script src=js/communication.js></script>
+		<script src="js/modernizr.custom.js"></script>
+		<script src="js/fblogout.js"></script>
+
+		
+		
+				<script src="js/modernizr.custom.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/imagegrid.css" />
+		<script type="text/javascript" src="js/modernizr.custom.26633.js"></script>
+
+		  <style>
+            *{
+                margin:0;
+                padding:0;
+              }
+          </style>
+	</head>
+	<body  style="background-image:url(images/background/background.jpeg)">
+	<div id="fb-root"></div>
+
+		<div id="container" class="container">
+			<header class="clearfix">
+				<h1>Galli</h1>
+						<div id='buttonwin'>
+			             <div id='creditSubmit' class="roundbutton" onClick="logoutApp()">
+			                <a class="link icon_logout"> </a>
+			             </div>
+					</div>		
+			</header>	
+
+			<div id="notice" class="notice">
+				<marquee behavior="scroll" direction="left" scrollamount="4"> <h2>Important messages from Association has to be displayed here </h2> </marquee>
+			</div>
+			<div id="mainmenu">
+		            <div id='security' class="item">
+		                <a class="link icon_security"></a>
+		                <div class="item_content">
+		                    <h2>Security</h2>
+		                    <p>
+		                        <a href="#">Vehicle</a>
+		                        <a href="#">Visitors</a>
+		                    </p>
+		                </div>
+		            </div>
+		
+		            <div id='storage' class="item">
+		                <a class="link icon_storage"></a>
+		                <div class="item_content">
+		                    <h2>Storage</h2>
+		                    <p>
+		                        <a href="#">Photos</a>
+		                        <a href="#">Documents</a>
+		                    </p>
+		                </div>
+		            </div>
+		            
+		            <div id='myself' class="item">
+		                <a class="link icon_myflat"></a>
+		                <div class="item_content">
+		                    <h2>My Apartment</h2>
+		                    <p>
+		                        <a href="#">Dues</a>
+		                        <a href="#" onClick="javascript:loadmyinfo('creditwin')">Family</a>	
+		                        <a href="#">Visitors</a>		                        
+							</p>
+		                </div>
+		            </div>
+		   
+		               <div id='database' class="item">
+		                <a class="link icon_database"></a>
+		                <div class="item_content">
+		                    <h2>Database</h2>
+		                    <p>
+		                        <a href="#" onClick="javascript:loadhomehelperswin('creditwin')">Helpers</a>
+		                        <a href="#">Resident</a>
+		                        <a href="#">Service</a>
+		                    </p>
+		                </div>
+		            </div>
+
+		            <div id='settings' class="item">
+		                <a class="link icon_settings"></a>
+		                <div class="item_content">
+		                    <h2>Settings</h2>
+		                    <p>
+		                        <a href="#" onClick="javascript:loadcreategroup('creategroup')">Helpers</a>
+		                    </p>
+		                </div>
+		            </div>
+		
+		              <div id='finance' class="item">
+		                <a class="link icon_finance"></a>
+		                <div class="item_content">
+		                    <h2>Finance</h2>
+		                    <p>
+		                        <a href="#" onClick="javascript:loadfinancedetails('creditwin')">Credit</a>
+		                        <a href="#" onClick="javascript:loaddebitwin('debitwin')">Debit</a>
+		                       <a href="#" onclick="">Reports</a>
+		                    </p>
+		                </div>
+		            </div>
+		       
+		            <div id='association' class="item">
+		                <a class="link icon_association"></a>
+		                <div class="item_content">
+		                    <h2>Association</h2>
+		                    <p>
+		                        <a href="#">Minutes</a>
+		                        <a href="#">Members</a>
+		                    </p>
+		                </div>
+		            </div>
+		            
+		            <div id=communication class="item">
+		                <a class="link icon_communication"></a>
+		                <div class="item_content">
+		                    <h2>Communication</h2>
+		                    <p>
+		                    	<a href="#" onClick="javascript:loadopinionpoll('opinionpoll')">Poll </a>	
+		                        <a href="#">Email</a>
+		                        <a href="#" onClick="javascript:loadcompliantbox('noticeboard')">Compliant</a>
+		                    </p>
+		                </div>
+		            </div>
+		
+			</div>
+			
+			
+			<div id="submenu">
+			</div>
+					
+			<div id="filler-below" class="filler-below" style="background-image:url(images/background/bluepebbles.jpeg)">			
+			</div>
+			
+			<div id="advertisements">
+
+			</div>
+		</div>
+	
+		</body>
+</html>
+
+
+
+           <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+ 
+ 	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+       <script>
+            $('.item').hover(
+                function(){
+                    var $this = $(this);
+                    expand($this);
+                },
+                function(){
+                    var $this = $(this);
+                    collapse($this);
+                }
+            );
+            function expand($elem){
+                var angle = 0;
+                var t = setInterval(function () {
+                    if(angle == 1440){
+                        clearInterval(t);
+                        return;
+                    }
+                    angle += 40;
+                    $('.link',$elem).stop().animate({rotate: '+=-40deg'}, 0);
+                },10);
+                $elem.stop().animate({width:'268px'}, 1000)
+                .find('.item_content').fadeIn(400,function(){
+                    $(this).find('p').stop(true,true).fadeIn(600);
+                });
+            }
+            function collapse($elem){
+                var angle = 1440;
+                var t = setInterval(function () {
+                    if(angle == 0){
+                        clearInterval(t);
+                        return;
+                    }
+                    angle -= 40;
+                    $('.link',$elem).stop().animate({rotate: '+=40deg'}, 0);
+                },10);
+                $elem.stop().animate({width:'52px'}, 1000)
+                .find('.item_content').stop(true,true).fadeOut().find('p').stop(true,true).fadeOut();
+            }
+ 							
+			<!---- Load Default Window ----->
+			var cont = $('#submenu');	
+				cont.load('submenu.html #communication', function(){
+				loadnoticeboard();
+				 $('.submenuitem').hover(
+			                function(){
+			                    var $this = $(this);
+			                    expand($this);
+			                },
+			                function(){
+			                    var $this = $(this);
+			                    collapse($this);
+			                }
+			            );
+			            function expand($elem){
+			                var angle = 0;
+			                var t = setInterval(function () {
+			                    if(angle == 1440){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle += 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=-40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'268px'}, 1000)
+			                .find('.item_content').fadeIn(400,function(){
+			                    $(this).find('p').stop(true,true).fadeIn(600);
+			                });
+			            }
+			            function collapse($elem){
+			                var angle = 1440;
+			                var t = setInterval(function () {
+			                    if(angle == 0){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle -= 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'75px'}, 1000)
+			                .find('.item_content').stop(true,true).fadeOut().find('p').stop(true,true).fadeOut();
+			            }
+
+				});
+							
+			<!---- Load communication Window ----->
+			$('.container #mainmenu #communication').click(function(e){ 
+			loadnoticeboard();
+				cont.load('submenu.html #communication', function(){
+				 $('.submenuitem').hover(
+			                function(){
+			                    var $this = $(this);
+			                    expand($this);
+			                },
+			                function(){
+			                    var $this = $(this);
+			                    collapse($this);
+			                }
+			            );
+			            function expand($elem){
+			                var angle = 0;
+			                var t = setInterval(function () {
+			                    if(angle == 1440){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle += 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=-40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'268px'}, 1000)
+			                .find('.item_content').fadeIn(400,function(){
+			                    $(this).find('p').stop(true,true).fadeIn(600);
+			                });
+			            }
+			            function collapse($elem){
+			                var angle = 1440;
+			                var t = setInterval(function () {
+			                    if(angle == 0){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle -= 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'75px'}, 1000)
+			                .find('.item_content').stop(true,true).fadeOut().find('p').stop(true,true).fadeOut();
+			            }
+
+				});
+				});
+				
+			<!---- Load database Window ----->
+			$('.container #mainmenu #database').click(function(e){ 
+				console.log("inside click");
+				loadHomeHelper();
+				cont.load('submenu.html #database', function(){
+				 $('.submenuitem').hover(
+			                function(){
+			                    var $this = $(this);
+			                    expand($this);
+			                },
+			                function(){
+			                    var $this = $(this);
+			                    collapse($this);
+			                }
+			            );
+			            function expand($elem){
+			                var angle = 0;
+			                var t = setInterval(function () {
+			                    if(angle == 1440){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle += 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=-40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'268px'}, 1000)
+			                .find('.item_content').fadeIn(400,function(){
+			                    $(this).find('p').stop(true,true).fadeIn(600);
+			                });
+			            }
+			            function collapse($elem){
+			                var angle = 1440;
+			                var t = setInterval(function () {
+			                    if(angle == 0){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle -= 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'75px'}, 1000)
+			                .find('.item_content').stop(true,true).fadeOut().find('p').stop(true,true).fadeOut();
+			            }
+
+				});
+				});
+			
+			<!---- Load myhome Window ----->
+			$('.container #mainmenu #myself').click(function(e){ 
+				console.log("inside click");
+				loadmyinfo("myhome");
+				cont.load('submenu.html #myself', function(){
+				 $('.submenuitem').hover(
+			                function(){
+			                    var $this = $(this);
+			                    expand($this);
+			                },
+			                function(){
+			                    var $this = $(this);
+			                    collapse($this);
+			                }
+			            );
+			            function expand($elem){
+			                var angle = 0;
+			                var t = setInterval(function () {
+			                    if(angle == 1440){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle += 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=-40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'268px'}, 1000)
+			                .find('.item_content').fadeIn(400,function(){
+			                    $(this).find('p').stop(true,true).fadeIn(600);
+			                });
+			            }
+			            function collapse($elem){
+			                var angle = 1440;
+			                var t = setInterval(function () {
+			                    if(angle == 0){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle -= 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'75px'}, 1000)
+			                .find('.item_content').stop(true,true).fadeOut().find('p').stop(true,true).fadeOut();
+			            }
+
+				});
+				});
+			<!---- Load finance Window ----->
+			$('.container #mainmenu #finance').click(function(e){ 
+				console.log("inside click");
+				loadfinancedetails("finance");
+				cont.load('submenu.html #finance', function(){
+				 $('.submenuitem').hover(
+			                function(){
+			                    var $this = $(this);
+			                    expand($this);
+			                },
+			                function(){
+			                    var $this = $(this);
+			                    collapse($this);
+			                }
+			            );
+			            function expand($elem){
+			                var angle = 0;
+			                var t = setInterval(function () {
+			                    if(angle == 1440){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle += 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=-40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'268px'}, 1000)
+			                .find('.item_content').fadeIn(400,function(){
+			                    $(this).find('p').stop(true,true).fadeIn(600);
+			                });
+			            }
+			            function collapse($elem){
+			                var angle = 1440;
+			                var t = setInterval(function () {
+			                    if(angle == 0){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle -= 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'75px'}, 1000)
+			                .find('.item_content').stop(true,true).fadeOut().find('p').stop(true,true).fadeOut();
+			            }
+
+				});
+				});
+
+			<!---- Load settings Window ----->
+			$('.container #mainmenu #settings').click(function(e){ 
+				loadcreategroup();
+				cont.load('submenu.html #settings', function(){
+				 $('.submenuitem').hover(
+			                function(){
+			                    var $this = $(this);
+			                    expand($this);
+			                },
+			                function(){
+			                    var $this = $(this);
+			                    collapse($this);
+			                }
+			            );
+			            function expand($elem){
+			                var angle = 0;
+			                var t = setInterval(function () {
+			                    if(angle == 1440){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle += 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=-40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'268px'}, 1000)
+			                .find('.item_content').fadeIn(400,function(){
+			                    $(this).find('p').stop(true,true).fadeIn(600);
+			                });
+			            }
+			            function collapse($elem){
+			                var angle = 1440;
+			                var t = setInterval(function () {
+			                    if(angle == 0){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle -= 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'75px'}, 1000)
+			                .find('.item_content').stop(true,true).fadeOut().find('p').stop(true,true).fadeOut();
+			            }
+
+				});
+				});
+				
+				<!---- Load Security Window ----->
+			$('.container #mainmenu #security').click(function(e){ 
+				console.log("inside click");
+				cont.load('submenu.html #security', function(){
+								           $('.submenuitem').hover(
+			                function(){
+			                    var $this = $(this);
+			                    expand($this);
+			                },
+			                function(){
+			                    var $this = $(this);
+			                    collapse($this);
+			                }
+			            );
+			            function expand($elem){
+			                var angle = 0;
+			                var t = setInterval(function () {
+			                    if(angle == 1440){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle += 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=-40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'268px'}, 1000)
+			                .find('.item_content').fadeIn(400,function(){
+			                    $(this).find('p').stop(true,true).fadeIn(600);
+			                });
+			            }
+			            function collapse($elem){
+			                var angle = 1440;
+			                var t = setInterval(function () {
+			                    if(angle == 0){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle -= 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'75px'}, 1000)
+			                .find('.item_content').stop(true,true).fadeOut().find('p').stop(true,true).fadeOut();
+			            }
+
+				});
+				});
+
+				<!---- Load Association Window ----->
+			$('.container #mainmenu #association').click(function(e){ 
+				loadsealofapproval("approval");
+				cont.load('submenu.html #association', function(){
+				           $('.submenuitem').hover(
+			                function(){
+			                    var $this = $(this);
+			                    expand($this);
+			                },
+			                function(){
+			                    var $this = $(this);
+			                    collapse($this);
+			                }
+			            );
+			            function expand($elem){
+			                var angle = 0;
+			                var t = setInterval(function () {
+			                    if(angle == 1440){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle += 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=-40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'268px'}, 1000)
+			                .find('.item_content').fadeIn(400,function(){
+			                    $(this).find('p').stop(true,true).fadeIn(600);
+			                });
+			            }
+			            function collapse($elem){
+			                var angle = 1440;
+			                var t = setInterval(function () {
+			                    if(angle == 0){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle -= 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'75px'}, 1000)
+			                .find('.item_content').stop(true,true).fadeOut().find('p').stop(true,true).fadeOut();
+			            }
+				});
+				});
+				<!---- Load storage Window ----->
+			$('.container #mainmenu #storage').click(function(e){ 
+				console.log("inside click");
+				cont.load('submenu.html #storage', function(){
+				           $('.submenuitem').hover(
+			                function(){
+			                    var $this = $(this);
+			                    expand($this);
+			                },
+			                function(){
+			                    var $this = $(this);
+			                    collapse($this);
+			                }
+			            );
+			            function expand($elem){
+			                var angle = 0;
+			                var t = setInterval(function () {
+			                    if(angle == 1440){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle += 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=-40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'268px'}, 1000)
+			                .find('.item_content').fadeIn(400,function(){
+			                    $(this).find('p').stop(true,true).fadeIn(600);
+			                });
+			            }
+			            function collapse($elem){
+			                var angle = 1440;
+			                var t = setInterval(function () {
+			                    if(angle == 0){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle -= 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'75px'}, 1000)
+			                .find('.item_content').stop(true,true).fadeOut().find('p').stop(true,true).fadeOut();
+			            }
+				});
+				});
+
+ 
+</script>

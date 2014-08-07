@@ -1,8 +1,11 @@
-function signinCallback(authResult) {
+		function onSignInCallback(authResult) {
   if (authResult['access_token']) {
+  	alert("success google auth!!");
+  	
     // Successfully authorized
-    document.getElementById('signinButton').setAttribute('style', 'display: none');
-
+    //document.getElementById('signinButton').setAttribute('style', 'display: none');
+   gapi.client.load('plus', 'v1', apiClientLoaded);  
+    window.open("http://apples-imac.local/~padmashreebhat/MyProject/MyNest/client/mainpage.html","_self");
   } else if (authResult['error']) {
     // There was an error.
     // Possible error codes:
@@ -11,6 +14,24 @@ function signinCallback(authResult) {
     // console.log('There was an error: ' + authResult['error']);
   }
 }
+
+function apiClientLoaded() {
+    gapi.client.plus.people.get({userId: 'me'}).execute(handleEmailResponse);
+  }
+
+  /**
+   * Response callback for when the API client receives a response.
+   *
+   * @param resp The API response object with the user email and profile information.
+   */
+  function handleEmailResponse(resp) {
+    var primaryEmail;
+    for (var i=0; i < resp.emails.length; i++) {
+      if (resp.emails[i].type === 'account') primaryEmail = resp.emails[i].value;
+    }
+   /* document.getElementById('responseContainer').value = 'Primary email: ' +
+        primaryEmail + '\n\nFull Response:\n' + JSON.stringify(resp);*/
+  }
 
 function disconnectUser(access_token) {
   var revokeUrl = 'https://accounts.google.com/o/oauth2/revoke?token=' +
@@ -26,6 +47,8 @@ function disconnectUser(access_token) {
     success: function(nullResponse) {
       // Do something now that user is disconnected
       // The response is always undefined.
+      alert("succesfully disconnected");
+ //      gapi.auth.signOut();
     },
     error: function(e) {
       // Handle the error
@@ -35,5 +58,4 @@ function disconnectUser(access_token) {
     }
   });
 }
-// Could trigger the disconnect on a button click
-$('#revokeButton').click(disconnectUser);
+

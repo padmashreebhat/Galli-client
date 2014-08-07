@@ -166,14 +166,14 @@ function ViewCompliantWindow(obj){
         $("#viewCompliantDetail #CompDet").html(CompDetails+"<br>");
 }
 
-function loadcompliantbox(divID)
+/*function loadcompliantbox(divID)
 {
 var cont = $('#filler-below');
  				cont.load('communication.html #CompliantBox', function(){
 });
  window.open("https://groups.google.com/forum/#!forum/gallitestqanda");
-}
- /*function loadcompliantbox(divID) {
+}*/
+ function loadcompliantbox(divID) {
             var cont = $('#filler-below');
  				cont.load('communication.html #CompliantBox', function(){
 				console.log("inside CompliantBox");			
@@ -196,7 +196,7 @@ var cont = $('#filler-below');
 					});			          
 				});
 
-        }*/
+        }
 
 function createcomplainttable(){
 			     var tablecontents = "";

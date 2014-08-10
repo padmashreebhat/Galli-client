@@ -25,16 +25,8 @@
 		<link rel="stylesheet" type="text/css" href="css/imagegrid.css" />
 		<script type="text/javascript" src="js/modernizr.custom.26633.js"></script>
     </head>
-    <body>
-    <script type="text/javascript">
-      (function() {
-       var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-       po.src = 'https://apis.google.com/js/client:plusone.js';
-       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-     })();
-    </script>
-    			<header>
-				<span>Sphinx <span class="bp-icon bp-icon-about" data-content="Company Profile to be updated"></span></span>
+    <body style="background-image:url(images/background/login.jpg)">
+			<header>
 				<h1>Galli</h1>
 				<div
 				  class="fb-like"
@@ -42,8 +34,16 @@
 				  data-width="450"
 				  data-show-faces="true">
 				</div>
-			</header>	
 
+			</header>	
+    <script type="text/javascript">
+      (function() {
+       var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+       po.src = 'https://apis.google.com/js/client:plusone.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+     })();
+    </script>
+ 
 		<img src="images/loading.gif" style="display:none;"/>
 				<div id="ri-grid" class="ri-grid ri-grid-size-2">
 					<img class="ri-loading-image" src="images/loading.gif"/>
@@ -134,7 +134,7 @@
 							<br>
 
 							<!----- google Login --------------------------------------------------->
-							<button class="g-signin" id="signinButton"
+							<button class="g-signin" id="signinButton" onclick="ongooglebuttonclick()"
 						        data-scope="https://www.googleapis.com/auth/plus.login"
 						        data-clientid="1084232835515-t2tvcifav346l5qo2v58pmp6prlh40uo.apps.googleusercontent.com"
 						        data-callback="onSignInCallback"

@@ -30,7 +30,7 @@ a:hover {
 	color: #000;
 }
 
-.container > header {
+ header {
 	width: 95%;
 	height: 15%;
 	margin: 0 auto;
@@ -50,18 +50,24 @@ a:hover {
 
 .notice {
 	position: relative;
-	height: 8.5%;
+	height: 6%;
 	overflow-y:auto;
 	background-color: white;
 	text-fill-color: black;
 	text-size:32px;
 		width: 95%;
 	margin: 0 auto;
-	padding: 2.875em 1.875em 1.875em;
+	padding: 2px 1px 1px 1px;
+	background-color: rgba(218,235,245,0);
+}
+#statuswin{
+	position: absolute;
+	top:2px;
+	left:1000px;
 }
 #mainmenu {
-background-color: rgba(218,235,245,0.43);
-height: 10%;
+background-color: rgba(218,235,245,0.1);
+height: 8%;
 width:100%;
 display: inline-block;
 clear:both;
@@ -69,7 +75,7 @@ text-fill-color: red;
 }
 
 #advertisements {
-background-color: #48a4d9;
+background-color: rgba(218,235,245,0.4);
 height: 30%;
 width:100%;
 display: inline-block;
@@ -91,15 +97,15 @@ margin-right: 100;
 }
 
 #submenu{
-background-color: rgba(218,235,245,0.43);
-	height: 20%;
+background-color: rgba(218,235,245,0);
+	height: 12%;
 	width:100%;
 	clear:both;
 	overflow-y:auto;
 }
 
 .filler-below {
-	width: 75%;
+	width: 85%;
 	height: auto;
 	background: #f0f0f0;
 	overflow-y:auto;
@@ -108,8 +114,11 @@ background-color: rgba(218,235,245,0.43);
 	border-style: groove;
 }
 
+.container > header {
+	height: 20px;
+}
 
-.container > header h1 {
+header h1 {
 	font-style:italic;
 	font-size: 4em;
 	margin: 0px 0px -100px 200px;

@@ -5,7 +5,6 @@
     // Successfully authorized
     //document.getElementById('signinButton').setAttribute('style', 'display: none');
    gapi.client.load('plus', 'v1', apiClientLoaded);  
-    window.open("http://apples-imac.local/~padmashreebhat/MyProject/MyNest/client/mainpage.html","_self");
   } else if (authResult['error']) {
     // There was an error.
     // Possible error codes:
@@ -32,10 +31,17 @@ function apiClientLoaded() {
    /* document.getElementById('responseContainer').value = 'Primary email: ' +
         primaryEmail + '\n\nFull Response:\n' + JSON.stringify(resp);*/
   }
-
+function ongooglebuttonclick()
+{
+alert("googlebutton clicked");
+}
 function disconnectUser(access_token) {
   var revokeUrl = 'https://accounts.google.com/o/oauth2/revoke?token=' +
       access_token;
+//disconnect fb
+disconnectfb();
+
+
 
   // Perform an asynchronous GET request.
   $.ajax({

@@ -38,9 +38,9 @@ function loadsealofapproval(divID) {
 				console.log("inside sealofapproval");
 				CloseRequestDetail();
 				$("#rejectbox").hide();
-						}
-				)};
-
+						});
+						$('#filler-below').show();
+				}
 
 function  CreateSealofApproval()
 {
@@ -143,9 +143,6 @@ CloseRequestDetail();
 function ViewReq(obj){
 /* View Row details */
 }
-$("#transvalue ").click(function(){
-	console.log("transaction value clicked");
-});
 
 
 /*---------------------------------------------------------------------------------        
@@ -185,7 +182,7 @@ $("#transvalue ").click(function(){
 					createMeetingTable();
 					});			          
 				});
-
+$('#filler-below').show();
         }
 function createMeetingTable(){
 			     var tablecontents = "";
@@ -258,7 +255,7 @@ function scheduleMeeting()
 					createMeetingTable();
 					});			          
 				});
-
+				$('#filler-below').show();
         }
 
 
@@ -315,6 +312,7 @@ function loadMOM(divID) {
 				cont.load('association.html #MOM', function(){
 				            CreateMOMtable();          
 						}
+						
 				)};
 				
 function AddActionPoint(){

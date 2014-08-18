@@ -66,6 +66,8 @@
 					getTransInfo(transNum);
 				});
         });
+        				$('#filler-below').show();
+
         }
 
 /*---------------------------------------------------------------------------------        
@@ -157,6 +159,7 @@ function generateReport()
 					$('#finance #tabscontent #debit').hide();
 					});			          
 				});
+				$('#filler-below').show();
 
         }
 

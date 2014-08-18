@@ -35,6 +35,7 @@
 					createpollresulttable();
 					});			      	          
 				});
+				$('#filler-below').show();
 
         }
 
@@ -195,7 +196,7 @@ var cont = $('#filler-below');
 					createcomplainttable();
 					});			          
 				});
-
+				$('#filler-below').show();
         }
 
 function createcomplainttable(){
@@ -287,7 +288,7 @@ function ViewNoticeDetailsWindow(obj){
 					createnoticetable();
 					});			          
 				});
-
+				$('#filler-below').show();
         }
 
 function createnoticetable(){
@@ -331,5 +332,6 @@ function loadSMS(){
 	           var cont = $('#filler-below');
 				cont.load('communication.html #SMS', function(){
 				console.log("inside SMS");			
-					});			          
+					});	
+					$('#filler-below').show();		          
 }

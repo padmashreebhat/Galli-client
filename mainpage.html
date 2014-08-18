@@ -122,15 +122,13 @@
 
 			</div>
 			</header>
+			<div id="filler-below" class="filler-below">			
+			</div>
 			<div id="mainmenu">
 		            <div id='security' class="item">
 		                <a class="link icon_security"></a>
 		                <div class="item_content">
 		                    <h2>Security</h2>
-		                    <p>
-		                        <a href="#">Vehicle</a>
-		                        <a href="#">Visitors</a>
-		                    </p>
 		                </div>
 		            </div>
 		
@@ -138,10 +136,6 @@
 		                <a class="link icon_storage"></a>
 		                <div class="item_content">
 		                    <h2>Storage</h2>
-		                    <p>
-		                        <a href="#">Photos</a>
-		                        <a href="#">Documents</a>
-		                    </p>
 		                </div>
 		            </div>
 		            
@@ -149,11 +143,6 @@
 		                <a class="link icon_myflat"></a>
 		                <div class="item_content">
 		                    <h2>My Apartment</h2>
-		                    <p>
-		                        <a href="#">Dues</a>
-		                        <a href="#" onClick="javascript:loadmyinfo('creditwin')">Family</a>	
-		                        <a href="#">Visitors</a>		                        
-							</p>
 		                </div>
 		            </div>
 		   
@@ -161,11 +150,6 @@
 		                <a class="link icon_database"></a>
 		                <div class="item_content">
 		                    <h2>Database</h2>
-		                    <p>
-		                        <a href="#" onClick="javascript:loadhomehelperswin('creditwin')">Helpers</a>
-		                        <a href="#">Resident</a>
-		                        <a href="#">Service</a>
-		                    </p>
 		                </div>
 		            </div>
 
@@ -173,9 +157,6 @@
 		                <a class="link icon_settings"></a>
 		                <div class="item_content">
 		                    <h2>Settings</h2>
-		                    <p>
-		                        <a href="#" onClick="javascript:loadcreategroup('creategroup')">Helpers</a>
-		                    </p>
 		                </div>
 		            </div>
 		
@@ -183,11 +164,6 @@
 		                <a class="link icon_finance"></a>
 		                <div class="item_content">
 		                    <h2>Finance</h2>
-		                    <p>
-		                        <a href="#" onClick="javascript:loadfinancedetails('creditwin')">Credit</a>
-		                        <a href="#" onClick="javascript:loaddebitwin('debitwin')">Debit</a>
-		                       <a href="#" onclick="">Reports</a>
-		                    </p>
 		                </div>
 		            </div>
 		       
@@ -195,10 +171,6 @@
 		                <a class="link icon_association"></a>
 		                <div class="item_content">
 		                    <h2>Association</h2>
-		                    <p>
-		                        <a href="#">Minutes</a>
-		                        <a href="#">Members</a>
-		                    </p>
 		                </div>
 		            </div>
 		            
@@ -206,11 +178,6 @@
 		                <a class="link icon_communication"></a>
 		                <div class="item_content">
 		                    <h2>Communication</h2>
-		                    <p>
-		                    	<a href="#" onClick="javascript:loadopinionpoll('opinionpoll')">Poll </a>	
-		                        <a href="#">Email</a>
-		                        <a href="#" onClick="javascript:loadcompliantbox('noticeboard')">Compliant</a>
-		                    </p>
 		                </div>
 		            </div>
 		
@@ -218,31 +185,28 @@
 			<div id="submenu">
 			
 			</div>
-			<div id="notice" class="notice">
-				<marquee behavior="scroll" direction="left" scrollamount="4"> <h2>Important messages from Association has to be displayed here </h2> </marquee>
-			</div>
 		
-			
-			<div id="filler-below" class="filler-below" style="background-image:url(images/background/bluepebbles.jpeg)">			
+		
+			<div class="Noticeboard" id="Noticeboard">	
+			<div class="heading"> <h4>  Noticeboard </h4></div>	
 			</div>
-			
-			<div id="advertisements">
 
-			</div>
 		</div>
 	
 		</body>
 </html>
 
 
-
-           <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
  
- 	
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
        <script>
-       // Could trigger the disconnect on a button click
        
+       function hidepopupwin()
+       {
+	      $('.container #filler-below').hide();
+       }
+	   $('.container #filler-below').hide();
 
             $('.item').hover(
                 function(){
@@ -264,11 +228,12 @@
                     angle += 40;
                     $('.link',$elem).stop().animate({rotate: '+=-40deg'}, 0);
                 },10);
-                $elem.stop().animate({width:'268px'}, 1000)
+                $elem.stop().animate({width:'200px'}, 1000)
                 .find('.item_content').fadeIn(400,function(){
                     $(this).find('p').stop(true,true).fadeIn(600);
                 });
             }
+
             function collapse($elem){
                 var angle = 1440;
                 var t = setInterval(function () {
@@ -283,21 +248,7 @@
                 .find('.item_content').stop(true,true).fadeOut().find('p').stop(true,true).fadeOut();
             }
  							
-			<!---- Load Default Window ----->
-			var cont = $('#submenu');	
-				cont.load('submenu.html #communication', function(){
-				loadnoticeboard();
-				 $('.submenuitem').hover(
-			                function(){
-			                    var $this = $(this);
-			                    expand($this);
-			                },
-			                function(){
-			                    var $this = $(this);
-			                    collapse($this);
-			                }
-			            );
-			            function expand($elem){
+ 			            function expandsubmenu($elem){
 			                var angle = 0;
 			                var t = setInterval(function () {
 			                    if(angle == 1440){
@@ -307,12 +258,12 @@
 			                    angle += 40;
 			                    $('.link',$elem).stop().animate({rotate: '+=-40deg'}, 0);
 			                },10);
-			                $elem.stop().animate({width:'268px'}, 1000)
+			                $elem.stop().animate({width:'200px'}, 1000)
 			                .find('.item_content').fadeIn(400,function(){
 			                    $(this).find('p').stop(true,true).fadeIn(600);
 			                });
 			            }
-			            function collapse($elem){
+			            function collapsesubmenu($elem){
 			                var angle = 1440;
 			                var t = setInterval(function () {
 			                    if(angle == 0){
@@ -326,191 +277,118 @@
 			                .find('.item_content').stop(true,true).fadeOut().find('p').stop(true,true).fadeOut();
 			            }
 
-				});
 							
+			var cont = $('#submenu');	
+		
 			<!---- Load communication Window ----->
 			$('.container #mainmenu #communication').click(function(e){ 
-			loadnoticeboard();
+			
 				cont.load('submenu.html #communication', function(){
+				$('.container #submenu #communication #nb').click(function(e){
+				loadnoticeboard();
+				});		
+				$('.container #submenu #communication #sms').click(function(e){
+				loadSMS();
+				});		
+				$('.container #submenu #communication #cb').click(function(e){
+				loadcompliantbox();
+				});		
+				$('.container #submenu #communication #poll').click(function(e){
+				loadopinionpoll();
+				});		
 				 $('.submenuitem').hover(
 			                function(){
 			                    var $this = $(this);
-			                    expand($this);
+			                    expandsubmenu($this);
 			                },
 			                function(){
 			                    var $this = $(this);
-			                    collapse($this);
+			                    collapsesubmenu($this);
 			                }
 			            );
-			            function expand($elem){
-			                var angle = 0;
-			                var t = setInterval(function () {
-			                    if(angle == 1440){
-			                        clearInterval(t);
-			                        return;
-			                    }
-			                    angle += 40;
-			                    $('.link',$elem).stop().animate({rotate: '+=-40deg'}, 0);
-			                },10);
-			                $elem.stop().animate({width:'268px'}, 1000)
-			                .find('.item_content').fadeIn(400,function(){
-			                    $(this).find('p').stop(true,true).fadeIn(600);
-			                });
-			            }
-			            function collapse($elem){
-			                var angle = 1440;
-			                var t = setInterval(function () {
-			                    if(angle == 0){
-			                        clearInterval(t);
-			                        return;
-			                    }
-			                    angle -= 40;
-			                    $('.link',$elem).stop().animate({rotate: '+=40deg'}, 0);
-			                },10);
-			                $elem.stop().animate({width:'75px'}, 1000)
-			                .find('.item_content').stop(true,true).fadeOut().find('p').stop(true,true).fadeOut();
-			            }
 
 				});
 				});
-				
+
+				var cont = $('#submenu');	
+			
 			<!---- Load database Window ----->
 			$('.container #mainmenu #database').click(function(e){ 
-				console.log("inside click");
-				loadHomeHelper();
 				cont.load('submenu.html #database', function(){
+				
+				$('.container #submenu #database #resident').click(function(e){
+				loadresidentwin();
+				});		
+				$('.container #submenu #database #employee').click(function(e){
+				loadSMS();
+				});		
+				$('.container #submenu #database #housekeeping').click(function(e){
+				loadHomeHelper();
+				});		
+				$('.container #submenu #database #instructor').click(function(e){
+				loadInstructorDetails();
+				});		
+				$('.container #submenu #database #serviceprovider').click(function(e){
+				loadServiceProvider();
+				});		
+
 				 $('.submenuitem').hover(
 			                function(){
 			                    var $this = $(this);
-			                    expand($this);
+			                    expandsubmenu($this);
 			                },
 			                function(){
 			                    var $this = $(this);
-			                    collapse($this);
+			                    collapsesubmenu($this);
 			                }
 			            );
-			            function expand($elem){
-			                var angle = 0;
-			                var t = setInterval(function () {
-			                    if(angle == 1440){
-			                        clearInterval(t);
-			                        return;
-			                    }
-			                    angle += 40;
-			                    $('.link',$elem).stop().animate({rotate: '+=-40deg'}, 0);
-			                },10);
-			                $elem.stop().animate({width:'268px'}, 1000)
-			                .find('.item_content').fadeIn(400,function(){
-			                    $(this).find('p').stop(true,true).fadeIn(600);
-			                });
-			            }
-			            function collapse($elem){
-			                var angle = 1440;
-			                var t = setInterval(function () {
-			                    if(angle == 0){
-			                        clearInterval(t);
-			                        return;
-			                    }
-			                    angle -= 40;
-			                    $('.link',$elem).stop().animate({rotate: '+=40deg'}, 0);
-			                },10);
-			                $elem.stop().animate({width:'75px'}, 1000)
-			                .find('.item_content').stop(true,true).fadeOut().find('p').stop(true,true).fadeOut();
-			            }
-
 				});
 				});
 			
 			<!---- Load myhome Window ----->
 			$('.container #mainmenu #myself').click(function(e){ 
-				console.log("inside click");
-				loadmyinfo("myhome");
 				cont.load('submenu.html #myself', function(){
+				$('.container #submenu #myself #family').click(function(e){
+				loadmyinfo();
+				});		
+				$('.container #submenu #myself #Dues').click(function(e){
+				});		
+				$('.container #submenu #myself #visitors').click(function(e){
+				});		
+
+
 				 $('.submenuitem').hover(
 			                function(){
 			                    var $this = $(this);
-			                    expand($this);
+			                    expandsubmenu($this);
 			                },
 			                function(){
 			                    var $this = $(this);
-			                    collapse($this);
+			                    collapsesubmenu($this);
 			                }
 			            );
-			            function expand($elem){
-			                var angle = 0;
-			                var t = setInterval(function () {
-			                    if(angle == 1440){
-			                        clearInterval(t);
-			                        return;
-			                    }
-			                    angle += 40;
-			                    $('.link',$elem).stop().animate({rotate: '+=-40deg'}, 0);
-			                },10);
-			                $elem.stop().animate({width:'268px'}, 1000)
-			                .find('.item_content').fadeIn(400,function(){
-			                    $(this).find('p').stop(true,true).fadeIn(600);
-			                });
-			            }
-			            function collapse($elem){
-			                var angle = 1440;
-			                var t = setInterval(function () {
-			                    if(angle == 0){
-			                        clearInterval(t);
-			                        return;
-			                    }
-			                    angle -= 40;
-			                    $('.link',$elem).stop().animate({rotate: '+=40deg'}, 0);
-			                },10);
-			                $elem.stop().animate({width:'75px'}, 1000)
-			                .find('.item_content').stop(true,true).fadeOut().find('p').stop(true,true).fadeOut();
-			            }
 
 				});
 				});
 			<!---- Load finance Window ----->
 			$('.container #mainmenu #finance').click(function(e){ 
-				console.log("inside click");
-				loadfinancedetails("finance");
 				cont.load('submenu.html #finance', function(){
+				$('.container #submenu #finance #report').click(function(e){
+				});		
+				$('.container #submenu #finance #transaction').click(function(e){
+				loadfinancedetails();
+				});		
+
 				 $('.submenuitem').hover(
 			                function(){
 			                    var $this = $(this);
-			                    expand($this);
+			                    expandsubmenu($this);
 			                },
 			                function(){
 			                    var $this = $(this);
-			                    collapse($this);
+			                    collapsesubmenu($this);
 			                }
 			            );
-			            function expand($elem){
-			                var angle = 0;
-			                var t = setInterval(function () {
-			                    if(angle == 1440){
-			                        clearInterval(t);
-			                        return;
-			                    }
-			                    angle += 40;
-			                    $('.link',$elem).stop().animate({rotate: '+=-40deg'}, 0);
-			                },10);
-			                $elem.stop().animate({width:'268px'}, 1000)
-			                .find('.item_content').fadeIn(400,function(){
-			                    $(this).find('p').stop(true,true).fadeIn(600);
-			                });
-			            }
-			            function collapse($elem){
-			                var angle = 1440;
-			                var t = setInterval(function () {
-			                    if(angle == 0){
-			                        clearInterval(t);
-			                        return;
-			                    }
-			                    angle -= 40;
-			                    $('.link',$elem).stop().animate({rotate: '+=40deg'}, 0);
-			                },10);
-			                $elem.stop().animate({width:'75px'}, 1000)
-			                .find('.item_content').stop(true,true).fadeOut().find('p').stop(true,true).fadeOut();
-			            }
-
 				});
 				});
 
@@ -521,41 +399,13 @@
 				 $('.submenuitem').hover(
 			                function(){
 			                    var $this = $(this);
-			                    expand($this);
+			                    expandsubmenu($this);
 			                },
 			                function(){
 			                    var $this = $(this);
-			                    collapse($this);
+			                    collapsesubmenu($this);
 			                }
 			            );
-			            function expand($elem){
-			                var angle = 0;
-			                var t = setInterval(function () {
-			                    if(angle == 1440){
-			                        clearInterval(t);
-			                        return;
-			                    }
-			                    angle += 40;
-			                    $('.link',$elem).stop().animate({rotate: '+=-40deg'}, 0);
-			                },10);
-			                $elem.stop().animate({width:'268px'}, 1000)
-			                .find('.item_content').fadeIn(400,function(){
-			                    $(this).find('p').stop(true,true).fadeIn(600);
-			                });
-			            }
-			            function collapse($elem){
-			                var angle = 1440;
-			                var t = setInterval(function () {
-			                    if(angle == 0){
-			                        clearInterval(t);
-			                        return;
-			                    }
-			                    angle -= 40;
-			                    $('.link',$elem).stop().animate({rotate: '+=40deg'}, 0);
-			                },10);
-			                $elem.stop().animate({width:'75px'}, 1000)
-			                .find('.item_content').stop(true,true).fadeOut().find('p').stop(true,true).fadeOut();
-			            }
 
 				});
 				});
@@ -567,87 +417,39 @@
 								           $('.submenuitem').hover(
 			                function(){
 			                    var $this = $(this);
-			                    expand($this);
+			                    expandsubmenu($this);
 			                },
 			                function(){
 			                    var $this = $(this);
-			                    collapse($this);
+			                    collapsesubmenu($this);
 			                }
 			            );
-			            function expand($elem){
-			                var angle = 0;
-			                var t = setInterval(function () {
-			                    if(angle == 1440){
-			                        clearInterval(t);
-			                        return;
-			                    }
-			                    angle += 40;
-			                    $('.link',$elem).stop().animate({rotate: '+=-40deg'}, 0);
-			                },10);
-			                $elem.stop().animate({width:'268px'}, 1000)
-			                .find('.item_content').fadeIn(400,function(){
-			                    $(this).find('p').stop(true,true).fadeIn(600);
-			                });
-			            }
-			            function collapse($elem){
-			                var angle = 1440;
-			                var t = setInterval(function () {
-			                    if(angle == 0){
-			                        clearInterval(t);
-			                        return;
-			                    }
-			                    angle -= 40;
-			                    $('.link',$elem).stop().animate({rotate: '+=40deg'}, 0);
-			                },10);
-			                $elem.stop().animate({width:'75px'}, 1000)
-			                .find('.item_content').stop(true,true).fadeOut().find('p').stop(true,true).fadeOut();
-			            }
-
 				});
 				});
 
 				<!---- Load Association Window ----->
 			$('.container #mainmenu #association').click(function(e){ 
-				loadsealofapproval("approval");
 				cont.load('submenu.html #association', function(){
+				$('.container #submenu #association #seal').click(function(e){
+				loadsealofapproval();
+				});		
+				$('.container #submenu #association #members').click(function(e){
+				loadAssociationMem();
+				});		
+				$('.container #submenu #association #meeting').click(function(e){
+				ScheduleMeeting();
+				});	
+
 				           $('.submenuitem').hover(
 			                function(){
 			                    var $this = $(this);
-			                    expand($this);
+			                    expandsubmenu($this);
 			                },
 			                function(){
 			                    var $this = $(this);
-			                    collapse($this);
+			                    collapsesubmenu($this);
 			                }
 			            );
-			            function expand($elem){
-			                var angle = 0;
-			                var t = setInterval(function () {
-			                    if(angle == 1440){
-			                        clearInterval(t);
-			                        return;
-			                    }
-			                    angle += 40;
-			                    $('.link',$elem).stop().animate({rotate: '+=-40deg'}, 0);
-			                },10);
-			                $elem.stop().animate({width:'268px'}, 1000)
-			                .find('.item_content').fadeIn(400,function(){
-			                    $(this).find('p').stop(true,true).fadeIn(600);
-			                });
-			            }
-			            function collapse($elem){
-			                var angle = 1440;
-			                var t = setInterval(function () {
-			                    if(angle == 0){
-			                        clearInterval(t);
-			                        return;
-			                    }
-			                    angle -= 40;
-			                    $('.link',$elem).stop().animate({rotate: '+=40deg'}, 0);
-			                },10);
-			                $elem.stop().animate({width:'75px'}, 1000)
-			                .find('.item_content').stop(true,true).fadeOut().find('p').stop(true,true).fadeOut();
-			            }
 				});
 				});
 				<!---- Load storage Window ----->
@@ -657,41 +459,13 @@
 				           $('.submenuitem').hover(
 			                function(){
 			                    var $this = $(this);
-			                    expand($this);
+			                    expandsubmenu($this);
 			                },
 			                function(){
 			                    var $this = $(this);
-			                    collapse($this);
+			                    collapsesubmenu($this);
 			                }
 			            );
-			            function expand($elem){
-			                var angle = 0;
-			                var t = setInterval(function () {
-			                    if(angle == 1440){
-			                        clearInterval(t);
-			                        return;
-			                    }
-			                    angle += 40;
-			                    $('.link',$elem).stop().animate({rotate: '+=-40deg'}, 0);
-			                },10);
-			                $elem.stop().animate({width:'268px'}, 1000)
-			                .find('.item_content').fadeIn(400,function(){
-			                    $(this).find('p').stop(true,true).fadeIn(600);
-			                });
-			            }
-			            function collapse($elem){
-			                var angle = 1440;
-			                var t = setInterval(function () {
-			                    if(angle == 0){
-			                        clearInterval(t);
-			                        return;
-			                    }
-			                    angle -= 40;
-			                    $('.link',$elem).stop().animate({rotate: '+=40deg'}, 0);
-			                },10);
-			                $elem.stop().animate({width:'75px'}, 1000)
-			                .find('.item_content').stop(true,true).fadeOut().find('p').stop(true,true).fadeOut();
-			            }
 				});
 				});
 

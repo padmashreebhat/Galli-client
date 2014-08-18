@@ -266,7 +266,7 @@ function deleteSP(obj) {
 					$('#tabContainer #tabscontent #tabpage_3').show();
 					});			          
 				});
-
+				$('#filler-below').show();
         }
 
  function loadhomehelperswin(divID) {
@@ -364,6 +364,7 @@ function deleteSP(obj) {
 					});			    
 
 				});
+				$('#filler-below').show();
 
         }
 

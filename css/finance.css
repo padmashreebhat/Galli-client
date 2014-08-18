@@ -156,18 +156,23 @@ registration{
  -webkit-border-radius: 15px;
 }
 fieldset{
-  border-top:1px solid #ccc;
+  border-top:1px solid #b47e11;
   border-left:0;
   border-bottom:0;
   border-right:0;
   padding:6px;
   margin:0px 30px 0px 0px;
 }
-
+#popheading{
+	font-family:arial;
+	color:#f19f10;
+	font-size:28px;
+	text-align:center;
+}
 legend{
   text-align:left;
-  color:#ccc;
-  font-size:18px;
+  color:#d59424;
+  font-size:22px;
   padding:0px 4px 0px 4px;
   margin-left:20px;
 }
@@ -177,7 +182,7 @@ label{
   width:200px;
   float: left;
   text-align: right;
-  color:#999;
+  color:#d59424;
   clear:left;
   margin:4px 4px 0px 0px;
   padding:0px;

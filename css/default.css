@@ -105,14 +105,19 @@ background-color: rgba(218,235,245,0);
 }
 
 .filler-below {
-	width: 85%;
+	width: 80%;
+	left:10%;
 	height: auto;
-	background: #f0f0f0;
+	background: rgba(240,240,240,0.6);
 	overflow-y:auto;
 	margin: 0px auto 100px auto;
 	border-color: #00bbff;
 	border-style: groove;
+	position: absolute;
+	z-index: 1;
+
 }
+$windowwidth:85%;
 
 .container > header {
 	height: 20px;
@@ -252,5 +257,44 @@ header h1 {
 
 .bp-icon-prev:after {
 	content: "\e004";
+}
+
+
+#Noticeboard{
+float: left;
+	width: 25%;
+	height: 40%;
+	background: #818593;
+	overflow-y:auto;
+	margin: 0px auto 100px auto;
+	border-color: #00bbff;
+	border-width: thick;
+	border-style:groove;
+	position: absolute;
+	left:100px;
+	top:250px;
+	border-radius: 25px;
+
+}
+
+#Noticeboard:hover{
+	width: 55%;
+	height:60%;
+	position:absolute;
+	z-index: 1;
+	right:40%;
+	border-style: groove;
+	border-radius: 25px;
+}
+.heading{
+	width:100%;
+	height:10%;
+	background-color: #1a5a87;
+	left:20%;
+}
+.heading > h4{
+	color: black;
+	margin-left: 10%;
+	font-size: medium;
 }
 

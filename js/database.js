@@ -42,7 +42,7 @@ function CloseHHViewWindow() {
 					$('#HomeHelpers #tabscontent #AddHomeHelper').hide();
 					$('#HomeHelpers #tabscontent #ViewHomeHelper').show();
 					});			    
-
+				$('#filler-below').show();
 				});
 
         }
@@ -222,6 +222,7 @@ function CloseInstructorView() {
 					$('#Instructor #tabscontent #ViewInstructorDetails').show();
 					CreateInstable();
 					});			    
+				$('#filler-below').show();
 
 				});
 
@@ -333,6 +334,7 @@ function CloseViewWindow() {
 					$('#ServiceProvider #tabscontent #ViewServiceProvider').show();
 					CreateSPtable();
 					});			    
+				$('#filler-below').show();
 
 				});
 

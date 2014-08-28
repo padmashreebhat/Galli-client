@@ -36,13 +36,21 @@
             border: 2px solid #00aade;
             font-family: Calibri;
             margin-left: 20px;
+            position:absolute;
 }
 
+#apviewBox{
+		top:25%;
+		left: 25%;	
+}
 h3{
 	color: #67bfe4;
-	
-}
 
+}
+.popuplable{
+	color:#d99023;
+		left:10%;
+}
 .photoID
 {
 			

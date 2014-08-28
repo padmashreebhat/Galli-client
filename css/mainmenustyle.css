@@ -261,6 +261,9 @@ padding: 30px 46px 47px 86px;
 .icon_logout{
     background:transparent url(../images/logout.png) no-repeat top left;
 }
+.icon_mom_s{
+    background:transparent url(../images/momicon.jpg) no-repeat top left;
+}
 
 .submenu_item_content{
     position:absolute;

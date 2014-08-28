@@ -13,17 +13,15 @@
 		    <div id="tabs">
 		      <ul>
 		        <li id="View">View</li>
-		        <a onClick="javascript:hidepopupwin()"> <img src="images/close.png" alt="Smiley face" style="float:right" alt="HTML tutorial" width="42" height="42"></a>
-				<h3 id="popheading"> SealOfApproval </h3>
-				
-		      </ul>
-		       
+			        <a onClick="javascript:hidepopupwin()"> <img src="images/close.png" alt="Smiley face" style="float:right" alt="HTML tutorial" width="42" height="42"></a>
+					<h3 id="popheading"> SealOfApproval </h3>					
+		      </ul>		       
 		    </div>
 	    
 		    <div id="tabscontent">
-		    <div class="alertbox" id="rejectbox">
-
-			</div>
+			    <div class="alertbox" id="rejectbox">
+	
+				</div>
 			
 		    	<div class="popUpWindow" id="viewSealofApprovalDet">
 		    		        <label> RequestID </label> <h3 id=RequestID> </h3>
@@ -35,11 +33,7 @@
 			            font-weight: bold; width: 100px" />
 			            	<input type="button" class="tablebutton" value="Reject" onclick="RejectRequest()" style="float: right; margin-right: 20px;
 			            font-weight: bold; width: 100px" />
-
-
 				</div>
-
-
 			
 			 <div class="tabpage" id="report">
 				<form action="#" method="post">
@@ -55,7 +49,6 @@
 						</fieldset>
 						<table id="tablespace"></table>
 					</div>	
-
 				</form>
 			</div>
 		      
@@ -71,7 +64,6 @@
 		      <ul>
 		        <li id="Schedule">Schedule</li>
 		        <li id="View">View</li>
-		        <li id="MOM">MOM</li>
 		         <a onClick="javascript:hidepopupwin()"> <img src="images/close.png" alt="Smiley face" style="float:right" alt="HTML tutorial" width="42" height="42"></a>
 				<h3 style="font-family:arial;color:white;font-size:24px;text-align:center;"> Meeting </h3>
 		      </ul>
@@ -85,14 +77,24 @@
 									 <fieldset>
 										 <legend>Meeting Details</legend>
 										 <label> MeetingID  </label> <input type="text" id="MeetingID" name="MeetingID"> 
-										 <label> Attendees  </label> <input type="text" id="Attendees" name="Attendees"> 
-										 <label> Date  </label> <input type="datetime" id="datetime" name="datetime"> 
+										 <label> Attendees  </label> 
+											<select id="Attendees" purpose="Select">
+											<option value="Owners">Owners</option>
+											<option value="Residents">Residents</option>
+											<option value="Association">Association</option>
+											</select> 
+										 <label> Date  </label> <input type="date" id="date" name="date"> 
+										 <label> From  </label> <input type="time" id="fromtime" name="fromtime"> 
+										 <label> To  </label> <input type="time" id="totime" name="totime"> 
  										<label>Subject </label><input id='Subject' type="text" style="width:450px;" name="Subject"> <br>
 	 									<label> Detail </label><TEXTAREA NAME="SpecialRequest" ROWS="8" style="width:450px;">Please enter your details</TEXTAREA>
 									</fieldset>
 								</div>	
 								<div id='buttonwin'>
 								<div id="container" class="container">
+										<div id='submitcomp' class="roundbutton" onClick="openMOM()">
+							                <a class="link icon_mom_s"> </a>
+										</div>
 										<div id='searchcomp' class="roundbutton" onClick="searchMeetingDetails()">
 							                <a class="link icon_find"> </a>
 										</div>
@@ -100,28 +102,56 @@
 							                <a class="link icon_submit"> </a>
 										</div>
 								</div>
-			
 								</div>			
-							</form>
+						</form>
 			      </div>
 		      
 			      <div class="tabpage" id="ViewMeeting">
-		    	  	   <img src="images/meeting.jpg" style="float:left" width="65" height="65">
-					  <table id="meetingtable"></table>
+				      <fieldset>
+				      <label> Status </label>
+										<select status="Open" id="status" onClick="javascript:createMeetingTable()">
+										<option status="Open">Open</option>
+											<option status="Closed">Closed</option>
+										</select> <br>
+				      </fieldset>
+			    	  	   <img src="images/meeting.jpg" style="float:left" width="65" height="65">
+						  <table id="meetingtable"></table>
 				  </div>	
-				  		<div class="tabpage" id="CreateMOM">
-							<form action="#" method="post">
+
+				  <div id="MOM">
+				  <div class="popUpWindow" id="apviewBox">
+		    		    	<div class="photoID" id="apphoto"> </div>
+		    		        <p class="popuplable"> AP ID </p> <h3 id=apID> </h3>
+							<p class="popuplable"> Details </p><h3 id=apdet> </h3> <br>
+							<input type="button" class="tablebutton" value="Ok" onclick="CloseAPViewWindow()" style="float: right; margin-right: 20px;
+			            font-weight: bold; width: 100px" />
+				  </div>
+				  
+				  <div class="tabpage" id="CreateMOM">
+						<form action="#" method="post">
+							<a onClick="javascript:hidepopupwin()"> <img src="images/close.png" alt="Smiley face" style="float:right" alt="HTML tutorial" width="42" height="42"></a>
 								<div id='Create'>
 									 <fieldset>
-									<legend>Meeting ID</legend>
+									 <legend>Capture Minutes </legend>
 									 <img border="0" src="images/mom.jpg" style="float:left" width="75" height="75">
-										 <label>MeetingID </label><input id='MeetingID' type="text" name="MeetingID"> <br>
-										 <div id='security' class="roundbutton" onClick="javascript:searchMeetingDetails()">
-							                <a class="link icon_find"> </a>
+									 <label> Attendees </label>
+									<TEXTAREA id='Attendees' NAME="Attendees" ROWS="2" style="width:450px;">Attendees</TEXTAREA>
+									 <label> Meeting Minutes</label><TEXTAREA id='minutes' NAME="minutes" ROWS="4" style="width:450px;">Capture meeting details</TEXTAREA>
+									 
+									 <div id='buttonwin'>
+										
+										<div id='security' class="roundbutton" onClick="javascript:StoreMoM()">
+							                <a class="link icon_logout"> </a>
 										</div>
+										<div id='security' class="roundbutton" onClick="javascript:StoreMoM()">
+							                <a class="link icon_submit"> </a>
+										</div>
+									</div>	
 									 </fieldset>
+									 
+									 
 									 <fieldset>
-										 <legend>Add ActionPoint Details</legend>
+									 <legend>Add ActionPoint Details</legend>
 										 <label> ActionPoint </label><TEXTAREA id='ActionPoint' NAME="ActionPoint" ROWS="2" style="width:450px;">Please enter your details</TEXTAREA>
 										 <label> Detail </label><TEXTAREA id='Detail' NAME="Detail" ROWS="8" style="width:450px;">Please enter your details</TEXTAREA>
 										 <label> ActionOwner </label>
@@ -134,7 +164,11 @@
 										 <input type="date" id="cdate">
 
 										 <label> Status </label>
-										 <input type="text" id="status">
+									<select status="Open" id="status">
+									<option status="Open">Open</option>
+									<option status="Ongoing">Ongoing</option>
+									<option status="Closed">Closed</option>
+									</select> <br>
 									</fieldset>
 								</div>	
 								<div id='buttonwin'>
@@ -144,7 +178,26 @@
 								</div>	
 									<table id="momtable"></table>
 							</form>
+			      </div>
+
+			      <div class="tabpage" id="ViewMOM">
+						<form action="#" method="post">
+							<a onClick="javascript:hidepopupwin()"> <img src="images/close.png" alt="Smiley face" style="float:right" alt="HTML tutorial" width="42" height="42"></a>
+								<div id='Create'>
+									 <fieldset>
+									 <legend>Meeting Details</legend>
+									 <img border="0" src="images/mom.jpg" style="float:left" width="75" height="75">
+									 <label> ID Number </label> <h3 id=meetID> </h3>
+									 <label> Subject </label> <h3 id=meetsub> </h3>
+									 <label> Attendees </label> <h3 id=Attendees> </h3>                                                                                                                          
+									
+									 <label> Meeting Minutes</label><TEXTAREA id='minutes' NAME="minutes" disabled ROWS="4" style="width:450px;">Capture meeting details</TEXTAREA>
+									 </fieldset>
+								</div>	
+									<table id="viewmomtable"></table>
+						</form>
 			      </div>		
+				  </div>
 			 </div>
 		</div>
 

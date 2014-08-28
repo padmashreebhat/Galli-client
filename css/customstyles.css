@@ -156,7 +156,7 @@ registration{
  -webkit-border-radius: 15px;
 }
 fieldset{
-  border-top:1px solid #b47e11;
+  border-top:1px solid #b57e10;
   border-left:0;
   border-bottom:0;
   border-right:0;
@@ -171,14 +171,19 @@ fieldset{
 }
 legend{
   text-align:left;
-  color:#d59424;
-  font-size:22px;
+  color:#ca850e;
+  font-size:19px;
   padding:0px 4px 0px 4px;
   margin-left:20px;
 }
 
+disptext{
+	font-size: 15px;
+	color: #4dc3e7;
+	float: left;
+}
 label{
-  font-size: 20px;
+  font-size: 15px;
   width:200px;
   float: left;
   text-align: right;
@@ -189,7 +194,7 @@ label{
 }
 TEXTAREA,input{
   font-family: Georgia;
-  font-size: 20px;
+  font-size: 12px;
   float:left;
   width:300px;
   border:1px solid #cccccc;

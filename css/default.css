@@ -108,7 +108,7 @@ background-color: rgba(218,235,245,0);
 	width: 80%;
 	left:10%;
 	height: auto;
-	background: rgba(240,240,240,0.6);
+	background: rgba(240,240,240,0.9);
 	overflow-y:auto;
 	margin: 0px auto 100px auto;
 	border-color: #00bbff;
@@ -259,7 +259,32 @@ header h1 {
 	content: "\e004";
 }
 
+#CompliantBox {
+background-color: #f0f0f0;
+height: 60%;
+width:25%;
+display: inline-block;
+text-fill-color: red;
+float: right;
+	border-color: #00bbff;
+	border-width: thick;
+	border-style:groove;
+	position: absolute;
+	left: 450px;
+	border-radius: 25px;
+	overflow: auto;
+		top:250px;
+}
 
+#CompliantBox:hover{
+	width: 55%;
+	height:auto;
+	position:absolute;
+	z-index: 1;
+	left: 25%;
+	border-style: groove;
+	border-radius: 25px;
+}
 #Noticeboard{
 float: left;
 	width: 25%;
@@ -283,6 +308,30 @@ float: left;
 	position:absolute;
 	z-index: 1;
 	right:40%;
+	border-style: groove;
+	border-radius: 25px;
+}
+
+#Contacts{
+float: left;
+	width: 25%;
+	height: 60%;
+	background: #f0f0f0;
+	overflow-y:auto;
+	margin: 0px auto 100px auto;
+	border-color: #00bbff;
+	border-width: thick;
+	border-style:groove;
+	position: absolute;
+	left:800px;
+	border-radius: 25px;
+}
+#Contacts:hover{
+	width: 55%;
+	height:60%;
+	position:absolute;
+	z-index: 1;
+	left:38%;
 	border-style: groove;
 	border-radius: 25px;
 }

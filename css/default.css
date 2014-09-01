@@ -259,48 +259,54 @@ header h1 {
 	content: "\e004";
 }
 
-#CompliantBox {
-background-color: #f0f0f0;
-height: 60%;
-width:25%;
-display: inline-block;
-text-fill-color: red;
-float: right;
-	border-color: #00bbff;
-	border-width: thick;
-	border-style:groove;
-	position: absolute;
-	left: 450px;
+#QuickViewWin {
+	background-color: blue;
+	
+}
+.QuickView{
+	height: 25%;
+	width:15%;
+	background-color: #f0f0f0;
 	border-radius: 25px;
 	overflow: auto;
-		top:250px;
-}
-
-#CompliantBox:hover{
-	width: 55%;
-	height:auto;
-	position:absolute;
-	z-index: 1;
-	left: 25%;
-	border-style: groove;
-	border-radius: 25px;
-}
-#Noticeboard{
-float: left;
-	width: 25%;
-	height: 40%;
-	background: #818593;
-	overflow-y:auto;
-	margin: 0px auto 100px auto;
+	position: absolute;
 	border-color: #00bbff;
 	border-width: thick;
 	border-style:groove;
-	position: absolute;
-	left:100px;
-	top:250px;
-	border-radius: 25px;
-
+	overflow-y:auto;
 }
+
+
+
+#Noticeboard{
+	left:10%;
+	top:42%;
+	width: 30%;
+	background-color: #a1a4a8;
+	height: 53%;
+}
+
+#SoA {
+	left: 50%;
+	top:42%;
+}
+
+#Poll {
+	left: 70%;
+	top:42%;
+}
+#Bills {
+	left: 50%;
+	top:70%;
+}
+#SoA1{
+	background: #f0f0f0;
+	margin: 0px auto 100px auto;
+	position: absolute;
+	left:800px;
+}
+
+
 
 #Noticeboard:hover{
 	width: 55%;
@@ -312,21 +318,8 @@ float: left;
 	border-radius: 25px;
 }
 
-#Contacts{
-float: left;
-	width: 25%;
-	height: 60%;
-	background: #f0f0f0;
-	overflow-y:auto;
-	margin: 0px auto 100px auto;
-	border-color: #00bbff;
-	border-width: thick;
-	border-style:groove;
-	position: absolute;
-	left:800px;
-	border-radius: 25px;
-}
-#Contacts:hover{
+
+#SoA1:hover{
 	width: 55%;
 	height:60%;
 	position:absolute;
@@ -337,13 +330,20 @@ float: left;
 }
 .heading{
 	width:100%;
-	height:10%;
+	height:20%;
 	background-color: #1a5a87;
 	left:20%;
+	font-family: cursive;
 }
 .heading > h4{
 	color: black;
 	margin-left: 10%;
 	font-size: medium;
+}
+
+.content > p{
+	color: blue;
+	font-size: 15px;
+	font-style: italic;
 }
 

@@ -1,3 +1,13 @@
+function getlatestnbMessages(){
+	//open database Communciation table
+	var messages ="1. Latest  message from association : Ganesha festival Schedule annuoncement";
+
+		return messages;
+} 
+function getMsgDetails(){
+	alert("getting Msg Details");
+	loadnoticeboard();
+}
 
 /*---------------------------------------------------------------------------------        
  ------------------------Load Opinion Poll--------------------------------------------

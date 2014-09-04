@@ -189,7 +189,7 @@
 		    <div id="QuickViewWin">
 				<div class="QuickView" id="Noticeboard">	
 					<div class="heading"> <h4> Noticeboard </h4></div>	
-					<div class="content"> <p id=NewNb>   </p> <br> <p id=TotNb>  </p>
+					<div class="content"> <p id=NewNb onclick="getMsgDetails()"><a id=QuickViewfont> </a> </p> <br> <p id=TotNb>  </p>
 					</div>
 				</div>
 		
@@ -224,6 +224,10 @@
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
        <script>
        
+				var msg=getlatestnbMessages();       
+		       	var QuickViewnb = msg;
+				$("#QuickViewWin #Noticeboard #NewNb #QuickViewfont").html(QuickViewnb+"<br>");
+
        function hidepopupwin()
        {
 	      $('.container #filler-below').hide();

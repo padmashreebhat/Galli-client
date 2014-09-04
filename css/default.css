@@ -308,7 +308,7 @@ header h1 {
 
 
 
-#Noticeboard:hover{
+/*#Noticeboard:hover{
 	width: 55%;
 	height:60%;
 	position:absolute;
@@ -316,7 +316,7 @@ header h1 {
 	right:40%;
 	border-style: groove;
 	border-radius: 25px;
-}
+}*/
 
 
 #SoA1:hover{
@@ -347,3 +347,22 @@ header h1 {
 	font-style: italic;
 }
 
+#NewNb{
+	font-size: 20px;
+	color: black;
+}
+
+/* visited link */
+.content > p > a:visited {
+    color: #696ea9;
+}
+
+/* mouse over link */
+.content > p > a:hover {
+    color: #2626da;
+}
+
+/* selected link */
+.content > p > a:active {
+    color: #252533;
+}

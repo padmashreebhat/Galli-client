@@ -1,14 +1,50 @@
+/*---------------------------------------------------------------------------------        
+ ------------------------Quick Window related--------------------------------------
+----------------------------------------------------------------------------------*/
+
 function getlatestnbMessages(){
 	//open database Communciation table
 	var messages ="1. Latest  message from association : Ganesha festival Schedule annuoncement";
-
-		return messages;
+	return messages;
 } 
+
 function getMsgDetails(){
 	alert("getting Msg Details");
 	loadnoticeboard();
 }
+function getTotalPollcount(){
+	var totalpollcount=8;
+	return totalpollcount;
+}
+function getOpenPollcount(){
+	var openpollcount=3;
+	return openpollcount;
+}
 
+function loadopenpolltable(){
+           var cont = $('#filler-below');
+           var pollview="Open";
+				cont.load('communication.html #Poll #tabscontent #ViewPoll', function(){
+					createpolltable(pollview);
+				});
+				$('#filler-below').show();
+}
+function loadclosepolltable(){
+           var cont = $('#filler-below');
+           var pollview="Closed";
+				cont.load('communication.html #Poll #tabscontent #ViewPoll', function(){
+					createpolltable(pollview);
+				});
+				$('#filler-below').show();
+}
+function loadNBdetails(){
+           var cont = $('#filler-below');
+           var pollview="Open";
+				cont.load('communication.html #noticeboarddet #tabscontent', function(){
+
+				});
+				$('#filler-below').show();
+}
 /*---------------------------------------------------------------------------------        
  ------------------------Load Opinion Poll--------------------------------------------
 ----------------------------------------------------------------------------------*/
@@ -49,7 +85,7 @@ function getMsgDetails(){
 
         }
 
-function createpolltable(){
+function createpolltable(pollview){
 			  var tablecontents = "";
 		      tablecontents = "<table>";
 		      tablecontents += "<tr>";
@@ -61,9 +97,16 @@ function createpolltable(){
 		      tablecontents += "<th>" + "Option3" + "</th>";
 		      tablecontents += "<th>" + "Option4" + "</th>";
 		      tablecontents += "<th>" + "Option5" + "</th>";
-		      tablecontents += "<th>" + "Status" + "</th>";
-		      tablecontents += "</tr>";
-		
+		      tablecontents += "<th>" + "Your Option" + "</th>";
+		      if(pollview="Open")
+		      {
+			  tablecontents += "<th>" + "" + "</th>";
+		      }
+		      else
+		      {
+			      
+		      }
+			  tablecontents += "</tr>"; 
 		/* Read content from JSON file and update the same */
 			  $.getJSON('JSON/result.json', function(jd) { 
 			  for (var i = 0; i < 5; i ++)
@@ -77,7 +120,15 @@ function createpolltable(){
 			      tablecontents += "<td>" + jd.fname+ "</td>";
 			      tablecontents += "<td>" + jd.fname+ "</td>";
 			      tablecontents += "<td>" + jd.fname+ "</td>";
-			      tablecontents += "<td>" + '<input type="text" value = "0" style="width:45px">'+ "</td>";
+			      if(pollview=="Open")
+			      {
+				  	 tablecontents += "<td>" + '<input type="text" value = "0" style="width:45px">'+ "</td>";
+				  	 tablecontents += "<td>" + '<input type="button" class="tablebutton" value = "Submit" onClick="Javacsript:ViewReq(this)">' + "</td>";    
+			      }
+			      else
+			      {
+				      tablecontents += "<td>" + '<input type="text" value = "0" style="width:45px">'+ "</td>";
+			      }
 			      tablecontents += "</tr>";
 			   }
 			   
@@ -85,10 +136,6 @@ function createpolltable(){
 			   document.getElementById("polltable").innerHTML = tablecontents;
 				});
 				
-				$("#transvalue ").click(function(){
-				alert("transaction value clicked");
-});
-
 }
 
 

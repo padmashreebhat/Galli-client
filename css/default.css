@@ -103,12 +103,23 @@ background-color: rgba(218,235,245,0);
 	clear:both;
 	overflow-y:auto;
 }
-
+.content-win{
+	width: 80%;
+	left:10%;
+	height: auto;
+	background: rgba(240,240,240,0.8);
+	overflow-y:auto;
+	margin: 0px auto 100px auto;
+	border-color: #00bbff;
+	border-style: groove;
+	position: absolute;
+	z-index: 1;	
+}
 .filler-below {
 	width: 80%;
 	left:10%;
 	height: auto;
-	background: rgba(240,240,240,0.9);
+	background: rgba(240,240,240,0.8);
 	overflow-y:auto;
 	margin: 0px auto 100px auto;
 	border-color: #00bbff;
@@ -264,8 +275,8 @@ header h1 {
 	
 }
 .QuickView{
-	height: 25%;
-	width:15%;
+	height: 18%;
+	width:10%;
 	background-color: #f0f0f0;
 	border-radius: 25px;
 	overflow: auto;
@@ -274,6 +285,7 @@ header h1 {
 	border-width: thick;
 	border-style:groove;
 	overflow-y:auto;
+	
 }
 
 
@@ -287,18 +299,44 @@ header h1 {
 }
 
 #SoA {
-	left: 50%;
+	left: 45%;
 	top:42%;
+/*	background-image: url(../images/background/window.jpeg);*/
 }
-
+#SoA:hover{
+		height: 18.5%;
+		width:10.5%;
+		background-color: #8c9eaf;
+		border-color: #2ba7d3;
+/*background-image: url(../images/background/windows5.jpg);*/
+}
 #Poll {
-	left: 70%;
+	left: 60%;
 	top:42%;
+/*	background-image: url(../images/background/window.jpeg);*/
+}
+#Poll:hover{
+		height: 18.5%;
+		width:10.5%;
+		background-color: #8c9eaf;
+		border-color: #2ba7d3;
+/*background-image: url(../images/background/windows5.jpg);*/
 }
 #Bills {
-	left: 50%;
-	top:70%;
+	left: 75%;
+	top:42%;
+/*	background-image: url(../images/background/window.jpeg);*/
 }
+
+#Bills:hover{
+		height: 18.5%;
+		width:10.5%;
+		background-color: #8c9eaf;
+		border-color: #2ba7d3;
+	/*	background-image: url(../images/background/windows5.jpg);*/
+		background-size: Auto;
+}
+
 #SoA1{
 	background: #f0f0f0;
 	margin: 0px auto 100px auto;
@@ -343,7 +381,7 @@ header h1 {
 
 .content > p{
 	color: blue;
-	font-size: 15px;
+	font-size: 16px;
 	font-style: italic;
 }
 

@@ -1,4 +1,33 @@
 /*=========================================================================*/        
+/* QuickView 
+/* Quick View related function calls
+/*=========================================================================*/   
+
+function loadpendingApproval(){
+	            var cont = $('#filler-below');
+				cont.load('association.html #sealofapproval #tabscontent', function(){
+				console.log("inside sealofapproval");
+				CloseRequestDetail();
+				$("#rejectbox").hide();
+						});
+						$('#filler-below').show();
+						var SoA="Open";
+						CreateSealofApproval(SoA);
+				}
+function loadapprovedrequest(){
+	            var cont = $('#filler-below');
+				cont.load('association.html #sealofapproval #tabscontent', function(){
+				console.log("inside sealofapproval");
+				CloseRequestDetail();
+				$("#rejectbox").hide();
+						});
+						$('#filler-below').show();
+						var SoA="Approved";
+						CreateSealofApproval(SoA);
+	
+}
+
+/*=========================================================================*/        
 /* Association menu
 /* Schedule Meeting, Capture MOM, Capture Action Points, Create Association group
 /* View Association group
@@ -334,11 +363,28 @@ function StoreMoM()
 /*=========================================================================*/   
 function CloseRequestDetail() {
             $("#viewSealofApprovalDet").hide();
+            $("#ApprovedDetails").hide();
             
         }
 function OpenRequestDetail() {
             $("#viewSealofApprovalDet").show();
         }
+function ViewClosedRequestDetailsWindow(obj){
+		var index = obj.parentNode.parentNode.rowIndex;
+		var table = document.getElementById("tablespace");
+		var x = document.getElementById("tablespace").rows[index].cells;
+		var Requestid= x[0].innerHTML;
+		var Requestid="<h3>"+Requestid+"</h3>";
+		var RequestDetails="Approval for Disel charges for the month of August 2014 required";
+		var Remark="Approved for August Month";
+
+    /* Get Address, history other details from database */
+	      $("#ApprovedDetails").show();
+        $("#ApprovedDetails #RequestID").html(Requestid+"<br>");
+        $("#ApprovedDetails #RequestDet").html(RequestDetails+"<br>");
+        $("#ApprovedDetails #Remark").html(Remark+"<br>");
+}
+
 function ViewRequestDetailsWindow(obj){
 		var index = obj.parentNode.parentNode.rowIndex;
 		var table = document.getElementById("tablespace");
@@ -347,7 +393,7 @@ function ViewRequestDetailsWindow(obj){
 		var Requestid="<h3>"+Requestid+"</h3>";
 		var RequestDetails="Approval for Disel charges for the month of August 2014 required"
     /* Get Address, history other details from database */
-      OpenRequestDetail();
+ 	    OpenRequestDetail(); 
         $("#viewSealofApprovalDet #RequestID").html(Requestid+"<br>");
         $("#viewSealofApprovalDet #RequestDet").html(RequestDetails+"<br>");
 }
@@ -363,19 +409,18 @@ function loadsealofapproval(divID) {
 						$('#filler-below').show();
 				}
 
-function  CreateSealofApproval()
+function  CreateSealofApproval(SoA)
 {
 
-if("Approved"==document.getElementById("approvalstatus").value)
+//if("Approved"==document.getElementById("approvalstatus").value)
+if(SoA=="Approved")
 {
 		     var tablecontents = "";
 		    tablecontents = "<table>";
 		      tablecontents += "<tr>";
-		      tablecontents += "<th>" + "TransactionID" + "</th>";
+		      tablecontents += "<th>" + "RequestID" + "</th>";
 		      tablecontents += "<th>" + "Date" + "</th>";
-		      tablecontents += "<th>" + "Amount" + "</th>";
 		      tablecontents += "<th>" + "Remarks" + "</th>";
-		      tablecontents += "<th>" + "Status" + "</th>";
 		      tablecontents += "</tr>";
 		
 		/* Read content from JSON file and update the same */
@@ -385,10 +430,8 @@ if("Approved"==document.getElementById("approvalstatus").value)
 			      tablecontents += "<tr>";
 			      tablecontents += "<td>" + jd.transactionNum +"</td>";
 			      tablecontents += "<td>" + jd.date + "</td>";
-			      tablecontents += "<td>" + jd.Amount + "</td>";
 			      tablecontents += "<td>" + jd.Remarks+ "</td>";
-			      tablecontents += "<td>" + "Approved" + "</td>";
-			      tablecontents += "<td>" + '<input type="button" class="tablebutton" value = "View" onClick="Javacsript:ViewRequestDetailsWindow(this)">' + "</td>";
+			      tablecontents += "<td>" + '<input type="button" class="tablebutton" value = "View" onClick="Javacsript:ViewClosedRequestDetailsWindow(this,SoA)">' + "</td>";
 			      tablecontents += "</tr>";
 			   }
 			   
@@ -406,11 +449,9 @@ else
 		     var tablecontents = "";
 		    tablecontents = "<table>";
 		      tablecontents += "<tr>";
-		      tablecontents += "<th>" + "TransactionID" + "</th>";
+		      tablecontents += "<th>" + "RequestID" + "</th>";
 		      tablecontents += "<th>" + "Date" + "</th>";
-		      tablecontents += "<th>" + "Amount" + "</th>";
 		      tablecontents += "<th>" + "Remarks" + "</th>";
-		      tablecontents += "<th>" + "Details" + "</th>";
 		      tablecontents += "</tr>";
 		
 		/* Read content from JSON file and update the same */
@@ -420,9 +461,8 @@ else
 			      tablecontents += "<tr>";
 			      tablecontents += "<td>" + jd.transactionNum + "</td>";
 			      tablecontents += "<td>" + jd.date + "</td>";
-			      tablecontents += "<td>" + jd.Amount + "</td>";
 			      tablecontents += "<td>" + jd.Remarks+ "</td>";
-			      tablecontents += "<td>" + '<input type="button" class="tablebutton" value = "View" onClick="Javacsript:ViewRequestDetailsWindow(this)">' + "</td>";
+			      tablecontents += "<td>" + '<input type="button" class="tablebutton" value = "View" onClick="Javacsript:ViewRequestDetailsWindow(this,SoA)">' + "</td>";
 			      tablecontents += "</tr>";
 			   }
 			   

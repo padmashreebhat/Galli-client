@@ -124,6 +124,7 @@
 			</header>
 			<div id="filler-below" class="filler-below">			
 			</div>
+
 			<div id="mainmenu">
 		    <!--        
 		    		<div id='security' class="item">
@@ -189,21 +190,21 @@
 		    <div id="QuickViewWin">
 				<div class="QuickView" id="Noticeboard">	
 					<div class="heading"> <h4> Noticeboard </h4></div>	
-					<div class="content"> <p id=NewNb onclick="getMsgDetails()"><a id=QuickViewfont> </a> </p> <br> <p id=TotNb>  </p>
+					<div class="content"> <p id=NewNb onclick="loadNBdetails()"><a id=QuickViewfont> </a> </p> <br> <p id=Tot>  </p>
 					</div>
 				</div>
 		
-				<div class="QuickView" id="SoA">	
+				<div class="QuickView" id="SoA" style="background-image:url(images/sealorig.jpg)">	
 					<div class="heading"> <h4> Approval </h4></div>	
-					<div class="content"> <p id=OpenAppr>  Open: </p> <br> <p id=TotNb> Total: </p> </div>
+					<div class="content"> <p id=Open onclick="loadpendingApproval()">  Open: <a id=QuickViewfont> </a> </p> <br> <p id=Tot onclick="loadapprovedrequest()"> Total: <a id=QuickViewfont> </a> </p> </div>
 				</div>
-				<div class="QuickView" id="Poll">	
+				<div class="QuickView" id="Poll" style="background-image:url(images/pollcopy.jpeg)">	
 					<div class="heading"> <h4> Poll </h4></div>	
-					<div class="content"> <p id=OpenAppr>  Open: </p> <br> <p id=TotNb> Total: </p> </div>
+					<div class="content"> <p id=Open onclick="loadopenpolltable()">  Open: <a id=QuickViewfont> </a> </p> <br> <p id=Tot onclick="loadclosepolltable()"> Closed: <a id=QuickViewfont> </a> </p> </div>
 				</div>
-				<div class="QuickView" id="Bills">	
+				<div class="QuickView" id="Bills" style="background-image:url(images/rupeecopy.jpeg)">	
 					<div class="heading"> <h4> Bills </h4></div>	
-					<div class="content"> <p id=OpenAppr>  New: </p> <br> <p id=TotNb> Old: </p> </div>
+					<div class="content"> <p id=Open onclick="getMsgDetails()">  Pending:<a id=QuickViewfont> </a> </p> <br> <p id=Tot> Old: <a id=QuickViewfont> </a></p> </div>
 				</div>
 			</div>
 <!---			<div id="CompliantBox">
@@ -223,10 +224,29 @@
  
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
        <script>
-       
+       /* Get latest messages from database to update Noticeboard */
 				var msg=getlatestnbMessages();       
 		       	var QuickViewnb = msg;
 				$("#QuickViewWin #Noticeboard #NewNb #QuickViewfont").html(QuickViewnb+"<br>");
+				
+	  /* Get Pending Poll numbers to update QuickView window */
+				var TotPollCount=getTotalPollcount();
+				var OpenPollCount=getOpenPollcount();
+				$("#QuickViewWin #Poll #Open #QuickViewfont").html(TotPollCount+"<br>");
+				$("#QuickViewWin #Poll #Tot #QuickViewfont").html(OpenPollCount+"<br>");
+				
+	  /* Get Pending Bills  update QuickView window */
+				var TotPollCount=getTotalPollcount();
+				var OpenPollCount=getOpenPollcount();
+				$("#QuickViewWin #Bills #Open #QuickViewfont").html(TotPollCount+"<br>");
+				$("#QuickViewWin #Bills #Tot #QuickViewfont").html(OpenPollCount+"<br>");
+
+	  /* Get Pending Approvals  update QuickView window */
+				var TotPollCount=getTotalPollcount();
+				var OpenPollCount=getOpenPollcount();
+				$("#QuickViewWin #SoA #Open #QuickViewfont").html(TotPollCount+"<br>");
+				$("#QuickViewWin #SoA #Tot #QuickViewfont").html(OpenPollCount+"<br>");
+
 
        function hidepopupwin()
        {

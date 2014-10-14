@@ -1,3 +1,4 @@
+
 function logoutApplication(){
 	FB.getLoginStatus(function(response) {
       if(response.status=='connected')
@@ -47,8 +48,12 @@ function logoutApplication(){
     // for FB.getLoginStatus().
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
-        window.open("http://Apples-iMac.local/~padmashreebhat/MyProject/MyNest/client/mainpage.html","_self");
-
+      console.log('inside checkfbstatus Padma: ' + response.email);
+       // window.open("http://Apples-iMac.local/~padmashreebhat/MyProject/MyNest/client/mainpage.html","_self");
+    FB.api('/me', function(response) {
+      console.log('inside checkfbstatus Padma: ' + response.email);
+      userinformation(response.email);
+    });
    
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
@@ -94,7 +99,7 @@ function logoutApplication(){
   });
 
   };
-
+ var useremailid="nobody.none.com";
   // Load the SDK asynchronously
   (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -111,6 +116,7 @@ function logoutApplication(){
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.email);
+      userinformation(response.email);
     });
    }
 /*  function OpenMainPage() {

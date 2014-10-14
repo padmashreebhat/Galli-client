@@ -25,12 +25,16 @@ function apiClientLoaded() {
    */
   function handleEmailResponse(resp) {
     var primaryEmail;
+    var emailstring;
     for (var i=0; i < resp.emails.length; i++) {
       if (resp.emails[i].type === 'account') primaryEmail = resp.emails[i].value;
     }
+    emailstring = 'Primary email: ' +
+        primaryEmail + '\n\nFull Response:\n' + JSON.stringify(resp);
+  }
    /* document.getElementById('responseContainer').value = 'Primary email: ' +
         primaryEmail + '\n\nFull Response:\n' + JSON.stringify(resp);*/
-  }
+  //}
 function ongooglebuttonclick()
 {
 alert("googlebutton clicked");

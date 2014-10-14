@@ -4,38 +4,39 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-		<title>Sphinx: MyNest</title>
+		<title>Sphinx: HiveInTown</title>
 		<meta name="description" content="Sphinx : MyNest" />
 		<meta name="keywords" content="MyNest Sphinx" />
 		<link rel="stylesheet" type="text/css" href="css/hptabmenu.css" />
 		<link rel="stylesheet" href="css/mainmenustyle.css" type="text/css" media="screen"/>
 		<link rel="stylesheet" type="text/css" href="css/myselfdefault.css" />
 		<link rel="stylesheet" type="text/css" href="css/default.css" />
-		<link rel="stylesheet" type="text/css" href="css/finance.css" />
+		<link rel="stylesheet" type="text/css" href="css/customstyles.css" />
+
 		
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 		<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 		<script src="js/login.js"></script>
 		<script src="js/fblogin.js"></script>
+		    <script src = "https://plus.google.com/js/client:plusone.js"></script>
 		<script src="js/googlelogin.js"></script>
-<script src = "https://plus.google.com/js/client:plusone.js"></script>
 
 		<script src="js/modernizr.custom.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/imagegrid.css" />
 		<script type="text/javascript" src="js/modernizr.custom.26633.js"></script>
-    </head>
+		<h2> HiveInTown </h2>
+	</head>
     <body style="background-image:url(images/background/login.jpg)">
-			<header>
-				<h1>Galli</h1>
+    		<div id="LoginInfo" class="UserInfo"> </div>
+				<div id="phpout">
+	</div>
 				<div
 				  class="fb-like"
 				  data-send="true"
 				  data-width="450"
 				  data-show-faces="true">
 				</div>
-
-			</header>	
     <script type="text/javascript">
       (function() {
        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
@@ -105,7 +106,8 @@
 					</ul>
 				</div>
 		<div id="container" class="container">
-		<div id="loginmenu" class="loginmenu">
+		
+	<div id="loginmenu" class="loginmenu">
     <div id="tabs">
       <ul>
         <li id="login" onclick="loadloginmenu()">Login</li>
@@ -118,13 +120,6 @@
 					<form action="#" method="post">
 						 <fieldset>
 							 <legend>login</legend>
-							  <label> Email  </label> <input type="text" id="email" name="email"> 
-							 <label>Password</label> <input type="password" maxlength="100" value="" id="passwd" name="passwd"/>                    						 			 <input class="bigbutton" type="button" value="Login" onclick="validateLogin()"/> 
-
-							 </fieldset>
-
-							<fieldset>
-							<legend> facebook/gmail user?</legend>
 							<!----- Facebook Login --------------------------------------------------->
 							<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 							</fb:login-button>
@@ -152,10 +147,6 @@
 								 <legend>New User?</legend>
 						 		 <input  class="bigbutton" type="button" value="Register" onclick="RegisterUser()"/> 
 							 </fieldset>
-							 <fieldset>
-								 <legend>Forgot Password?</legend>
-						 		 <input  class="bigbutton" type="button" value="PasswordReset" onclick="ForgotPassword()"/> 
-							 </fieldset>
 
 					</form>
 	      </div>
@@ -164,9 +155,9 @@
 					<form action="#" method="post">
 						 <fieldset>
 								 <legend>User Information</legend>
+								 <label> email </label> <input type="text" id="fname" name="email"> 
          						 <label> First Name  </label> <input type="text" id="fname" name="fname"> 
          						 <label> Last Name  </label> <input type="text" id="lname" name="lname"> 
-							     <label> Email  </label> <input type="text" id="email" name="email"> 
 						 </fieldset>
 						<fieldset>		 
 								 <legend>Apartment Information</legend>
@@ -377,6 +368,14 @@
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 		<script type="text/javascript" src="js/jquery.gridrotator.js"></script>
 		<script type="text/javascript">	
+		$('#LoginInfo').bind('contentchanged', function() {
+  // do something after the div content has changed
+ // 		var loginid=('#LoginInfo').val();
+ var loginid=document.getElementById("LoginInfo").innerHTML;
+  		alert("I am inside contentchanged");
+  alert(loginid);
+  verifyUserID(loginid);
+});
 			$(function() {
 			
 				$( '#ri-grid' ).gridrotator( {
@@ -398,7 +397,11 @@
 			
 			});
 			
-  
+			 $('#LoginInfo').change(
+			 function(){ alert("insidelogininfo");
+				 
+			 }
+			 );
               $('.item').hover(
                 function(){
                     var $this = $(this);
@@ -437,7 +440,49 @@
                 $elem.stop().animate({width:'52px'}, 1000)
                 .find('.item_content').stop(true,true).fadeOut().find('p').stop(true,true).fadeOut();
             }
-            
+
+
+function userinformation(useremail){
+	alert(useremail);
+//	$('<div/>').text(useremail).appendTo($('#LoginInfo'));
+	document.getElementById("LoginInfo").innerHTML = useremail;
+	$('#LoginInfo').trigger('contentchanged'); 
+}
+
+            function verifyUserID(username){
+				var loc = location.host;
+				var retVal = $.Deferred();
+				
+				$.getJSON('people.php?username='+username,function(result){
+					people = result[0];
+					auth = result[1];
+			
+					console.log('Authentication is '+auth['username']+', '+auth['auth']);
+					retVal.resolve(auth['auth']);
+					
+					// Process People Object 
+					$('#phpout').empty();
+					for(var i=0; i<people.length; i++){
+						$('<div/>').text(people[i].lname).appendTo($('#phpout'));
+						$('<div/>').text(people[i].fname).appendTo($('#phpout'));
+						$('<div/>').text(people[i].age).appendTo($('#phpout'));
+					}
+				})
+				.done(function( ) {
+					console.log( "second success" );
+				})
+				.fail(function( ) {
+			    	console.log( "error" );
+			    	return false;
+			    })
+				.always(function( ) {
+			    	console.log( "complete" );
+			    });
+			    
+			    // Return the deferred object for listening
+			    return retVal;
+			}
+
      		
    				cont = $('.container #loginmenu #tabscontent #features #mydata #CommunicationDet');				
 				$(cont).hide("drop");

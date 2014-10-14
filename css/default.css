@@ -83,18 +83,7 @@ clear:both;
 text-fill-color: red;
 }
 
-#userinfo {
-background-color: yellow;
-height: 52%;
-width: 9%;
-margin-left:50;
-margin-top:50;
-float: left;
-display: block;
-border: double;
-z-index: 100;
-margin-right: 100;
-}
+
 
 #submenu{
 background-color: rgba(218,235,245,0);
@@ -114,6 +103,15 @@ background-color: rgba(218,235,245,0);
 	border-style: groove;
 	position: absolute;
 	z-index: 1;	
+}
+.UserInfo{
+	width:20%;
+	height:4%;
+	top:0;
+	color: black;
+	font-style: italic;
+	font-size: 15;
+	clear: both;
 }
 .filler-below {
 	width: 80%;
@@ -294,7 +292,7 @@ header h1 {
 	left:10%;
 	top:42%;
 	width: 30%;
-	background-color: #a1a4a8;
+	background-color: #e6e8eb;
 	height: 53%;
 }
 
@@ -304,6 +302,8 @@ header h1 {
 /*	background-image: url(../images/background/window.jpeg);*/
 }
 #SoA:hover{
+		left:44.5%;
+		top:41.5%;
 		height: 18.5%;
 		width:10.5%;
 		background-color: #8c9eaf;
@@ -376,9 +376,13 @@ header h1 {
 .heading > h4{
 	color: black;
 	margin-left: 10%;
-	font-size: medium;
+	font-size: 25px;
 }
-
+.heading > h5{
+	color: black;
+	margin-left: 10%;
+	font-size: 15px;
+}
 .content > p{
 	color: blue;
 	font-size: 16px;

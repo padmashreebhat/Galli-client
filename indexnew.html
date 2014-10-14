@@ -1,0 +1,443 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="js/fblogin.js"></script>
+		<script src="js/googlelogin.js"></script>
+
+<title>Welcome to Sobha Ultima Campus Web Portal</title>
+<style type="text/css">
+body{
+	 background:#212121;
+	 font:bold 12px Arial, Helvetica, sans-serif;
+	 margin:0;
+	 padding:0;
+	 min-width:960px;
+	 color:#bbbbbb; 
+}
+
+a.forgot { 
+	text-decoration:none; 
+	color:#00c8ff;
+}
+
+/******************** Info, Warning, Error, Validation, Success messages *************************/
+.info, .success, .warning, .error, .validation {
+	font-style: italic;
+	font-size: 12px;
+	font-family:sans-serif;
+	text-align: left;
+	border: 1px solid;
+	background-repeat: no-repeat;
+	background-position: 10px 10px;
+	padding:10px 0px 16px 50px; margin:0px 15px 0px 10px;
+	width:165px; height:33px; min-height: 23px; min-width:50px;
+	overflow:hidden; word-wrap:break-word;
+}
+.info {
+	color: #00529B;
+	background-color: #BDE5F8;
+	background-image: url('images/info.png');
+}
+.success {
+	color: #4F8A10;
+	background-color: #DFF2BF;
+	background-image:url('images/success.png');
+}
+.error {
+	color: #D8000C;
+	background-color: #FFBABA;
+	background-image: url('images/error.png');
+}
+.warning {
+	color: #9e5f00;
+	background-color: #FEEFB3;
+	background-image: url('images/warning.png');
+}
+.validation {
+	color: #D63301;
+	background-color: #FFCCBA;
+	background-image: url('images/validation.png');
+}
+/******************** Info, Warning, Error, Validation, Success messages *************************/
+
+h1 {
+	font: 4em normal Arial, Helvetica, sans-serif;
+	padding: 20px;	margin: 0;
+	text-align:center;
+}
+
+h1 small{
+	font: 0.2em normal  Arial, Helvetica, sans-serif;
+	text-transform:uppercase; letter-spacing: 0.2em; line-height: 5em;
+	display: block;
+}
+
+h2 {
+    color:#bbb;
+    font-size:3em;
+	text-align:center;
+	text-shadow:0 1px 3px #161616;
+}
+
+.container {width: 960px; margin: 0 auto; overflow: hidden;}
+
+#content {	float: left; width: 100%;}
+
+.post { margin: 0 auto; padding-bottom: 50px; float: left; width: 960px; }
+
+.btn-sign {
+	width:460px;
+	margin-bottom:20px;
+	margin:0 auto;
+	padding:20px;
+	border-radius:5px;
+	background: -moz-linear-gradient(center top, #00c6ff, #018eb6);
+    background: -webkit-gradient(linear, left top, left bottom, from(#00c6ff), to(#018eb6));
+	background:  -o-linear-gradient(top, #00c6ff, #018eb6);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#00c6ff', EndColorStr='#018eb6');
+	text-align:center;
+	font-size:36px;
+	color:#fff;
+	text-transform:uppercase;
+}
+
+.btn-sign a { color:#fff; text-shadow:0 1px 2px #161616; }
+
+#mask {
+	display: none;
+	background: #000; 
+	position: fixed; left: 0; top: 0; 
+	z-index: 10;
+	width: 100%; height: 100%;
+	opacity: 0.8;
+	z-index: 999;
+}
+
+.login-popup{
+	display:none;
+	background: #333;
+	padding: 10px; 	
+	border: 2px solid #ddd;
+	float: left;
+	font-size: 1.2em;
+	position: fixed;
+	top: 50%; left: 50%;
+	z-index: 99999;
+	box-shadow: 0px 0px 20px #999;
+	-moz-box-shadow: 0px 0px 20px #999; /* Firefox */
+    -webkit-box-shadow: 0px 0px 20px #999; /* Safari, Chrome */
+	border-radius:3px 3px 3px 3px;
+    -moz-border-radius: 3px; /* Firefox */
+    -webkit-border-radius: 3px; /* Safari, Chrome */
+}
+
+img.btn_close {
+	float: right; 
+	margin: -28px -28px 0 0;
+}
+
+fieldset { 
+	border:none; 
+}
+
+form.signin .textbox label { 
+	display:block; 
+	padding-bottom:7px; 
+}
+
+form.signin .textbox span { 
+	display:block;
+}
+
+form.signin p, form.signin span { 
+	color:#999; 
+	font-size:11px; 
+	line-height:18px;
+} 
+
+form.signin .textbox input { 
+	background:#666666; 
+	border-bottom:1px solid #333;
+	border-left:1px solid #000;
+	border-right:1px solid #333;
+	border-top:1px solid #000;
+	color:#fff; 
+	border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+	font:13px Arial, Helvetica, sans-serif;
+	padding:6px 6px 4px;
+	width:200px;
+}
+
+form.signin input:-moz-placeholder { color:#bbb; text-shadow:0 0 2px #000; }
+form.signin input::-webkit-input-placeholder { color:#bbb; text-shadow:0 0 2px #000;  }
+
+.button { 
+	background: -moz-linear-gradient(center top, #f3f3f3, #dddddd);
+	background: -webkit-gradient(linear, left top, left bottom, from(#f3f3f3), to(#dddddd));
+	background:  -o-linear-gradient(top, #f3f3f3, #dddddd);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#f3f3f3', EndColorStr='#dddddd');
+	border-color:#000; 
+	border-width:1px;
+	border-radius:4px 4px 4px 4px;
+	-moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+	color:#333;
+	cursor:pointer;
+	display:inline-block;
+	padding:6px 6px 4px;
+	margin-top:10px;
+	font:12px; 
+	width:214px;
+}
+
+.button:hover { background:#ddd; }
+
+</style>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> -->
+<script type="text/javascript">
+
+/*********************************************/
+/* Helper javascript functions defined here */
+/*********************************************/
+function removeLoginWindow(){
+	$($('a.login-window').attr('href')).find('div.error').remove(); 	
+	$('#mask , .login-popup').fadeOut(300 , function() {
+		$('#mask').remove();  
+	});
+	$('#phpout').empty();
+}
+
+function printError(msg,type){
+	var errbox = $($('a.login-window').attr('href')).find('div.'+type);
+	if( errbox.length == 0 )
+	{
+		$($('a.login-window').attr('href')).append('<div class='+type+'></div>');			
+		errbox = $($('a.login-window').attr('href')).find('div.'+type);
+	}
+	errbox.text(msg);
+}
+
+function isInputValid(){
+	var retVal = true;
+	
+	var uname = $($('a.login-window').attr('href')).find('#username');
+	if( uname.val().length == 0 ){
+		uname.focus();
+		retVal = false;
+	}
+	
+	return retVal;
+}
+
+function processLoginDetails(){
+alert("inside processLoginDetails");
+	var uname = $($('a.login-window').attr('href')).find('#username');
+
+	console.log('username is '+uname.val());
+	
+	verifyUserID(uname.val())
+		.done(function(auth){
+			// Received data
+			if( auth == true ){		
+				// Call the Home Page URI
+				//var url = './Backup/Sequence-master/themes/modern-slide-in/index.html';    
+				//$(location).attr('href',url);
+			}
+			else{
+				printError('Invalid username '+uname.val()+'. Please enter again','error');					
+			}
+		});
+}
+
+function verifyUserID(username){
+	var loc = location.host;
+	var retVal = $.Deferred();
+	$.getJSON('people.php?username='+username,function(result){
+		people = result[0];
+		auth = result[1];
+
+		console.log('Authentication is '+auth['username']+', '+auth['auth']);
+		retVal.resolve(auth['auth']);
+		
+		// Process People Object 
+		$('#phpout').empty();
+		for(var i=0; i<people.length; i++){
+			$('<div/>').text(people[i].lname).appendTo($('#phpout'));
+			$('<div/>').text(people[i].fname).appendTo($('#phpout'));
+			$('<div/>').text(people[i].age).appendTo($('#phpout'));
+		}
+	})
+	.done(function( ) {
+		console.log( "second success" );
+	})
+	.fail(function( ) {
+    	console.log( "error" );
+    	return false;
+    })
+	.always(function( ) {
+    	console.log( "complete" );
+    });
+    
+    // Return the deferred object for listening
+    return retVal;
+}
+
+/*********************************************/
+/* javascript function overrides */
+/*********************************************/
+$(document).ready(function() {
+	
+	$('a.login-window').click(function() {
+			
+		// Getting the variable's value from a link 
+		var loginBox = $(this).attr('href');
+
+		//Fade in the Popup and add close button
+		$(loginBox).fadeIn(300);
+		
+		//Set the center alignment padding + border
+		var popMargTop = ($(loginBox).height() + 24) / 2; 
+		var popMargLeft = ($(loginBox).width() + 24) / 2; 
+		
+		$(loginBox).css({ 
+			'margin-top' : -popMargTop,
+			'margin-left' : -popMargLeft
+		});
+		
+		// Add the mask to body
+		$('body').append('<div id="mask"></div>');
+		$('#mask').fadeIn(300);
+		
+		var uname = $(loginBox).find('#username');
+		var pass = $(loginBox).find('#password');
+		uname.val(''); pass.val('');
+
+		uname.focus();
+		uname.show().unbind('keyup').keyup(function(evt){
+			if(evt.keyCode == 13){
+				if(uname.val().length > 0){
+					pass.focus();
+				}
+			}
+		});
+		
+		pass.show().unbind('keyup').keyup(function(evt){
+			if(evt.keyCode == 13) {
+				if( isInputValid() == true ){
+					processLoginDetails();
+				}
+			}
+		});	
+	
+		$(loginBox).children().show().unbind('keyup').keyup(function(evt){
+			if(evt.keyCode == 27){
+				removeLoginWindow();
+			}
+		});					
+		
+		$(loginBox).find('#signin').show().unbind('click').click(function(){
+			if( isInputValid() == true )
+			{
+				processLoginDetails();
+			}
+		});
+
+		/*event.preventDefault();*/
+	});
+	
+	// When clicking on the button close or the mask layer the popup closed
+	$('a.close').on('click', function() { 
+	
+		removeLoginWindow();			
+		return false;
+	});
+
+	$(document).on('click', '#mask', function() {
+	
+		removeLoginWindow();					
+		return false;
+	});
+
+});
+
+
+
+</script>
+
+<!-- <link rel="canonical" href="http://www.alessioatzeni.com/wp-content/tutorials/jquery/login-box-modal-dialog-window/index.html" /> -->
+</head>
+<body>
+<h1>Welcome to Sobha Ultima Campus<small>Located at Jakkur Plantation | <a href="http://goo.gl/jUfLxi">Google Map</a></small></h1>
+				<div
+				  class="fb-like"
+				  data-send="true"
+				  data-width="450"
+				  data-show-faces="true">
+				</div>
+				<div id="LoginInfo" class="UserInfo"> </div>
+
+   <script type="text/javascript">
+      (function() {
+       var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+       po.src = 'https://apis.google.com/js/client:plusone.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+     })();
+    </script>
+
+<div class="container">
+	<div id="content">
+		<div class="post" align="center">
+    	<h3>Access to Malachite Owners and Residents</h3>
+        	<div class="btn-sign">
+				<a href="#login-box" class="login-window">Sign In</a>
+        	</div>
+		</div>
+        
+        <div id="login-box" class="login-popup">
+        	<a href="#" class="close"><img src="images/close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
+        								<!----- Facebook Login --------------------------------------------------->
+							<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+							</fb:login-button>
+							
+							<div id="status">
+							</div>
+							<br>
+
+							<!----- google Login --------------------------------------------------->
+							<button class="g-signin" id="signinButton" onclick="ongooglebuttonclick()"
+						        data-scope="https://www.googleapis.com/auth/plus.login"
+						        data-clientid="1084232835515-t2tvcifav346l5qo2v58pmp6prlh40uo.apps.googleusercontent.com"
+						        data-callback="onSignInCallback"
+						        data-theme="dark"
+						        data-cookiepolicy="single_host_origin"
+						        data-requestvisibleactions="http://schemas.google.com/AddActivity"
+						        data-width="wide">
+						    </button>
+
+			<form method="post" class="signin" action="#">
+                <fieldset class="textbox">
+            	<label class="username">
+                <span>User email</span>
+                <input id="username" name="username" value="" type="text" autocomplete="on" placeholder="Username">
+                </label>
+                
+                
+                <button id="signin" class="submit button" type="button">Sign in</button>
+                
+                </fieldset>
+			</form>			
+		</div>
+    </div>
+    
+	<div id="phpout">
+	</div>
+</div>
+
+
+</body>
+</html>

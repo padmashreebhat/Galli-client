@@ -15,9 +15,9 @@
 			<img src="images/notice.jpg" style="float:left" width="75" height="75">
 			<fieldset>
 			<legend>Details</legend>
-			<label> NoticeID  </label> <h3 id="NoticeID" name="NoticeID"> NB00023 </h3>
-			<label> Subject  </label> <h3 id="Subject" name="Subject"> Ganesha Festival Announcement </h3>
-			<label> Details </label> <h3 id="NoticeDet" name="NoticeDet"> Ganesha Festival Announcement</h3>
+			<label> NoticeID  </label> <h3 id="NoticeID" name="NoticeID">  </h3>
+			<label> Subject  </label> <h3 id="Subject" name="Subject">  </h3>
+			<label> Details </label> <h3 id="NoticeDet" name="NoticeDet"> </h3>
 			</fieldset>
 		</div>		
 		</div>
@@ -59,8 +59,8 @@
 										<option value="OfficeStaff">OfficeStaff</option>
 										<option value="Others">Others</option>
 										</select> <br>
-										<label>Subject </label><input id='Subject' type="text" style="width:450px;" name="Subject"> <br>
-										<label> Detail </label><TEXTAREA NAME="SpecialRequest" ROWS="8" style="width:450px;">Please enter your details</TEXTAREA>
+										<label>Subject </label><input id="Subject" type="text" style="width:450px;" name="Subject"> <br>
+										<label> Detail </label><TEXTAREA id="Detail" NAME="SpecialRequest"  ROWS="8" style="width:450px;">Please enter your details</TEXTAREA>
 									</fieldset>
 								</div>	
 								<div id='buttonwin'>
@@ -169,14 +169,14 @@
 							<form action="#" method="post">
 								<div id='Create'>
 									 <fieldset>
-										 <legend>Notice Board</legend>
 						 				<label>  Priority </label>
 										<select purpose="Medium">
 										<option value="Medium">Medium</option>
 										<option value="High">High</option>
 										</select> <br>
 										<label>Subject </label><input id='Subject' type="text" style="width:450px;" name="Subject"> <br>
-										<label> Detail </label><TEXTAREA NAME="SpecialRequest" ROWS="8" style="width:450px;">Please enter your details</TEXTAREA>
+										<label> Detail </label><TEXTAREA id='Detail' NAME="SpecialRequest" ROWS="8" style="width:450px;">Please enter your details</TEXTAREA>
+										<label> ValidUpto  </label> <input type="date" id="Validity" name="Validity"> 
 									</fieldset>
 								</div>	
 								<div id='buttonwin'>

@@ -39,7 +39,7 @@ function CreateGroupTable()
 
 function addGroupDetails()
  {
-     var GroupName = document.getElementById("GroupName");
+    var GroupName = document.getElementById("GroupName");
     var Description = document.getElementById("Description");
     var MailList = document.getElementById("MailList");
     var table = document.getElementById("tablespace");

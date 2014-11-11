@@ -267,6 +267,10 @@ function deleteSP(obj) {
 					});			          
 				});
 				$('#filler-below').show();
+				$('body').append('<div id="mask"></div>');
+				$('#mask').fadeIn(300);
+				
+
         }
 
  function loadhomehelperswin(divID) {
@@ -365,6 +369,10 @@ function deleteSP(obj) {
 
 				});
 				$('#filler-below').show();
+				$('body').append('<div id="mask"></div>');
+				$('#mask').fadeIn(300);
+				
+
 
         }
 

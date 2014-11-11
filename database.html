@@ -6,6 +6,100 @@
 
 <body>
 <div id="wrapper">
+
+		   <div id="Instructor1">
+		    <div id="tabs">
+		      <ul>
+		        <li id="login" onclick="loadloginmenu()">Login</li>
+		        <li id="features" onclick="loadloginmenu()">Features</li>
+		        <li id="aboutus">AboutUS</li>
+		         <a onClick="javascript:hidepopupwin()"> <img src="images/close.png" alt="Smiley face" style="float:right" alt="HTML tutorial" width="42" height="42"></a>
+				<h3 style="font-family:arial;color:white;font-size:24px;text-align:center;"> Login  </h3>
+		      
+			</ul>
+		      
+		      	<div class=submenutitle>
+				<h4> Instructor </h4>
+				
+				</div>			
+		    </div>
+	    
+		    <div id="tabscontent">
+
+	      <div class="tabpage" id="login">
+					<form action="#" method="post">
+						 <fieldset>
+							 <legend>login</legend>
+							<!----- Facebook Login --------------------------------------------------->
+							<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+							</fb:login-button>
+							
+							<div id="status">
+							</div>
+							<br>
+
+							<!----- google Login --------------------------------------------------->
+							<button class="g-signin" id="signinButton" onclick="ongooglebuttonclick()"
+						        data-scope="https://www.googleapis.com/auth/plus.login"
+						        data-clientid="1084232835515-t2tvcifav346l5qo2v58pmp6prlh40uo.apps.googleusercontent.com"
+						        data-callback="onSignInCallback"
+						        data-theme="dark"
+						        data-cookiepolicy="single_host_origin"
+						        data-requestvisibleactions="http://schemas.google.com/AddActivity"
+						        data-width="wide">
+						    </button>
+						    <div id=profile>
+						    </div>
+							</fieldset>
+														 
+							 <br>
+							 <fieldset>
+								 <legend>New User?</legend>
+						 		 <input  class="bigbutton" type="button" value="Register" onclick="RegisterUser()"/> 
+							 </fieldset>
+
+					</form>
+	      </div>		    
+			      <div class="tabpage" id="AddInstructorDetails">
+							<form action="#" method="post">
+								<div id='Add'>
+									 <fieldset>
+									  <img src="images/instructor.jpeg" style="float:left" width="75" height="75">
+										 <legend>InstructorDetails</legend>
+										 <label> Name  </label> <input type="text" id="SPName" name="SPName"> 
+						 				<label>  Field </label>
+										<select purpose="Music">
+										<option value="Music">Electrica</option>
+										<option value="Dance">Plumber</option>
+										<option value="Tennis">Civil</option>
+										<option value="Taekwondo">OfficeStaff</option>
+										<option value="Others">Others</option>
+										</select> <br>
+										<label> Contact </label><input id='Contact' type="text" style="width:450px;" name="Contact"> <br>
+										<label> Qulification </label><input id='Contact' type="text" style="width:450px;" name="Contact"> <br>
+										<label> Address </label><TEXTAREA NAME="SpecialRequest" ROWS="8" style="width:450px;">Please enter address</TEXTAREA>
+										<label> Documents </label><input id='Contact' type="text" style="width:450px;" name="Contact"> <br>
+									</fieldset>
+								</div>	
+								<div id='buttonwin'>
+								<div id="container" class="container">
+										<div id='SearchSP' class="roundbutton" onClick="SearchIns()">
+							                <a class="link icon_find"> </a>
+										</div>
+										<div id='SubmitSP' class="roundbutton" onClick="StoreInsDetails()">
+							                <a class="link icon_submit"> </a>
+										</div>
+								</div>
+								</div>			
+							</form>
+			      </div>
+			      <div class="tabpage" id="ViewInstructorDetails">
+			      	<table id="instable"></table>
+			      </div>
+		    					   
+			 </div>
+		
+		</div>	
 	   <div id="ServiceProvider">
 		    <div id="tabs">
 		      <ul>

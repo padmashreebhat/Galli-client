@@ -1,12 +1,58 @@
+function getlatestnbMessages(){
+	//open database Communciation table
+    var Command="GetNB";
+    var retVal = $.Deferred();
+	var email=getuserID();
+ 	var tablecontents = "";
+
+ 	tablecontents = "<table>";
+	$.getJSON('communication.php?Command='+Command+'&username='+email,function(result){
+
+		noticeboard = result[0];
+		for(var i=0; i<noticeboard.length; i++){
+			      tablecontents += "<tr>";
+			      tablecontents += "<td onclick='ShownbDetails(this)'>" + noticeboard[i].lname + "</td>";
+			      tablecontents += "</tr>";
+		}
+			   tablecontents += "</table>";
+			   document.getElementById("nbtable").innerHTML = tablecontents;
+	});
+	
+}
+
+function ShownbDetails(row){
+    Command="GetnbDetail";
+    var retVal = $.Deferred();
+	var nbrow=row.parentNode.rowIndex;
+	$.getJSON('communication.php?Command='+Command+'&username='+email,function(result){
+						
+		});
+        var cont = $('#filler-below');
+		cont.load('communication.html #noticeboarddet #tabscontent', function(){
+					
+		var Subject= noticeboard[nbrow].lname;
+		var id= noticeboard[nbrow].fname;
+		var Detail= noticeboard[nbrow].age;
+		var Compid="<h3>"+Compid+"</h3>";
+		var CompDetails="Shower in Study is leaking ";
+ 
+        $("#tabscontent #NoticeID").html(id+"<br>");
+        $("#tabscontent #Subject").html(Subject+"<br>");
+		$("#tabscontent #NoticeDet").html(Detail+"<br>");
+	
+ 				$('#filler-below').show();
+				});
+
+				$('body').append('<div id="mask"></div>');
+				$('#mask').fadeIn(300);
+				
+				
+
+}
 /*---------------------------------------------------------------------------------        
  ------------------------Quick Window related--------------------------------------
 ----------------------------------------------------------------------------------*/
 
-function getlatestnbMessages(){
-	//open database Communciation table
-	var messages ="1. Latest  message from association : Ganesha festival Schedule annuoncement";
-	return messages;
-} 
 
 function getMsgDetails(){
 	alert("getting Msg Details");
@@ -27,7 +73,10 @@ function loadopenpolltable(){
 				cont.load('communication.html #Poll #tabscontent #ViewPoll', function(){
 					createpolltable(pollview);
 				});
+				$('body').append('<div id="mask"></div>');
+				$('#mask').fadeIn(300);
 				$('#filler-below').show();
+
 }
 function loadclosepolltable(){
            var cont = $('#filler-below');
@@ -35,7 +84,10 @@ function loadclosepolltable(){
 				cont.load('communication.html #Poll #tabscontent #ViewPoll', function(){
 					createpolltable(pollview);
 				});
+				$('body').append('<div id="mask"></div>');
+				$('#mask').fadeIn(300);
 				$('#filler-below').show();
+
 }
 function loadNBdetails(){
            var cont = $('#filler-below');
@@ -43,7 +95,10 @@ function loadNBdetails(){
 				cont.load('communication.html #noticeboarddet #tabscontent', function(){
 
 				});
+				$('body').append('<div id="mask"></div>');
+				$('#mask').fadeIn(300);
 				$('#filler-below').show();
+
 }
 /*---------------------------------------------------------------------------------        
  ------------------------Load Opinion Poll--------------------------------------------
@@ -253,6 +308,9 @@ var cont = $('#filler-below');
 					createcomplainttable();
 					});			          
 				});
+				
+				$('body').append('<div id="mask"></div>');
+				$('#mask').fadeIn(300);
 				$('#filler-below').show();
         }
 
@@ -297,6 +355,38 @@ function createcomplainttable(){
 function RegisterComplaint(){
     /*Register Compliant */
 	alert("Register complaint and store in database");
+	var retVal = $.Deferred();
+	var email=getuserID();
+	var Subject=$('#CompliantBox #tabscontent #CreateCompliant #Subject').val();
+	var Detail=$('#CompliantBox #tabscontent #CreateCompliant  #Detail').val();
+	var Command="SubmitComplaint";
+	
+		$.getJSON('communication.php?Command='+Command+'&Subject='+Subject+'&Detail='+Detail+'&email='+email+'&Validity='+Validity,function(result){
+		people = result[0];
+		auth = result[1];
+
+		console.log('Authentication is '+auth['username']+', '+auth['auth']);
+		retVal.resolve(auth['auth']);
+		
+		// Process People Object 
+		$('#phpout').empty();
+		for(var i=0; i<people.length; i++){
+			$('<div/>').text(people[i].lname).appendTo($('#phpout'));
+			$('<div/>').text(people[i].fname).appendTo($('#phpout'));
+			$('<div/>').text(people[i].age).appendTo($('#phpout'));
+		}
+	})
+	.done(function( ) {
+		console.log( "second success" );
+	})
+	.fail(function( ) {
+    	console.log( "error" );
+    	return false;
+    })
+	.always(function( ) {
+    	console.log( "complete" );
+    });
+
 }
 
 
@@ -345,6 +435,8 @@ function ViewNoticeDetailsWindow(obj){
 					createnoticetable();
 					});			          
 				});
+				$('body').append('<div id="mask"></div>');
+				$('#mask').fadeIn(300);
 				$('#filler-below').show();
         }
 
@@ -380,9 +472,6 @@ function createnoticetable(){
 
 }
 
-function SubmitNotice(){
-	alert("update info into database");
-}
 
 
 function loadSMS(){
@@ -390,5 +479,81 @@ function loadSMS(){
 				cont.load('communication.html #SMS', function(){
 				console.log("inside SMS");			
 					});	
-					$('#filler-below').show();		          
+				$('body').append('<div id="mask"></div>');
+				$('#mask').fadeIn(300);
+				$('#filler-below').show();
+		          
+}
+
+/*---------------------------------------------------------------------------------        
+ ------------------------Update Database with Noticeboard details--------------------------------------------
+----------------------------------------------------------------------------------*/
+function SubmitNotice(){
+	alert("update info into database");
+	var retVal = $.Deferred();
+	var email=getuserID();
+	var Subject=$('#NoticeBoard #tabscontent #CreateNotice #Subject').val();
+	var Detail=$('#NoticeBoard #tabscontent #CreateNotice  #Detail').val();
+	var Validity=$('#NoticeBoard #tabscontent #CreateNotice #Validity').val();
+	var Command="SubmitNB";
+	
+		$.getJSON('communication.php?Command='+Command+'&Subject='+Subject+'&Detail='+Detail+'&email='+email+'&Validity='+Validity,function(result){
+		people = result[0];
+		auth = result[1];
+
+		console.log('Authentication is '+auth['username']+', '+auth['auth']);
+		retVal.resolve(auth['auth']);
+		
+		// Process People Object 
+		$('#phpout').empty();
+		for(var i=0; i<people.length; i++){
+			$('<div/>').text(people[i].lname).appendTo($('#phpout'));
+			$('<div/>').text(people[i].fname).appendTo($('#phpout'));
+			$('<div/>').text(people[i].age).appendTo($('#phpout'));
+		}
+	})
+	.done(function( ) {
+		console.log( "second success" );
+	})
+	.fail(function( ) {
+    	console.log( "error" );
+    	return false;
+    })
+	.always(function( ) {
+    	console.log( "complete" );
+    });
+    
+    // Return the deferred object for listening
+    Command="GetNB";
+ 	
+	$.getJSON('database.php?username='+email,function(result){
+
+		people = result[0];
+		auth = result[1];
+
+		console.log('Authentication is '+auth['username']+', '+auth['auth']);
+		retVal.resolve(auth['auth']);
+		
+		// Process People Object 
+		$('#phpout').empty();
+		for(var i=0; i<people.length; i++){
+			$('<div/>').text(people[i].lname).appendTo($('#phpout'));
+			$('<div/>').text(people[i].fname).appendTo($('#phpout'));
+			$('<div/>').text(people[i].age).appendTo($('#phpout'));
+		}
+	})
+	.done(function( ) {
+		console.log( "second success" );
+	})
+	.fail(function( ) {
+    	console.log( "error" );
+    	return false;
+    })
+	.always(function( ) {
+    	console.log( "complete" );
+    });
+    
+    // Return the deferred object for listening
+	
+    return retVal;
 }

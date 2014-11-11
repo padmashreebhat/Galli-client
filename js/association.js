@@ -13,6 +13,10 @@ function loadpendingApproval(){
 						$('#filler-below').show();
 						var SoA="Open";
 						CreateSealofApproval(SoA);
+						$('body').append('<div id="mask"></div>');
+				$('#mask').fadeIn(300);
+				
+
 				}
 function loadapprovedrequest(){
 	            var cont = $('#filler-below');
@@ -24,6 +28,10 @@ function loadapprovedrequest(){
 						$('#filler-below').show();
 						var SoA="Approved";
 						CreateSealofApproval(SoA);
+						$('body').append('<div id="mask"></div>');
+				$('#mask').fadeIn(300);
+				
+
 	
 }
 
@@ -59,6 +67,10 @@ function ScheduleMeeting(divID) {
 					});			          
 				});
 				$('#filler-below').show();
+				$('body').append('<div id="mask"></div>');
+				$('#mask').fadeIn(300);
+				
+
         }
 
 
@@ -407,6 +419,10 @@ function loadsealofapproval(divID) {
 				$("#rejectbox").hide();
 						});
 						$('#filler-below').show();
+						$('body').append('<div id="mask"></div>');
+				$('#mask').fadeIn(300);
+				
+
 				}
 
 function  CreateSealofApproval(SoA)
@@ -534,6 +550,10 @@ function ViewReq(obj){
 					});			          
 				});
 				$('#filler-below').show();
+				$('body').append('<div id="mask"></div>');
+				$('#mask').fadeIn(300);
+				
+
         }
 
 

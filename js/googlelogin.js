@@ -1,7 +1,6 @@
 		function onSignInCallback(authResult) {
   if (authResult['access_token']) {
-  	alert("success google auth!!");
-  	
+   	
     // Successfully authorized
     //document.getElementById('signinButton').setAttribute('style', 'display: none');
    gapi.client.load('plus', 'v1', apiClientLoaded);  
@@ -31,13 +30,13 @@ function apiClientLoaded() {
     }
     emailstring = 'Primary email: ' +
         primaryEmail + '\n\nFull Response:\n' + JSON.stringify(resp);
+        userinformation(primaryEmail);
   }
    /* document.getElementById('responseContainer').value = 'Primary email: ' +
         primaryEmail + '\n\nFull Response:\n' + JSON.stringify(resp);*/
   //}
 function ongooglebuttonclick()
 {
-alert("googlebutton clicked");
 }
 function disconnectUser(access_token) {
   var revokeUrl = 'https://accounts.google.com/o/oauth2/revoke?token=' +
@@ -57,8 +56,7 @@ disconnectfb();
     success: function(nullResponse) {
       // Do something now that user is disconnected
       // The response is always undefined.
-      alert("succesfully disconnected");
- //      gapi.auth.signOut();
+  //      gapi.auth.signOut();
     },
     error: function(e) {
       // Handle the error

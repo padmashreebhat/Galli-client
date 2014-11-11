@@ -15,6 +15,20 @@ function CloseHHViewWindow() {
             $("#hhviewBox").show();
         }
 
+
+       function loadloginmenu(divID) {
+		   
+		    
+            var cont = $('#filler-below');
+				cont.load('database.html #Instructor1', function(){
+				console.log("inside l");
+				$('#filler-below').show();
+				$('body').append('<div id="mask"></div>');
+				$('#mask').fadeIn(300);
+				
+
+});
+}
 /************************Load Service Provider*****************************************************************/
 
        function loadHomeHelper(divID) {
@@ -43,6 +57,10 @@ function CloseHHViewWindow() {
 					$('#HomeHelpers #tabscontent #ViewHomeHelper').show();
 					});			    
 				$('#filler-below').show();
+				$('body').append('<div id="mask"></div>');
+				$('#mask').fadeIn(300);
+				
+
 				});
 
         }
@@ -223,6 +241,10 @@ function CloseInstructorView() {
 					CreateInstable();
 					});			    
 				$('#filler-below').show();
+				$('body').append('<div id="mask"></div>');
+				$('#mask').fadeIn(300);
+				
+
 
 				});
 
@@ -335,6 +357,10 @@ function CloseViewWindow() {
 					CreateSPtable();
 					});			    
 				$('#filler-below').show();
+				$('body').append('<div id="mask"></div>');
+				$('#mask').fadeIn(300);
+				
+
 
 				});
 

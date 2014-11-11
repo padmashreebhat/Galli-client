@@ -1,15 +1,20 @@
+
 function RegisterUser(){
 		$('#tabscontent #login').hide();
 		$('#tabscontent #register').show();
-		RegiseterUserDetails();
 }
 
 function RegiseterUserDetails(){
-	var loc = location.host;
+	var loc = "none";
 	var retVal = $.Deferred();
-	var useremail="fs@gmail.com";
-	var AptNum="25B";
-	$.getJSON('registeruser.php?useremail='+useremail+'&AptNumber='+AptNum,function(result){
+	var email=$('#content #Register #email').val();
+	var fname=$('#content #Register  #fname').val();
+	var lname=$('#content #Register #lname').val();
+	var AptNum=$('#content #Register #AptNum').val();
+	var AptName=$('#content #Register #AptName').val();
+	
+	
+		$.getJSON('register.php?email='+email+'&fname='+fname+'&lname='+lname+'&AptNum='+AptNum+'&AptName='+AptName,function(result){
 		people = result[0];
 		auth = result[1];
 
@@ -17,12 +22,12 @@ function RegiseterUserDetails(){
 		retVal.resolve(auth['auth']);
 		
 		// Process People Object 
-		/*$('#phpout').empty();
+		$('#phpout').empty();
 		for(var i=0; i<people.length; i++){
 			$('<div/>').text(people[i].lname).appendTo($('#phpout'));
 			$('<div/>').text(people[i].fname).appendTo($('#phpout'));
 			$('<div/>').text(people[i].age).appendTo($('#phpout'));
-		}*/
+		}
 	})
 	.done(function( ) {
 		console.log( "second success" );
@@ -36,6 +41,7 @@ function RegiseterUserDetails(){
     });
     
     // Return the deferred object for listening
+	
     return retVal;
 
 }

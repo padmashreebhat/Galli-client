@@ -1,126 +1,130 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-    <head>
+	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 		<title>Sphinx: HiveInTown</title>
-		<meta name="description" content="Sphinx : MyNest" />
+		<meta name="description" content="Sphinx : Galli" />
 		<meta name="keywords" content="MyNest Sphinx" />
-		<link rel="stylesheet" type="text/css" href="css/hptabmenu.css" />
+		<link rel="stylesheet" type="text/css" href="css/tabmenustyle.css" />
 		<link rel="stylesheet" href="css/mainmenustyle.css" type="text/css" media="screen"/>
 		<link rel="stylesheet" type="text/css" href="css/myselfdefault.css" />
+		<link rel="stylesheet" type="text/css" href="css/myselfcomponent.css" />
 		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/table.css" />
 		<link rel="stylesheet" type="text/css" href="css/customstyles.css" />
+		<link rel="stylesheet" type="text/css" href="css/alertbox.css" />
+		<link rel="stylesheet" type="text/css" href="css/login.css" />
 
-		
+
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 		<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-		<script src="js/login.js"></script>
-		<script src="js/fblogin.js"></script>
-		    <script src = "https://plus.google.com/js/client:plusone.js"></script>
-		<script src="js/googlelogin.js"></script>
 
+		<script src=js/finance.js></script>
+		<script src=js/myflat.js></script>
+		<script src=js/database.js></script>
+		<script src=js/association.js></script>
+		<script src=js/settings.js></script>
+		<script src=js/communication.js></script>
+		<script src="js/modernizr.custom.js"></script>
+		<script src="js/fblogout.js"></script>
+		<script src="js/googlelogin.js"></script>
+		<script src="js/fblogin.js"></script>
+		<script src="js/login.js"></script>
+		
 		<script src="js/modernizr.custom.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/imagegrid.css" />
 		<script type="text/javascript" src="js/modernizr.custom.26633.js"></script>
-		<h2> HiveInTown </h2>
+		
+		  <style>
+            *{
+                margin:0;
+                padding:0;
+              }
+              
+              #mask {
+	display: none;
+	background: #000; 
+	position: fixed; left: 0; top: 0; 
+	z-index: 10;
+	width: 100%; height: 100%;
+	opacity: 0.8;
+	z-index: 999;
+}
+
+          </style>
+
 	</head>
-    <body style="background-image:url(images/background/login.jpg)">
-    		<div id="LoginInfo" class="UserInfo"> </div>
+	<!-- Place this asynchronous JavaScript just before your </body> tag -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+  <script type="text/javascript">
+  (function() {
+    var po = document.createElement('script');
+    po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/client:plusone.js?onload=render';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(po, s);
+  })();
+
+  function render() {
+    gapi.signin.render('customBtn', {
+      //'callback': 'signinCallback',
+      'clientid': '841077041629.apps.googleusercontent.com',
+      'cookiepolicy': 'single_host_origin',
+      'requestvisibleactions': 'http://schema.org/AddAction',
+      'scope': 'https://www.googleapis.com/auth/plus.login'
+    });
+  }
+  </script>
+		<body style="background-image:url(images/background/login.jpg)">
+		<h1> HiveInTown </h1>
+		    		<div id="LoginInfo" class="UserInfo"> </div>
 				<div id="phpout">
 	</div>
-				<div
-				  class="fb-like"
-				  data-send="true"
-				  data-width="450"
-				  data-show-faces="true">
+<!--		<div id="fb-root"></div> -->
+			<div id="container" class="container">
+			
+				<header>
+				<div id="statuswin">
+		<div class="post" align="right">
+        	<div class="btn-sign">
+				<a href="#login-box" class="login-window">Sign In</a>
+        	</div>
+		</div>
+
+
+<!--				<div
+					  class="fb-like"
+					  data-send="true"
+					  data-width="450"
+					  data-show-faces="true" >
+					</div>
+					  <!-- In the callback, you would hide the gSignInWrapper element on a
+	  successful sign in -->
+<!---				  <div id="gSignInWrapper">
+				    <span class="label"></span>
+				    <div id="customBtn" class="customGPlusSignIn">
+				      <span class="icon"></span>
+				      <span class="buttonText">G</span>
+				    </div>
+				  </div>
+				
 				</div>
-    <script type="text/javascript">
-      (function() {
-       var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-       po.src = 'https://apis.google.com/js/client:plusone.js';
-       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-     })();
-    </script>
- 
-		<img src="images/loading.gif" style="display:none;"/>
-				<div id="ri-grid" class="ri-grid ri-grid-size-2">
-					<img class="ri-loading-image" src="images/loading.gif"/>
-					<ul>
-						<li><a href="#"><img src="images/medium/1.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/2.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/3.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/4.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/5.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/6.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/7.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/8.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/9.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/10.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/11.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/12.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/13.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/14.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/15.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/16.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/17.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/18.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/19.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/20.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/21.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/22.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/23.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/24.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/25.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/26.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/27.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/28.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/29.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/30.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/31.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/32.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/33.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/34.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/35.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/36.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/37.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/38.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/39.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/40.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/41.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/42.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/43.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/44.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/45.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/46.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/47.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/48.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/49.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/50.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/51.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/52.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/53.jpg"/></a></li>
-						<li><a href="#"><img src="images/medium/54.jpg"/></a></li>
-					</ul>
-				</div>
-		<div id="container" class="container">
-		
-	<div id="loginmenu" class="loginmenu">
-    <div id="tabs">
-      <ul>
-        <li id="login" onclick="loadloginmenu()">Login</li>
-        <li id="features" onclick="loadloginmenu()">Features</li>
-        <li id="aboutus">AboutUS</li>
-      </ul>
-    </div>
-        <div id="tabscontent">
-	      <div class="tabpage" id="login">
-					<form action="#" method="post">
-						 <fieldset>
-							 <legend>login</legend>
-							<!----- Facebook Login --------------------------------------------------->
+			--->
+			</header>
+			<div id="UserInfo" class="UserInfo"> </div>
+
+
+	<div id="content">
+        
+        <div id="login-box" class="login-popup">
+        	<a href="#" class="close"><img src="images/close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
+			<form method="post" class="signin" action="#">
+                
+                			<!----- Facebook Login --------------------------------------------------->
 							<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 							</fb:login-button>
 							
@@ -138,66 +142,46 @@
 						        data-requestvisibleactions="http://schemas.google.com/AddActivity"
 						        data-width="wide">
 						    </button>
-						    <div id=profile>
-						    </div>
-							</fieldset>
-														 
-							 <br>
-							 <fieldset>
-								 <legend>New User?</legend>
-						 		 <input  class="bigbutton" type="button" value="Register" onclick="RegisterUser()"/> 
-							 </fieldset>
+			</br>
+                     <div class="btn-sign">
+						<a href="#Register" class="login-window">NewUser?</a>
+					</div>
+                </fieldset>
+			</form>			
+		</div>
+		
+        <div id="Register" class="login-popup">
+        	<a href="#" class="close"><img src="images/close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
+			<form method="post" class="signin" action="#">
+                <fieldset class="textbox">
+	            	<label class="username">
+	                <span>User email</span>
+	                <input id="email" name="email" value="" type="text" autocomplete="on" placeholder="email"> </br>
+	                 <span>First Name</span>
+	                <input id="fname" name="fname" value="" type="text" autocomplete="on" placeholder="FirstName">
+	                <span>Last Name</span>
+	                <input id="lname" name="lname" value="" type="text" autocomplete="on" placeholder="LastName">
+	                <span>Apt Num</span>
+	                <input id="AptNum" name="AptNum" value="" type="text" autocomplete="on" placeholder="AptNum">
+	                </label>
+	                <input id="custbutton" type="button" value="Register" onclick="RegiseterUserDetails()"/> 
+                </fieldset>
+			</form>			
+		</div>
 
-					</form>
-	      </div>
+    </div>
 
-	      <div class="tabpage" id="register">
-					<form action="#" method="post">
-						 <fieldset>
-								 <legend>User Information</legend>
-								 <label> email </label> <input type="text" id="fname" name="email"> 
-         						 <label> First Name  </label> <input type="text" id="fname" name="fname"> 
-         						 <label> Last Name  </label> <input type="text" id="lname" name="lname"> 
-						 </fieldset>
-						<fieldset>		 
-								 <legend>Apartment Information</legend>
-         						 <label> Flat Number  </label> <input type="text" id="AptNum" name="AptNum"> 
-         						 <label> Apartment Name  </label> <input type="text" id="AptName" name="AptName"> 							
-								 <input class="bigbutton" type="button" value="Register" onclick="RegiseterUserDetails()"/> 
-						</fieldset>
-						<fieldset>
-								 <br>
-								 <legend>New Galli to be created?</legend>
-						 		 <input class="bigbutton" type="button" value="CreateGalli" onclick="CreateGalli()"/> 
-				    	 </fieldset>
-					</form>
-	      </div>
 
-	      <div class="tabpage" id="registergalli">
-					<form action="#" method="post">
-						 <fieldset>
-								 <legend>ApartmentDetails</legend>
-         						 <label> ApartmentName  </label> <input type="text" id="aptname" name="aptname"> 
-         						 <label> ApartmentAddress  </label> <input type="text" id="aptaddress" name="aptaddress">
-         						 <label> NumberofBlocks  </label> <input type="text" id="NumberofBlocks" name="NumberofBlocks">
-         						 <label> NumberofApartments  </label> <input type="text" id="TotalNumberofApartments" name="TotalNumberofApartments"> 
-								 <input class="bigbutton" type="button" value="Create" /> 
-						</fieldset>
-					</form>
-	      </div>
 
-	      
-		<div class="tabpage" id="features">
-		<form action="#" method="post">
-					<div id="mainmenu">
-		            <div id='security' class="item">
+			<div id="filler-below" class="filler-below">			
+			</div>
+
+			<div id="mainmenu">
+		           
+		    		<div id='security' class="item">
 		                <a class="link icon_security"></a>
 		                <div class="item_content">
 		                    <h2>Security</h2>
-		                    <p>
-		                        <a href="#">Vehicle</a>
-		                        <a href="#">Visitors</a>
-		                    </p>
 		                </div>
 		            </div>
 		
@@ -205,10 +189,6 @@
 		                <a class="link icon_storage"></a>
 		                <div class="item_content">
 		                    <h2>Storage</h2>
-		                    <p>
-		                        <a href="#">Photos</a>
-		                        <a href="#">Documents</a>
-		                    </p>
 		                </div>
 		            </div>
 		            
@@ -216,23 +196,20 @@
 		                <a class="link icon_myflat"></a>
 		                <div class="item_content">
 		                    <h2>My Apartment</h2>
-		                    <p>
-		                        <a href="#">Dues</a>
-		                        <a href="#" onClick="javascript:loadmyinfo('creditwin')">Family</a>	
-		                        <a href="#">Visitors</a>		                        
-							</p>
 		                </div>
-		            </div>
+		            </div> 
 		   
 		               <div id='database' class="item">
 		                <a class="link icon_database"></a>
 		                <div class="item_content">
 		                    <h2>Database</h2>
-		                    <p>
-		                        <a href="#" onClick="javascript:loadhomehelperswin('creditwin')">Helpers</a>
-		                        <a href="#">Resident</a>
-		                        <a href="#">Service</a>
-		                    </p>
+		                </div>
+		            </div>
+
+		           <div id='settings' class="item">
+		                <a class="link icon_settings"></a>
+		                <div class="item_content">
+		                    <h2>Settings</h2>
 		                </div>
 		            </div>
 		
@@ -240,169 +217,70 @@
 		                <a class="link icon_finance"></a>
 		                <div class="item_content">
 		                    <h2>Finance</h2>
-		                    <p>
-		                        <a href="#" onClick="javascript:loadfinancedetails('creditwin')">Credit</a>
-		                        <a href="#" onClick="javascript:loaddebitwin('debitwin')">Debit</a>
-		                       <a href="#" onclick="">Reports</a>
-		                    </p>
 		                </div>
-		            </div>
+		            </div>  
 		       
 		            <div id='association' class="item">
 		                <a class="link icon_association"></a>
 		                <div class="item_content">
 		                    <h2>Association</h2>
-		                    <p>
-		                        <a href="#">Minutes</a>
-		                        <a href="#">Members</a>
-		                    </p>
 		                </div>
 		            </div>
 		            
-		            <div id=communication class="item">
+		          <div id=communication class="item">
 		                <a class="link icon_communication"></a>
 		                <div class="item_content">
 		                    <h2>Communication</h2>
-		                    <p>
-		                    	<a href="#">eMail</a>	
-		                        <a href="#">sms</a>
-		                        <a href="#" onClick="javascript:loadnoticeboard('noticeboard')">Compliant</a>
-		                    </p>
 		                </div>
-		            </div>
+		            </div>  
 		
 			</div>
-
-			<div id="mydata">
-					
-					<div id="CommunicationDet">
-					<fieldset>
-					<legend>Communication</legend>
-					<h2> Email <h2>
-					<p> Sending Mails </p>
-					<h2> SMS <h2>
-					<p> Sending SMS </p>
-					<h2> NoticeBoard </h2>
-					<p> Resident can display Notice </p>
-					</fieldset>
+			<div id="submenu">
+			
+			</div>
+		    <div id="QuickViewWin">
+				<div class="QuickView" id="Noticeboard">	
+					<div class="heading"> <h4> Noticeboard </h4></div>	
+					<div class="content"> <table id="nbtable"></table> <p id=NewNb onclick="loadNBdetails()"><a id=QuickViewfont> </a> </p> <br> <p id=Tot>  </p>
 					</div>
-					<div id="AssociationDet">
-					<fieldset>
-					<legend>Association</legend>
-					<h2> MOM <h2>
-					<p> Capturing Minutes </p>
-					<h2> Meetings <h2>
-					<p> Schedule Meetings </p>
-					<h2> Association </h2>
-					<p> Current Association details </p>
-					</fieldset>
-					</div>
-					<div id="FinanceDet">
-					<fieldset>
-					<legend>Finance</legend>
-					<h2> Credit <h2>
-					<p> Generate Receipts </p>
-					<h2> Debit <h2>
-					<p> Generate Reports </p>
-					<h2> Reports </h2>
-					<p> Generate Reports </p>
-					</fieldset>
-					</div>
-					<div id="DatabaseDet">
-					<fieldset>
-					<legend>Database</legend>
-					<h2> HomeHelpers <h2>
-					<p> Maintain details of Maid,Cook,Drivers </p>
-					<h2> Resident <h2>
-					<p> Maintain information of residents </p>
-					<h2> Employee </h2>
-					<p> Details of employee </p>
-					</fieldset>
-					</div>
-					<div id="ApartmentDet">
-					<fieldset>
-					<legend>MyHome</legend>
-					<h2> MyData <h2>
-					<p> Maintain details of Family,Car,Homehelpers </p>
-					<h2> Reports <h2>
-					<p> Maintain details bill payments,pending etc </p>
-					<h2> Visitors </h2>
-					<p> Details of visitors to my apartment </p>
-					</fieldset>
-					</div>
-					<div id="StorageDet">
-					<fieldset>
-					<legend>Storage</legend>
-					<h2> Documents <h2>
-					<p> Aggrement documents, presentations etc will be maintained </p>
-					<h2> Photos <h2>
-					<p> Photos/Videos of events </p>
-					</fieldset>
-					</div>
-					<div id="SecurityDet">
-					<fieldset>
-					<legend>Security</legend>
-					<h2> VisitorRecord <h2>
-					<p> All visitor details </p>
-					<h2> Vehicle Information <h2>
-					<p> All vehicle information </p>
-					</fieldset>
-					</div>
-
-			 </div>	
-		</form>	      
-		</div>
-      
-		<div class="tabpage" id="aboutus">
-					<form action="#" method="post">
-						 <fieldset>
-								 <legend>aboutus</legend>
-         
-							 </fieldset>
-					</form>
-	      </div>	
-	  	</div>
+				</div>
+		
+				<div class="QuickView" id="SoA" style="background-image:url(images/sealorig.jpg)">	
+					<div class="heading"> <h5> Approval </h5></div>	
+					<div class="content"> <p id=Open onclick="loadpendingApproval()">  Open: <a id=QuickViewfont> </a> </p> <br> <p id=Tot onclick="loadapprovedrequest()"> Total: <a id=QuickViewfont> </a> </p> </div>
+				</div>
+				<div class="QuickView" id="Poll" style="background-image:url(images/pollcopy.jpeg)">	
+					<div class="heading"> <h5> Poll </h5></div>	
+					<div class="content"> <p id=Open onclick="loadopenpolltable()">  Open: <a id=QuickViewfont> </a> </p> <br> <p id=Tot onclick="loadclosepolltable()"> Closed: <a id=QuickViewfont> </a> </p> </div>
+				</div>
+				<div class="QuickView" id="Bills" style="background-image:url(images/rupeecopy.jpeg)">	
+					<div class="heading"> <h5> Bills </h5></div>	
+					<div class="content"> <p id=Open onclick="getMsgDetails()">  Pending:<a id=QuickViewfont> </a> </p> <br> <p id=Tot> Old: <a id=QuickViewfont> </a></p> </div>
+				</div>
+			</div>
 
 		</div>
-			
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-		<script type="text/javascript" src="js/jquery.gridrotator.js"></script>
-		<script type="text/javascript">	
-		$('#LoginInfo').bind('contentchanged', function() {
-  // do something after the div content has changed
- // 		var loginid=('#LoginInfo').val();
- var loginid=document.getElementById("LoginInfo").innerHTML;
-  		alert("I am inside contentchanged");
-  alert(loginid);
-  verifyUserID(loginid);
-});
-			$(function() {
-			
-				$( '#ri-grid' ).gridrotator( {
-					rows		: 3,
-					columns		: 15,
-					animType	: 'fadeInOut',
-					animSpeed	: 1000,
-					interval	: 600,
-					step		: 1,
-					w320		: {
-						rows	: 3,
-						columns	: 4
-					},
-					w240		: {
-						rows	: 3,
-						columns	: 4
-					}
-				} );
-			
-			});
-			
-			 $('#LoginInfo').change(
-			 function(){ alert("insidelogininfo");
-				 
-			 }
-			 );
-              $('.item').hover(
+	
+		</body>
+</html>
+
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+ 
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+       <script>
+
+       function hidepopupwin()
+       {
+	      //$('.container #filler-below').hide();
+	      $('#mask , .container #filler-below').fadeOut(300 , function() {
+		  	$('#mask').remove();  
+		 });
+       }
+       
+	   $('.container #filler-below').hide();
+
+            $('.item').hover(
                 function(){
                     var $this = $(this);
                     expand($this);
@@ -422,11 +300,12 @@
                     angle += 40;
                     $('.link',$elem).stop().animate({rotate: '+=-40deg'}, 0);
                 },10);
-                $elem.stop().animate({width:'268px'}, 1000)
+                $elem.stop().animate({width:'200px'}, 1000)
                 .find('.item_content').fadeIn(400,function(){
                     $(this).find('p').stop(true,true).fadeIn(600);
                 });
             }
+
             function collapse($elem){
                 var angle = 1440;
                 var t = setInterval(function () {
@@ -440,13 +319,272 @@
                 $elem.stop().animate({width:'52px'}, 1000)
                 .find('.item_content').stop(true,true).fadeOut().find('p').stop(true,true).fadeOut();
             }
+ 							
+ 			            function expandsubmenu($elem){
+			                var angle = 0;
+			                var t = setInterval(function () {
+			                    if(angle == 1440){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle += 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=-40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'200px'}, 1000)
+			                .find('.item_content').fadeIn(400,function(){
+			                    $(this).find('p').stop(true,true).fadeIn(600);
+			                });
+			            }
+			            function collapsesubmenu($elem){
+			                var angle = 1440;
+			                var t = setInterval(function () {
+			                    if(angle == 0){
+			                        clearInterval(t);
+			                        return;
+			                    }
+			                    angle -= 40;
+			                    $('.link',$elem).stop().animate({rotate: '+=40deg'}, 0);
+			                },10);
+			                $elem.stop().animate({width:'75px'}, 1000)
+			                .find('.item_content').stop(true,true).fadeOut().find('p').stop(true,true).fadeOut();
+			            }
+
+							
+			var cont = $('#submenu');	
+		
+			<!---- Load communication Window ----->
+			$('.container #mainmenu #communication').click(function(e){ 
+			
+				cont.load('submenu.html #communication', function(){
+				$('.container #submenu #communication #nb').click(function(e){
+				loadnoticeboard();
+				});		
+				$('.container #submenu #communication #sms').click(function(e){
+				loadSMS();
+				});		
+				$('.container #submenu #communication #cb').click(function(e){
+				loadcompliantbox();
+				});		
+				$('.container #submenu #communication #poll').click(function(e){
+				loadopinionpoll();
+				});		
+				 $('.submenuitem').hover(
+			                function(){
+			                    var $this = $(this);
+			                    expandsubmenu($this);
+			                },
+			                function(){
+			                    var $this = $(this);
+			                    collapsesubmenu($this);
+			                }
+			            );
+
+				});
+				});
+
+				var cont = $('#submenu');	
+			
+			<!---- Load database Window ----->
+			$('.container #mainmenu #database').click(function(e){ 
+				cont.load('submenu.html #database', function(){
+				
+				$('.container #submenu #database #resident').click(function(e){
+				loadresidentwin();
+				});		
+				$('.container #submenu #database #employee').click(function(e){
+				loadSMS();
+				});		
+				$('.container #submenu #database #housekeeping').click(function(e){
+				loadHomeHelper();
+				});		
+				$('.container #submenu #database #instructor').click(function(e){
+				loadInstructorDetails();
+				//loadloginscreen();
+				});		
+				$('.container #submenu #database #serviceprovider').click(function(e){
+				loadServiceProvider();
+				});		
+
+				 $('.submenuitem').hover(
+			                function(){
+			                    var $this = $(this);
+			                    expandsubmenu($this);
+			                },
+			                function(){
+			                    var $this = $(this);
+			                    collapsesubmenu($this);
+			                }
+			            );
+				});
+				});
+			
+			<!---- Load myhome Window ----->
+			$('.container #mainmenu #myself').click(function(e){ 
+				cont.load('submenu.html #myself', function(){
+				$('.container #submenu #myself #family').click(function(e){
+				loadmyinfo();
+				});		
+				$('.container #submenu #myself #Dues').click(function(e){
+				});		
+				$('.container #submenu #myself #visitors').click(function(e){
+				});		
+
+
+				 $('.submenuitem').hover(
+			                function(){
+			                    var $this = $(this);
+			                    expandsubmenu($this);
+			                },
+			                function(){
+			                    var $this = $(this);
+			                    collapsesubmenu($this);
+			                }
+			            );
+
+				});
+				});
+			<!---- Load finance Window ----->
+			$('.container #mainmenu #finance').click(function(e){ 
+				cont.load('submenu.html #finance', function(){
+				$('.container #submenu #finance #report').click(function(e){
+				});		
+				$('.container #submenu #finance #transaction').click(function(e){
+				loadfinancedetails();
+				});		
+
+				 $('.submenuitem').hover(
+			                function(){
+			                    var $this = $(this);
+			                    expandsubmenu($this);
+			                },
+			                function(){
+			                    var $this = $(this);
+			                    collapsesubmenu($this);
+			                }
+			            );
+				});
+				});
+
+			<!---- Load settings Window ----->
+			$('.container #mainmenu #settings').click(function(e){ 
+				loadcreategroup();
+				cont.load('submenu.html #settings', function(){
+				 $('.submenuitem').hover(
+			                function(){
+			                    var $this = $(this);
+			                    expandsubmenu($this);
+			                },
+			                function(){
+			                    var $this = $(this);
+			                    collapsesubmenu($this);
+			                }
+			            );
+
+				});
+				});
+				
+				<!---- Load Security Window ----->
+			$('.container #mainmenu #security').click(function(e){ 
+				console.log("inside click");
+				cont.load('submenu.html #security', function(){
+								           $('.submenuitem').hover(
+			                function(){
+			                    var $this = $(this);
+			                    expandsubmenu($this);
+			                },
+			                function(){
+			                    var $this = $(this);
+			                    collapsesubmenu($this);
+			                }
+			            );
+				});
+				});
+
+				<!---- Load Association Window ----->
+			$('.container #mainmenu #association').click(function(e){ 
+				cont.load('submenu.html #association', function(){
+				$('.container #submenu #association #seal').click(function(e){
+				loadsealofapproval();
+				});		
+				$('.container #submenu #association #members').click(function(e){
+				loadAssociationMem();
+				});		
+				$('.container #submenu #association #meeting').click(function(e){
+				ScheduleMeeting();
+				});	
+
+				           $('.submenuitem').hover(
+			                function(){
+			                    var $this = $(this);
+			                    expandsubmenu($this);
+			                },
+			                function(){
+			                    var $this = $(this);
+			                    collapsesubmenu($this);
+			                }
+			            );
+				});
+				});
+				<!---- Load storage Window ----->
+			$('.container #mainmenu #storage').click(function(e){ 
+				console.log("inside click");
+				cont.load('submenu.html #storage', function(){
+				           $('.submenuitem').hover(
+			                function(){
+			                    var $this = $(this);
+			                    expandsubmenu($this);
+			                },
+			                function(){
+			                    var $this = $(this);
+			                    collapsesubmenu($this);
+			                }
+			            );
+				});
+				});
+
+ 
+</script>
+<script>
+/*********************************************/
+/* Helper javascript functions defined here */
+/*********************************************/
+function removeLoginWindow(){
+	$($('a.login-window').attr('href')).find('div.error').remove(); 	
+	$('#mask , .login-popup').fadeOut(300 , function() {
+		$('#mask').remove();  
+	});
+	$('#phpout').empty();
+}
+
+function printError(msg,type){
+	var errbox = $($('a.login-window').attr('href')).find('div.'+type);
+	if( errbox.length == 0 )
+	{
+		$($('a.login-window').attr('href')).append('<div class='+type+'></div>');			
+		errbox = $($('a.login-window').attr('href')).find('div.'+type);
+	}
+	errbox.text(msg);
+}
+
+		$('#LoginInfo').bind('contentchanged', function() {
+  // do something after the div content has changed
+ // 		var loginid=('#LoginInfo').val();
+ var loginid=document.getElementById("LoginInfo").innerHTML;
+  		  		verifyUserID(loginid);
+  		  		getlatestnbMessages(loginid);
+ 				$("#QuickViewWin #Noticeboard #NewNb #QuickViewfont").html(QuickViewnb+"<br>");
+
+});
 
 
 function userinformation(useremail){
-	alert(useremail);
-//	$('<div/>').text(useremail).appendTo($('#LoginInfo'));
 	document.getElementById("LoginInfo").innerHTML = useremail;
 	$('#LoginInfo').trigger('contentchanged'); 
+}
+
+function getuserID(){
+useremail=document.getElementById("LoginInfo").innerHTML;
+	return useremail;
 }
 
             function verifyUserID(username){
@@ -460,7 +598,14 @@ function userinformation(useremail){
 					console.log('Authentication is '+auth['username']+', '+auth['auth']);
 					retVal.resolve(auth['auth']);
 					
-					// Process People Object 
+					//Remove Home page content and update with main menu content 
+					$('#ri-grid').hide();
+					$('#loginmenu').hide();
+					$('#QuickViewWin').show();
+					$('#mainmenu').show();
+					$('#submenu').show();
+
+					// Process People Object
 					$('#phpout').empty();
 					for(var i=0; i<people.length; i++){
 						$('<div/>').text(people[i].lname).appendTo($('#phpout'));
@@ -483,200 +628,75 @@ function userinformation(useremail){
 			    return retVal;
 			}
 
-     		
-   				cont = $('.container #loginmenu #tabscontent #features #mydata #CommunicationDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #AssociationDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #FinanceDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #DatabaseDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #ApartmentDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #StorageDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #SecurityDet');				
-				$(cont).hide("drop");
-	
-			$('.container #loginmenu #tabscontent #features #mainmenu #communication').hover(function(e){ 
-   				cont = $('.container #loginmenu #tabscontent #features #mydata #CommunicationDet');				
-				$(cont).show("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #AssociationDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #FinanceDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #DatabaseDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #ApartmentDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #StorageDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #SecurityDet');				
-				$(cont).hide("drop");
-
-				});
-
-				$('.container #loginmenu #tabscontent #features #mainmenu #association').hover(function(e){ 
-   				cont = $('.container #loginmenu #tabscontent #features #mydata #CommunicationDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #AssociationDet');				
-				$(cont).show("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #FinanceDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #DatabaseDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #ApartmentDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #StorageDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #SecurityDet');				
-				$(cont).hide("drop");
-
-				});
-				$('.container #loginmenu #tabscontent #features #mainmenu #finance').hover(function(e){ 
-   				cont = $('.container #loginmenu #tabscontent #features #mydata #CommunicationDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #AssociationDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #FinanceDet');				
-				$(cont).show("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #DatabaseDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #ApartmentDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #StorageDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #SecurityDet');				
-				$(cont).hide("drop");
-				});
-				$('.container #loginmenu #tabscontent #features #mainmenu #database').hover(function(e){ 
-   				cont = $('.container #loginmenu #tabscontent #features #mydata #CommunicationDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #AssociationDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #FinanceDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #DatabaseDet');				
-				$(cont).show("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #ApartmentDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #StorageDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #SecurityDet');				
-				$(cont).hide("drop");
-				});
-				$('.container #loginmenu #tabscontent #features #mainmenu #myself').hover(function(e){ 
-   				cont = $('.container #loginmenu #tabscontent #features #mydata #CommunicationDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #AssociationDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #FinanceDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #DatabaseDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #ApartmentDet');				
-				$(cont).show("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #StorageDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #SecurityDet');				
-				$(cont).hide("drop");
-				});
-				$('.container #loginmenu #tabscontent #features #mainmenu #storage').hover(function(e){ 
-   				cont = $('.container #loginmenu #tabscontent #features #mydata #CommunicationDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #AssociationDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #FinanceDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #DatabaseDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #ApartmentDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #StorageDet');				
-				$(cont).show("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #SecurityDet');				
-				$(cont).hide("drop");
-				});
-				$('.container #loginmenu #tabscontent #features #mainmenu #security').hover(function(e){ 
-   				cont = $('.container #loginmenu #tabscontent #features #mydata #CommunicationDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #AssociationDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #FinanceDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #DatabaseDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #ApartmentDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #StorageDet');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features #mydata #SecurityDet');				
-				$(cont).show("drop");
-				});
+/*********************************************/
+/* javascript function overrides */
+/*********************************************/
+$(document).ready(function() {
 
 
- 		<!---- Load communication Window ----->
-			$('.container #loginmenu #tabscontent #login #register').click(function(e){
-				cont = $('.container #loginmenu #tabscontent #register');				
-				$(cont).show("drop");
-			});
-		$('.container #loginmenu #tabs #login').hover(function(e){ 
-				console.log("inside login");
-				$('.container #loginmenu #tabscontent').show("drop");
-				cont = $('.container #loginmenu #tabscontent #login');				
-				$(cont).show("drop");
-				cont = $('.container #loginmenu #tabscontent #register');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #registergalli');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features');
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #aboutus');
-				$(cont).hide("drop");
-				});
+       $("#mainmenu").hide();
+       $("#QuickViewWin").hide();
+       /* Get latest messages from database to update Noticeboard */
+				var msg=getlatestnbMessages();       
+		       	var QuickViewnb = msg;
+				$("#QuickViewWin #Noticeboard #NewNb #QuickViewfont").html(QuickViewnb+"<br>");
 				
-		$('.container #loginmenu #tabs #features').hover(function(e){ 
-				console.log("inside login");
-				$('.container #loginmenu #tabscontent').show("drop");
-				cont = $('.container #loginmenu #tabscontent #features');				
-				$(cont).show("drop");
-				cont = $('.container #loginmenu #tabscontent #login');
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #aboutus');
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #register');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #registergalli');				
-				$(cont).hide("drop");
+	  /* Get Pending Poll numbers to update QuickView window */
+				var TotPollCount=getTotalPollcount();
+				var OpenPollCount=getOpenPollcount();
+				$("#QuickViewWin #Poll #Open #QuickViewfont").html(TotPollCount+"<br>");
+				$("#QuickViewWin #Poll #Tot #QuickViewfont").html(OpenPollCount+"<br>");
+				
+	  /* Get Pending Bills  update QuickView window */
+				var TotPollCount=getTotalPollcount();
+				var OpenPollCount=getOpenPollcount();
+				$("#QuickViewWin #Bills #Open #QuickViewfont").html(TotPollCount+"<br>");
+				$("#QuickViewWin #Bills #Tot #QuickViewfont").html(OpenPollCount+"<br>");
 
-				});
+	  /* Get Pending Approvals  update QuickView window */
+				var TotPollCount=getTotalPollcount();
+				var OpenPollCount=getOpenPollcount();
+				$("#QuickViewWin #SoA #Open #QuickViewfont").html(TotPollCount+"<br>");
+				$("#QuickViewWin #SoA #Tot #QuickViewfont").html(OpenPollCount+"<br>");
 
 
-
-		$('.container #loginmenu #tabs #aboutus').hover(function(e){ 
-				console.log("inside login");
-				$('.container #loginmenu #tabscontent').show("drop");
-				cont = $('.container #loginmenu #tabscontent #aboutus');				
-				$(cont).show("drop");
-				cont = $('.container #loginmenu #tabscontent #login');
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #features');
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #register');				
-				$(cont).hide("drop");
-				cont = $('.container #loginmenu #tabscontent #registergalli');				
-				$(cont).hide("drop");
-
-				});
-
-		$('.container #loginmenu #tabs #aboutus').hover(function(e){ 
+	
+	$('a.login-window').click(function() {
 			
-		});
-	
-	   </script>
-    </body>
-</html>
+		// Getting the variable's value from a link 
+		var loginBox = $(this).attr('href');
 
+		//Fade in the Popup and add close button
+		$(loginBox).fadeIn(300);
+		
+		//Set the center alignment padding + border
+		var popMargTop = ($(loginBox).height() + 24) / 2; 
+		var popMargLeft = ($(loginBox).width() + 24) / 2; 
+		
+		$(loginBox).css({ 
+			'margin-top' : -popMargTop,
+			'margin-left' : -popMargLeft
+		});
+		
+		// Add the mask to body
+		$('body').append('<div id="mask"></div>');
+		$('#mask').fadeIn(300);
+		
+		/*event.preventDefault();*/
+	});
 	
-  
+	// When clicking on the button close or the mask layer the popup closed
+	$('a.close').on('click', function() { 
+	
+		removeLoginWindow();			
+		return false;
+	});
+
+	$(document).on('click', '#mask', function() {
+	
+		/*removeLoginWindow();					
+		return false;*/
+	});
+
+});
+</script>

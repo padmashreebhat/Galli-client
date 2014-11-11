@@ -7,7 +7,87 @@
 <body>
 
 <div id="wrapper">
+	<div id="loginmenu" class="loginmenu">
+    <div id="tabs">
+      <ul>
+        <li id="login" onclick="loadloginmenu()">Login</li>
+        <li id="features" onclick="loadloginmenu()">Features</li>
+        <li id="aboutus">AboutUS</li>
+      </ul>
+    </div>
+        <div id="tabscontent">
+	      <div class="tabpage" id="login">
+					<form action="#" method="post">
+						 <fieldset>
+							 <legend>login</legend>
+							<!----- Facebook Login --------------------------------------------------->
+							<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+							</fb:login-button>
+							
+							<div id="status">
+							</div>
+							<br>
 
+							<!----- google Login --------------------------------------------------->
+							<button class="g-signin" id="signinButton" onclick="ongooglebuttonclick()"
+						        data-scope="https://www.googleapis.com/auth/plus.login"
+						        data-clientid="1084232835515-t2tvcifav346l5qo2v58pmp6prlh40uo.apps.googleusercontent.com"
+						        data-callback="onSignInCallback"
+						        data-theme="dark"
+						        data-cookiepolicy="single_host_origin"
+						        data-requestvisibleactions="http://schemas.google.com/AddActivity"
+						        data-width="wide">
+						    </button>
+						    <div id=profile>
+						    </div>
+							</fieldset>
+														 
+							 <br>
+							 <fieldset>
+								 <legend>New User?</legend>
+						 		 <input  class="bigbutton" type="button" value="Register" onclick="RegisterUser()"/> 
+							 </fieldset>
+
+					</form>
+	      </div>
+
+	      <div class="tabpage" id="register">
+					<form action="#" method="post">
+						 <fieldset>
+								 <legend>User Information</legend>
+								 <label> email </label> <input type="text" id="email" name="email"> 
+         						 <label> First Name  </label> <input type="text" id="fname" name="fname"> 
+         						 <label> Last Name  </label> <input type="text" id="lname" name="lname"> 
+						 </fieldset>
+						<fieldset>		 
+								 <legend>Apartment Information</legend>
+         						 <label> Flat Number  </label> <input type="text" id="AptNum" name="AptNum"> 
+         						 <label> Apartment Name  </label> <input type="text" id="AptName" name="AptName"> 							
+								 <input class="bigbutton" type="button" value="Register" onclick="RegiseterUserDetails()"/> 
+						</fieldset>
+						<fieldset>
+								 <br>
+								 <legend>New Galli to be created?</legend>
+						 		 <input class="bigbutton" type="button" value="CreateGalli" onclick="CreateGalli()"/> 
+				    	 </fieldset>
+					</form>
+	      </div>
+
+	      <div class="tabpage" id="registergalli">
+					<form action="#" method="post">
+						 <fieldset>
+								 <legend>ApartmentDetails</legend>
+         						 <label> ApartmentName  </label> <input type="text" id="aptname" name="aptname"> 
+         						 <label> ApartmentAddress  </label> <input type="text" id="aptaddress" name="aptaddress">
+         						 <label> NumberofBlocks  </label> <input type="text" id="NumberofBlocks" name="NumberofBlocks">
+         						 <label> NumberofApartments  </label> <input type="text" id="TotalNumberofApartments" name="TotalNumberofApartments"> 
+								 <input class="bigbutton" type="button" value="Create" /> 
+						</fieldset>
+					</form>
+	      </div>
+
+        </div>
+	</div>
   	   <div id="sealofapproval">
 	  	   <img src="images/seal.jpg" style="float:left" width="75" height="75">
 		    <div id="tabs">

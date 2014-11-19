@@ -84,30 +84,30 @@
 			 </div>
 		
 		</div>
-		   <div id="Poll">
-		    <div id="tabs">
-		      <ul>
-		        <li id="View">View</li>
-				<li id="Create">Create</li>
-		        <li id="Results">Result</li>
-		        <a onClick="javascript:hidepopupwin()"> <img src="images/close.png" alt="Smiley face" style="float:right" alt="HTML tutorial" width="42" height="42"></a>
-		        <h3 id="popheading"> Opinion Poll </h3>
-		      </ul>
-		    </div>
+		<div id="OpPoll">
+			<div id="tabs">
+				 <ul>
+					 <li id="View">View</li>
+					 <li id="Create">Create</li>
+					 <li id="Results">Result</li>
+					
+					 <h3 id="popheading"> Opinion Poll </h3>
+				 </ul>
+			</div>
 	    
 		    <div id="tabscontent">
 			      <div class="tabpage" id="CreatePoll">
 			      		<img src="images/poll.jpeg" style="float:left" width="75" height="75">
+			      		<a onClick="javascript:hidepopupwin()"> <img src="images/close.png" alt="Smiley face" style="float:right" alt="HTML tutorial" width="42" height="42"></a>
 							<form action="#" method="post">
 								<div id='Create'>
 									 <fieldset>
 										 <legend>Poll Details</legend>
-										 <label> PollID  </label> <input type="text" id="PollID" name="PollID"> 
-										 <label> ValidUpto  </label> <input type="date" id="validity" name="validity"> 
+																				 
+										<label> Topic </label><input id='Subject' type="text" style="width:450px;" name="Subject"> <br>
+										<label> Description </label><TEXTAREA id='Detail' NAME="Poll Description" ROWS="8" style="width:450px;">Please enter details</TEXTAREA>
+										<label> ValidUpto  </label> <input type="Validity" id="validity" name="validity"> 
 			
-										<label> Topic </label><input id='Topic' type="text" style="width:450px;" name="Subject"> <br>
-										<label> Description </label><TEXTAREA NAME="Poll Description" ROWS="8" style="width:450px;">Please enter details</TEXTAREA>
-										 
 
 									</fieldset>
 									<fieldset>
@@ -141,9 +141,10 @@
 					 </div>		
 				  </div>
 				  <div class="tabpage" id="PollResult">
+					  <a onClick="javascript:hidepopupwin()"> <img src="images/close.png" alt="Smiley face" style="float:right" alt="HTML tutorial" width="42" height="42"></a>
 					  <table id="pollresulttable"></table>
 				  </div>	
-			 </div>
+			 </div> 
 		
 		</div>	
 		<div id="NoticeBoard">

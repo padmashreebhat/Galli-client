@@ -11,6 +11,24 @@ table{
     margin-right:auto;
   
 }
+
+.nbtable{
+    font-family:cursive;
+    font-size: 35px;
+    font-style:italic;
+    font-weight: normal;
+    letter-spacing: -1px;
+    line-height: 0.5em;
+    text-align:center;
+	margin-left:auto; 
+    margin-right:auto;
+	border:0px solid #ffffff;
+}
+.nbtable td{
+	border:0px solid #f0e7e7;
+	text-align: left;
+	font-size: 20px;
+}
 th{
     padding:6px 10px;
     color:#71b9e0;

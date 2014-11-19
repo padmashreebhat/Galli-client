@@ -241,7 +241,7 @@
 		    <div id="QuickViewWin">
 				<div class="QuickView" id="Noticeboard">	
 					<div class="heading"> <h4> Noticeboard </h4></div>	
-					<div class="content"> <table id="nbtable"></table> <p id=NewNb onclick="loadNBdetails()"><a id=QuickViewfont> </a> </p> <br> <p id=Tot>  </p>
+					<div class="content"> <table id="nbtable" class="nbtable"></table> <p id=NewNb onclick="loadNBdetails()"><a id=QuickViewfont> </a> </p> <br> <p id=Tot>  </p>
 					</div>
 				</div>
 		
@@ -367,6 +367,7 @@
 				});		
 				$('.container #submenu #communication #poll').click(function(e){
 				loadopinionpoll();
+				
 				});		
 				 $('.submenuitem').hover(
 			                function(){

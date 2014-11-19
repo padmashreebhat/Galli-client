@@ -70,18 +70,38 @@ function getOpenPollcount(){
 function loadopenpolltable(){
            var cont = $('#filler-below');
            var pollview="Open";
-				cont.load('communication.html #Poll #tabscontent #ViewPoll', function(){
+				cont.load('communication.html #OpPoll #tabscontent #ViewPoll', function(){
 					createpolltable(pollview);
 				});
 				$('body').append('<div id="mask"></div>');
 				$('#mask').fadeIn(300);
 				$('#filler-below').show();
+				
+				
+				   var Command="GetPoll";
+    var retVal = $.Deferred();
+	var email=getuserID();
+ 	var tablecontents = "";
+
+ 	tablecontents = "<table>";
+	$.getJSON('communication.php?Command='+Command+'&username='+email,function(result){
+
+		noticeboard = result[0];
+	/*	for(var i=0; i<noticeboard.length; i++){
+			      tablecontents += "<tr>";
+			      tablecontents += "<td onclick='ShownbDetails(this)'>" + noticeboard[i].lname + "</td>";
+			      tablecontents += "</tr>";
+		}
+			   tablecontents += "</table>";
+			   document.getElementById("nbtable").innerHTML = tablecontents;*/
+	});
+
 
 }
 function loadclosepolltable(){
            var cont = $('#filler-below');
            var pollview="Closed";
-				cont.load('communication.html #Poll #tabscontent #ViewPoll', function(){
+				cont.load('communication.html #OpPoll #tabscontent #ViewPoll', function(){
 					createpolltable(pollview);
 				});
 				$('body').append('<div id="mask"></div>');
@@ -105,38 +125,43 @@ function loadNBdetails(){
 ----------------------------------------------------------------------------------*/
  function loadopinionpoll(divID) {
             var cont = $('#filler-below');
-				cont.load('communication.html #Poll', function(){
+				cont.load('communication.html #OpPoll', function(){
 				console.log("inside Poll");			
 
-				$('#Poll #tabscontent #CreatePoll').show();
-				$('#Poll #tabscontent #ViewPoll').hide();
-				$('#Poll #tabscontent #PollResult').hide();
+				$('#OpPoll #tabscontent #CreatePoll').show();
+				$('#OpPoll #tabscontent #ViewPoll').hide();
+				$('#OpPoll #tabscontent #PollResult').hide();
 				
-				cont = $('#Poll #tabs #Create');
+				cont = $('#OpPoll #tabs #Create');
 				$(cont).hover(function(e){ 
 					console.log("inside Create");
-					$('#Poll #tabscontent #CreatePoll').show();
-					$('#Poll #tabscontent #ViewPoll').hide();
-					$('#Poll #tabscontent #PollResult').hide();
+					$('#OpPoll #tabscontent #CreatePoll').show();
+					$('#OpPoll #tabscontent #ViewPoll').hide();
+					$('#OpPoll #tabscontent #PollResult').hide();
 					});			          
-				cont = $('#Poll #tabs #View');
+				cont = $('#OpPoll #tabs #View');
 				$(cont).hover(function(e){ 
 					console.log("inside View");
-					$('#Poll #tabscontent #CreatePoll').hide();
-					$('#Poll #tabscontent #ViewPoll').show();
-					$('#Poll #tabscontent #PollResult').hide();
+					$('#OpPoll #tabscontent #CreatePoll').hide();
+					$('#OpPoll #tabscontent #ViewPoll').show();
+					$('#OpPoll #tabscontent #PollResult').hide();
 					createpolltable();
 					});		
-				cont = $('#Poll #tabs #Results');
+				cont = $('#OpPoll #tabs #Results');
 				$(cont).hover(function(e){ 
 					console.log("inside View");
-					$('#Poll #tabscontent #CreatePoll').hide();
-					$('#Poll #tabscontent #ViewPoll').hide();
-					$('#Poll #tabscontent #PollResult').show();
+					$('#OpPoll #tabscontent #CreatePoll').hide();
+					$('#OpPoll #tabscontent #ViewPoll').hide();
+					$('#OpPoll #tabscontent #PollResult').show();
 					createpollresulttable();
 					});			      	          
 				});
+				
+				
+				$('body').append('<div id="mask"></div>');
+				$('#mask').fadeIn(300);
 				$('#filler-below').show();
+
 
         }
 
@@ -251,6 +276,34 @@ function SearchPoll(){
 function RegisterPoll(){
 	/* Register  poll details*/
 	alert("Register  poll details");
+	var retVal = $.Deferred();
+	var email=getuserID();
+	var Subject=$('#OpPoll #tabscontent #CreatePoll #Subject').val();
+	var Detail=$('#OpPoll #tabscontent #CreatePoll  #Detail').val();
+	var Validity=$('#OpPoll #tabscontent #CreatePoll #Validity').val();
+	var Pollopt1=$('#OpPoll #tabscontent #CreatePoll #Pollopt1').val();
+	var Pollopt2=$('#OpPoll #tabscontent #CreatePoll  #Pollopt2').val();
+	var Pollopt3=$('#OpPoll #tabscontent #CreatePoll #Pollopt3').val();
+	var Pollopt4=$('#OpPoll #tabscontent #CreatePoll #Pollopt4').val();
+	var Pollopt5=$('#OpPoll #tabscontent #CreatePoll  #Pollopt5').val();
+	var PollOption=0;
+	var Command="CreatePoll";
+	
+		$.getJSON('communication.php?Command='+Command+'&Subject='+Subject+'&Validity='+Validity+'&Detail='+Detail+'&Pollopt1='+Pollopt1+'&Pollopt2='+Pollopt2+'&Pollopt3='+Pollopt3+'&Pollopt4='+Pollopt4+'&Pollopt5='+Pollopt5,+'&PollOption='+PollOption,function(result){
+		people = result[0];
+	})
+	.done(function( ) {
+		console.log( "second success" );
+	})
+	.fail(function( ) {
+    	console.log( "error" );
+    	return false;
+    })
+	.always(function( ) {
+    	console.log( "complete" );
+    });
+     return retVal;
+
 }
 
 
@@ -523,37 +576,6 @@ function SubmitNotice(){
     	console.log( "complete" );
     });
     
-    // Return the deferred object for listening
-    Command="GetNB";
- 	
-	$.getJSON('database.php?username='+email,function(result){
 
-		people = result[0];
-		auth = result[1];
-
-		console.log('Authentication is '+auth['username']+', '+auth['auth']);
-		retVal.resolve(auth['auth']);
-		
-		// Process People Object 
-		$('#phpout').empty();
-		for(var i=0; i<people.length; i++){
-			$('<div/>').text(people[i].lname).appendTo($('#phpout'));
-			$('<div/>').text(people[i].fname).appendTo($('#phpout'));
-			$('<div/>').text(people[i].age).appendTo($('#phpout'));
-		}
-	})
-	.done(function( ) {
-		console.log( "second success" );
-	})
-	.fail(function( ) {
-    	console.log( "error" );
-    	return false;
-    })
-	.always(function( ) {
-    	console.log( "complete" );
-    });
-    
-    // Return the deferred object for listening
-	
     return retVal;
 }

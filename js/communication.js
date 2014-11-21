@@ -494,17 +494,35 @@ function ViewNoticeDetailsWindow(obj){
         }
 
 function createnoticetable(){
-			  var tablecontents = "";
+			  var Command="GetNB";
+			  var retVal = $.Deferred();
+			  var email=getuserID();
+ 			  var tablecontents = "";
     		  tablecontents = "<table>";
 		      tablecontents += "<tr>";
-			  tablecontents += "<th>" + "Owner" + "</th>";
-		      tablecontents += "<th>" + "Date" + "</th>";
+			  tablecontents += "<th>" + "NoticeID" + "</th>";
+		      tablecontents += "<th>" + "Validity" + "</th>";
 		      tablecontents += "<th>" + "Subject" + "</th>";
-			  tablecontents += "<th>" + "" + "</th>";
 		      tablecontents += "</tr>";
 		
+		
+	$.getJSON('communication.php?Command='+Command+'&username='+email,function(result){
+		noticeboard = result[0];
+		for(var i=0; i<noticeboard.length; i++){
+			      tablecontents += "<tr>";
+				  tablecontents += "<td>" + noticeboard[i].fname + "</td>";
+			      tablecontents +="<td onclick='ShownbDetails(this)'>" +  noticeboard[i].lname + "</td>";
+			      tablecontents += "<td onclick='ShownbDetails(this)'>" +  noticeboard[i].lname + "</td>";
+				  			      tablecontents += "</tr>";
+		}
+			   tablecontents += "</table>";
+			   document.getElementById("noticetable").innerHTML = tablecontents;
+	});
+
+		
+		
 		/* Read content from JSON file and update the same */
-			  $.getJSON('JSON/result.json', function(jd) { 
+		/*	  $.getJSON('JSON/result.json', function(jd) { 
 			  for (var i = 0; i < 10; i ++)
 			   {
 			      tablecontents += "<tr>";
@@ -521,7 +539,7 @@ function createnoticetable(){
 				
 				$("#transvalue ").click(function(){
 				alert("transaction value clicked");
-});
+});*/
 
 }
 
@@ -542,7 +560,6 @@ function loadSMS(){
  ------------------------Update Database with Noticeboard details--------------------------------------------
 ----------------------------------------------------------------------------------*/
 function SubmitNotice(){
-	alert("update info into database");
 	var retVal = $.Deferred();
 	var email=getuserID();
 	var Subject=$('#NoticeBoard #tabscontent #CreateNotice #Subject').val();
@@ -576,6 +593,6 @@ function SubmitNotice(){
     	console.log( "complete" );
     });
     
-
+getlatestnbMessages();
     return retVal;
 }

@@ -32,7 +32,6 @@ a:hover {
 
  header {
 	width: 95%;
-	height: 15%;
 	margin: 0 auto;
 	z-index: 1000;
 	position: relative;
@@ -72,6 +71,9 @@ width:100%;
 display: inline-block;
 clear:both;
 text-fill-color: red;
+float: left;
+width: 12%;
+height:100%;
 }
 
 #advertisements {
@@ -86,11 +88,21 @@ text-fill-color: red;
 
 
 #submenu{
-background-color: rgba(218,235,245,0);
-	height: 12%;
-	width:100%;
-	clear:both;
+background-color: rgba(218,235,245,0.3);
+	height: 20%;
+	float:both;
 	overflow-y:auto;
+	width: 15%;
+	left:5%;
+	height: auto;
+	overflow-y:auto;
+	margin: 0px auto 100px auto;
+	position: absolute;
+	z-index: 90000;
+	text-align: left;
+}
+#submenu > h4{
+	text-align: left;
 }
 .content-win{
 	width: 80%;
@@ -114,8 +126,8 @@ background-color: rgba(218,235,245,0);
 	clear: both;
 }
 .filler-below {
-	width: 80%;
-	left:10%;
+	width: 70%;
+	left:20%;
 	height: auto;
 	background: rgba(240,240,240,0.8);
 	overflow-y:auto;
@@ -289,99 +301,80 @@ header h1 {
 
 
 #Noticeboard{
-	left:10%;
-	top:42%;
+	left:15%;
+	top:22%;
 	width: 30%;
 	background-color: #e6e8eb;
 	height: 53%;
+	    -webkit-transition-property: width; /* Safari */
+    -webkit-transition-duration: 2s; /* Safari */
+    transition-property: width;
+    transition-duration: 2s;
+    z-index: 800;
 }
 
-#SoA {
-	left: 45%;
-	top:42%;
-/*	background-image: url(../images/background/window.jpeg);*/
-}
-#SoA:hover{
-		left:44.5%;
-		top:41.5%;
-		height: 18.5%;
-		width:10.5%;
-		background-color: #8c9eaf;
-		border-color: #2ba7d3;
-/*background-image: url(../images/background/windows5.jpg);*/
-}
-#Poll {
-	left: 60%;
-	top:42%;
-/*	background-image: url(../images/background/window.jpeg);*/
-}
-#Poll:hover{
-		height: 18.5%;
-		width:10.5%;
-		background-color: #8c9eaf;
-		border-color: #2ba7d3;
-/*background-image: url(../images/background/windows5.jpg);*/
-}
-#Bills {
-	left: 75%;
-	top:42%;
-/*	background-image: url(../images/background/window.jpeg);*/
-}
-
-#Bills:hover{
-		height: 18.5%;
-		width:10.5%;
-		background-color: #8c9eaf;
-		border-color: #2ba7d3;
-	/*	background-image: url(../images/background/windows5.jpg);*/
-		background-size: Auto;
-}
-
-#SoA1{
-	background: #f0f0f0;
-	margin: 0px auto 100px auto;
-	position: absolute;
-	left:800px;
-}
-
-
-
-/*#Noticeboard:hover{
+#Noticeboard:hover{
 	width: 55%;
-	height:60%;
 	position:absolute;
 	z-index: 1;
 	right:40%;
 	border-style: groove;
 	border-radius: 25px;
-}*/
-
-
-#SoA1:hover{
-	width: 55%;
-	height:60%;
-	position:absolute;
-	z-index: 1;
-	left:38%;
-	border-style: groove;
-	border-radius: 25px;
 }
+
+#SoA {
+	left: 47%;
+	top:22%;
+}
+
+#Poll {
+	left: 60%;
+	top:22%;
+
+}
+
+#Bills {
+	left: 75%;
+	top:22%;
+}
+
+#Complaint {
+	left:47%;
+	top:45%;
+}
+
+#Poll:hover,#SoA:hover,#Complaint:hover, #Bills:hover{
+		height: 18.5%;
+		width:10.5%;
+		background-color: #8c9eaf;
+		border-color: #2ba7d3;
+		background-size: Auto;
+}
+
+
+
+
+
+
+
 .heading{
 	width:100%;
 	height:20%;
-	background-color: #1a5a87;
 	left:20%;
 	font-family: cursive;
+	font-variant: inherit;
 }
 .heading > h4{
 	color: black;
 	margin-left: 10%;
 	font-size: 25px;
+	font-weight: 400;
 }
 .heading > h5{
 	color: black;
 	margin-left: 10%;
-	font-size: 15px;
+	font-size: 18px;
+	font-weight: 200;
 }
 .content > p{
 	color: blue;

@@ -12,10 +12,7 @@ function logoutApplication(){
       }
     });
 }
-  function onSignInCallback()
-  {
-	  alert("facebook button clicked");
-  }
+
   // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');

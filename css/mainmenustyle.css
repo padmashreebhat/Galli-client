@@ -15,7 +15,7 @@
 .item{
     position:relative;
     background-color:#f0f0f0;
-    float:right;
+    float:left;
     width:52px;
     margin:0px 5px;
     height:52px;
@@ -28,6 +28,7 @@
     box-shadow:1px 1px 3px #555;
     cursor:pointer;
     overflow:hidden;
+    clear:both;
 }
 
 .link{
@@ -118,8 +119,8 @@
 .submenutitle{
 	float:left;
 	text-align: center;
-font-size: 30px;
-padding: 30px 46px 47px 86px;
+font-size: 20px;
+padding: 0px 46px 0px 19px;
 }
 
 .submenuitem{
@@ -138,6 +139,8 @@ padding: 30px 46px 47px 86px;
     box-shadow:1px 1px 3px #555;
     cursor:pointer;
     overflow:hidden;
+    clear:both;
+    float: left;
 }
 
 .link{
